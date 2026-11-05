@@ -93,7 +93,7 @@ return function(methods, fail, snapshot, finish)
 	end
 	function methods.addItem(params)
 		if type(params.raw) ~= "string" or #params.raw > 65536 then fail("INVALID_REQUEST", "Некорректный текст предмета") end
-		local item = new("Item"):Item(params.raw)
+		local item = construct("Item", params.raw)
 		if not item.base then fail("INVALID_REQUEST", "Lua не распознал базу предмета") end
 		local slot = params.slot and build.itemsTab.slots[params.slot]
 		if params.slot and (not slot or slot.nodeId or not build.itemsTab:IsItemValidForSlot(item, params.slot)) then fail("INVALID_REQUEST", "Предмет несовместим со слотом") end

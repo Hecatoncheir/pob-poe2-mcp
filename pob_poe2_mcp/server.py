@@ -54,20 +54,22 @@ def validate(value, schema):
 
 
 class Server:
-    def __init__(self, pob_dir=None, timeout=60):
+    def __init__(self, pob_dir=None, timeout=60, mode="engine"):
         self.api = None
         self.initialized = False
         self.pob_dir = pob_dir
         self.timeout = timeout
+        self.mode = mode
 
     def handle(self, method, params):
         if method == "initialize":
             self.initialized = True
             requested = params.get("protocolVersion")
             version = requested if requested in ["2024-11-05", "2025-03-26", "2025-06-18", "2025-11-25"] else "2025-11-25"
+            mode_info = " Режим app: операции изменяют текущую сборку открытого окна PoB; сохранение выполняет пользователь." if self.mode == "app" else " Режим engine: отдельная сессия расчёта на файлах установленного PoB."
             return {"protocolVersion": version, "capabilities": {"tools": {}},
                     "serverInfo": {"name": "pob-poe2-mcp", "version": __version__},
-                    "instructions": "Все игровые расчёты выполняет Lua. Сначала прочитайте каталоги. Проверяйте warnings, ошибки камней, unsupported модификаторы и config. Не называйте сборку проверенной в игре: проверен только расчёт PoB."}
+                    "instructions": "Все игровые расчёты выполняет Lua. Сначала прочитайте каталоги. Проверяйте warnings, ошибки камней, unsupported модификаторы и config. Не называйте сборку проверенной в игре: проверен только расчёт PoB." + mode_info}
         if method == "ping":
             return {}
         if not self.initialized:
@@ -83,7 +85,7 @@ class Server:
         try:
             validate(args, tool["inputSchema"])
             if self.api is None:
-                self.api = BuildAPI(pob_dir=self.pob_dir, timeout=self.timeout)
+                self.api = BuildAPI(pob_dir=self.pob_dir, timeout=self.timeout, mode=self.mode)
             result = self.api.check(args.get("targets")) if name == "pob_check_build" else self.api.call(METHODS[name], args)
             payload = {"revision": self.api.revision, "result": result}
             return {"content": [{"type": "text", "text": json.dumps(payload, ensure_ascii=False)}], "structuredContent": payload, "isError": False}
@@ -95,10 +97,10 @@ class Server:
             self.api.close()
 
 
-def main(pob_dir=None, timeout=60):
+def main(pob_dir=None, timeout=60, mode="engine"):
     sys.stdin.reconfigure(encoding="utf-8")
     sys.stdout.reconfigure(encoding="utf-8")
-    server = Server(pob_dir=pob_dir, timeout=timeout)
+    server = Server(pob_dir=pob_dir, timeout=timeout, mode=mode)
     try:
         while True:
             line = sys.stdin.buffer.readline(MAX_MESSAGE + 1)

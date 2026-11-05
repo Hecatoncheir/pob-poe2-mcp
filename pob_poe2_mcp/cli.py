@@ -7,7 +7,8 @@ import sys
 
 from . import __version__
 from .api import BuildAPI
-from .engine import LOCK, resolve_engine_dir, setup_engine
+from .bridge import install_bridge, uninstall_bridge
+from .engine import LOCK, engine_layout, resolve_engine_dir, setup_engine
 from .errors import EngineError
 from .server import main as serve
 
@@ -27,15 +28,32 @@ def parser():
         command = commands.add_parser(name, help=help_text)
         command.add_argument("--pob-dir", help="Каталог с src/ и runtime/; иначе POB_DIR или каталог setup")
         command.add_argument("--timeout", type=positive_timeout, default=60, help="Ожидание Lua в секундах")
+        command.add_argument("--mode", choices=["engine", "app"], default="engine", help="Отдельный движок или текущая сборка окна PoB")
+    for name, help_text in [("install-bridge", "Подключить MCP к текущей сборке окна PoB"), ("uninstall-bridge", "Удалить подключение из Launch.lua")]:
+        command = commands.add_parser(name, help=help_text)
+        command.add_argument("--pob-dir", help="Каталог PoB; по умолчанию автоматический поиск")
     setup = commands.add_parser("setup", help="Загрузить совместимый движок из GitHub в новый каталог")
     setup.add_argument("--destination", help="Новый каталог; по умолчанию внутри LOCALAPPDATA")
+    config = commands.add_parser("config", help="Показать готовую настройку MCP-клиента с абсолютными путями")
+    config.add_argument("--mode", choices=["engine", "app", "both"], default="both")
     return result
 
 
-def doctor(pob_dir, timeout):
-    with BuildAPI(pob_dir=pob_dir, timeout=timeout) as api:
+def client_config(mode="both"):
+    modes = ["engine", "app"] if mode == "both" else [mode]
+    return {"mcpServers": {"pob-" + name: {
+        "command": sys.executable,
+        "args": ["-X", "utf8", "-m", "pob_poe2_mcp", "serve", "--mode", name],
+    } for name in modes}}
+
+
+def doctor(pob_dir, timeout, mode="engine"):
+    with BuildAPI(pob_dir=pob_dir, timeout=timeout, mode=mode) as api:
         classes = api.call("getCatalog", {"kind": "classes"})
+        layout = engine_layout(api.pob_dir)
         print(json.dumps({"ok": True, "engineDir": str(api.pob_dir),
+                          "mode": mode, "layout": layout.kind, "installedVersion": layout.version,
+                          "pinnedRepository": LOCK["repository"],
                           "pinnedRevision": LOCK["revision"], "classes": classes["total"],
                           "capabilities": api.capabilities}, ensure_ascii=False, indent=2))
 
@@ -43,17 +61,28 @@ def doctor(pob_dir, timeout):
 def main(argv=None):
     args = parser().parse_args(argv)
     try:
+        if args.command == "config":
+            print(json.dumps(client_config(args.mode), ensure_ascii=False, indent=2))
+            return
         if args.command == "setup":
             directory = setup_engine(args.destination)
             print(f"Движок готов: {directory}")
             print(f'Проверка: pob-poe2-mcp doctor --pob-dir "{directory}"')
             return
-        pob_dir = resolve_engine_dir(getattr(args, "pob_dir", None))
+        if args.command in ["install-bridge", "uninstall-bridge"]:
+            action = install_bridge if args.command == "install-bridge" else uninstall_bridge
+            print(json.dumps(action(args.pob_dir), ensure_ascii=False, indent=2))
+            print("Перезапустите PoB, чтобы изменение вступило в силу.")
+            return
+        mode = getattr(args, "mode", "engine")
+        pob_dir = getattr(args, "pob_dir", None)
+        if mode == "engine":
+            pob_dir = resolve_engine_dir(pob_dir)
         timeout = getattr(args, "timeout", 60)
         if args.command == "doctor":
-            doctor(pob_dir, timeout)
+            doctor(pob_dir, timeout, mode)
             return
-        serve(pob_dir=pob_dir, timeout=timeout)
+        serve(pob_dir=pob_dir, timeout=timeout, mode=mode)
     except (EngineError, OSError, subprocess.SubprocessError) as error:
         print(f"Ошибка: {error}", file=sys.stderr)
         raise SystemExit(1) from None

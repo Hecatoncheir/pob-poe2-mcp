@@ -2,8 +2,16 @@ name: Проверки MCP
 
 on:
   push:
+    branches: ["**"]
   pull_request:
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      ref:
+        description: "Проверяемая ветка или тег"
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: read
@@ -15,10 +23,12 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        python: ["3.11", "3.13"]
+        python: ["3.11", "3.13", "3.14"]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ inputs.ref || github.ref }}
+      - uses: actions/setup-python@v7.1.0
         with:
           python-version: ${{ matrix.python }}
       - name: Проверить транспорт без движка
@@ -28,8 +38,10 @@ jobs:
     name: Установка пакета и настоящий Lua
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ inputs.ref || github.ref }}
+      - uses: actions/setup-python@v7.1.0
         with:
           python-version: "3.13"
       - name: Подготовить изолированное окружение
@@ -57,7 +69,17 @@ jobs:
           python -X utf8 -m unittest discover -s tests -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -X utf8 examples/build_fireball.py
-      - uses: actions/upload-artifact@v4
+      - name: Собрать и проверить ZIP без системного Python и Git
+        shell: pwsh
+        run: |
+          python -X utf8 tools/build_portable.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Expand-Archive -LiteralPath dist/pob-poe2-mcp-windows-x64.zip -DestinationPath dist/portable-check
+          python -X utf8 tools/check_portable.py dist/portable-check/pob-poe2-mcp --pob-dir .engine
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v7.0.2
         with:
-          name: pob-poe2-mcp-wheel
-          path: dist/*.whl
+          name: pob-poe2-mcp-packages
+          path: |
+            dist/*.whl
+            dist/pob-poe2-mcp-windows-x64.zip

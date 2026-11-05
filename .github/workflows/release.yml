@@ -1,0 +1,80 @@
+name: Публикация релиза
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Существующий тег, например v0.2.0"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ inputs.tag || github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  metadata:
+    name: Проверить версию и changelog
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.version.outputs.tag }}
+    env:
+      RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ env.RELEASE_TAG }}
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: "3.13"
+      - id: version
+        name: Сверить тег с пакетом и changelog
+        run: |
+          python tools/release.py --tag "$RELEASE_TAG" --check-only
+          echo "tag=$RELEASE_TAG" >> "$GITHUB_OUTPUT"
+
+  checks:
+    name: Проверки и сборка
+    needs: metadata
+    uses: ./.github/workflows/ci.yml
+    with:
+      ref: ${{ needs.metadata.outputs.tag }}
+
+  publish:
+    name: Опубликовать пакеты и описание
+    needs: [metadata, checks]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RELEASE_TAG: ${{ needs.metadata.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ env.RELEASE_TAG }}
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: "3.13"
+      - uses: actions/download-artifact@v8.0.2
+        with:
+          name: pob-poe2-mcp-packages
+          path: dist
+      - name: Сформировать описание и контрольные суммы
+        run: python tools/release.py --tag "$RELEASE_TAG" --artifacts dist
+      - name: Опубликовать GitHub Release
+        run: |
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "Релиз уже опубликован; повторный запуск не заменяет его файлы."
+            exit 0
+          fi
+          gh release create "$RELEASE_TAG" \
+            dist/*.whl dist/pob-poe2-mcp-windows-x64.zip dist/SHA256SUMS \
+            --verify-tag --title "$RELEASE_TAG — PoB PoE2 MCP" \
+            --notes-file dist/RELEASE_NOTES.md
+          echo "Опубликован [$RELEASE_TAG](https://github.com/$GITHUB_REPOSITORY/releases/tag/$RELEASE_TAG)" >> "$GITHUB_STEP_SUMMARY"

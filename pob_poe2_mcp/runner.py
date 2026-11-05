@@ -12,10 +12,12 @@ PACKAGE_DIR = Path(__file__).resolve().parent
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pob-dir", type=Path, required=True)
+    parser.add_argument("--script", type=Path, default=PACKAGE_DIR / "lua/headless_server.lua")
     args = parser.parse_args()
     root = args.pob_dir.resolve()
-    script = PACKAGE_DIR / "lua/headless_server.lua"
-    runtime = root / "runtime"
+    script = args.script.resolve()
+    scripts = root / "src" if (root / "src/Launch.lua").is_file() else root
+    runtime = root / "runtime" if (root / "runtime/lua51.dll").is_file() else root
     if os.name != "nt":
         parser.error("Этот адаптер предназначен для Windows runtime проекта.")
     with os.add_dll_directory(str(runtime)):
@@ -32,16 +34,22 @@ def main():
             raise RuntimeError("Не удалось создать Lua-состояние.")
         try:
             lua.luaL_openlibs(handle)
-            os.chdir(root / "src")
+            os.chdir(scripts)
             # JSON-совместимое экранирование подходит для ASCII-путей в Lua.
             # Длинная строка позволяет передавать путь без исполнения shell-кода.
             path = str(script).replace("\\", "/")
             package_path = str(PACKAGE_DIR).replace("\\", "/")
             if "]]" in path or "]]" in package_path:
                 raise ValueError("Недопустимый путь сценария.")
-            code = '''
-package.path = "../runtime/lua/?.lua;../runtime/lua/?/init.lua;" .. package.path
-package.cpath = "../runtime/?.dll;" .. package.cpath
+            runtime_path = str(runtime).replace("\\", "/")
+            if "]]" in runtime_path:
+                raise ValueError("Недопустимый путь runtime.")
+            code = f'''POB_MCP_PACKAGE_DIR = [[{package_path}]]
+POB_MCP_RUNTIME_DIR = [[{runtime_path}]]
+POB_MCP_HEADLESS = true
+''' + '''
+package.path = POB_MCP_RUNTIME_DIR .. "/lua/?.lua;" .. POB_MCP_RUNTIME_DIR .. "/lua/?/init.lua;" .. package.path
+package.cpath = POB_MCP_RUNTIME_DIR .. "/?.dll;" .. package.cpath
 arg = {}
 local originalLoadfile = loadfile
 function loadfile(path)
@@ -60,7 +68,7 @@ function dofile(path)
     if not chunk then error(err) end
     return chunk()
 end
-''' + f"\nPOB_MCP_PACKAGE_DIR = [[{package_path}]]\ndofile([[{path}]])\n"
+''' + f"\ndofile([[{path}]])\n"
             status = lua.luaL_loadstring(handle, code.encode("utf-8"))
             if status == 0:
                 status = lua.lua_pcall(handle, 0, 0, 0)

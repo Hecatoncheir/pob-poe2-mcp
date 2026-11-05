@@ -2,34 +2,33 @@
 
 import json
 import queue
-import subprocess
-import sys
 import threading
-from pathlib import Path
 
 from .engine import resolve_engine_dir, validate_engine
 from .errors import EngineError
+from .transport import AppTransport, ProcessTransport
 
-PACKAGE_DIR = Path(__file__).resolve().parent
 MAX_MESSAGE = 8 * 1024 * 1024
 
 
 class BuildAPI:
-    """Одна независимая сборка на процесс; вызовы выполняются последовательно."""
+    """Последовательный доступ к отдельной сессии или текущей сборке окна PoB."""
 
-    def __init__(self, timeout=60, pob_dir=None):
-        self.pob_dir = validate_engine(resolve_engine_dir(pob_dir))
+    def __init__(self, timeout=60, pob_dir=None, mode="engine", endpoint=None):
+        self.mode = mode
+        if mode == "app":
+            self.transport = AppTransport(pob_dir=pob_dir, endpoint=endpoint)
+            self.pob_dir = self.transport.pob_dir
+        elif mode == "engine":
+            self.pob_dir = validate_engine(resolve_engine_dir(pob_dir))
+            self.transport = ProcessTransport(self.pob_dir)
+        else:
+            raise ValueError("Режим должен быть engine или app")
         self.timeout = timeout
         self.revision = 0
         self.counter = 0
         self.lock = threading.Lock()
         self.responses = queue.Queue()
-        self.process = subprocess.Popen(
-            [sys.executable, "-X", "utf8", str(PACKAGE_DIR / "runner.py"),
-             "--pob-dir", str(self.pob_dir)],
-            cwd=self.pob_dir, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-            stderr=sys.stderr, text=True, encoding="utf-8", bufsize=1,
-        )
         threading.Thread(target=self._read, daemon=True).start()
         try:
             self.capabilities = self.call("initialize")
@@ -40,7 +39,7 @@ class BuildAPI:
     def _read(self):
         try:
             while True:
-                line = self.process.stdout.readline(MAX_MESSAGE + 1)
+                line = self.transport.reader.readline(MAX_MESSAGE + 1)
                 if not line:
                     raise EngineError("ENGINE_STOPPED", "Процесс Lua завершился")
                 if len(line.encode("utf-8")) > MAX_MESSAGE or not line.endswith("\n"):
@@ -54,15 +53,17 @@ class BuildAPI:
             self.counter += 1
             request = {"protocol": 1, "id": str(self.counter), "method": method,
                        "params": {"revision": self.revision, **(params or {})}}
+            if self.transport.token:
+                request["token"] = self.transport.token
             line = json.dumps(request, ensure_ascii=False) + "\n"
             if len(line.encode("utf-8")) > MAX_MESSAGE:
                 raise EngineError("MESSAGE_TOO_LARGE", "Запрос превышает лимит")
-            if self.process.poll() is not None:
-                raise EngineError("ENGINE_STOPPED", "Перезапустите клиент")
             try:
-                self.process.stdin.write(line)
-                self.process.stdin.flush()
+                self.transport.send(line)
                 response = self.responses.get(timeout=self.timeout)
+            except OSError as error:
+                self.close()
+                raise EngineError("ENGINE_STOPPED", str(error)) from None
             except queue.Empty:
                 self.close()
                 raise EngineError("TIMEOUT", "Lua не ответил; сессия закрыта") from None
@@ -94,12 +95,7 @@ class BuildAPI:
                 "targetsPassed": all(check["passed"] for check in checks) if checks else None}
 
     def close(self):
-        if self.process.poll() is None:
-            self.process.kill()
-            self.process.wait(timeout=5)
-        for stream in [self.process.stdin, self.process.stdout]:
-            if stream:
-                stream.close()
+        self.transport.close()
 
     def __enter__(self):
         return self

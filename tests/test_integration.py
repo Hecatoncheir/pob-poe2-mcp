@@ -8,12 +8,12 @@ import tempfile
 import unittest
 
 from pob_poe2_mcp.api import BuildAPI, EngineError
-from pob_poe2_mcp.engine import REQUIRED_FILES, resolve_engine_dir
+from pob_poe2_mcp.engine import engine_layout, resolve_engine_dir
 from pob_poe2_mcp.server import TOOLS, validate
 
 ROOT = Path(__file__).resolve().parents[1]
 ENGINE = resolve_engine_dir()
-HAS_ENGINE = sys.platform == "win32" and all((ENGINE / name).is_file() for name in REQUIRED_FILES)
+HAS_ENGINE = sys.platform == "win32" and engine_layout(ENGINE) is not None
 
 
 @unittest.skipUnless(HAS_ENGINE, "Нужен движок: задайте POB_DIR или выполните setup")
@@ -61,6 +61,7 @@ class AssistantAPI(unittest.TestCase):
         api.call("createBuild", {"level": 1})
         api.call("loadBuild", {"xml": api.call("exportBuild")["xml"]})
         before = api.call("exportBuild")["xml"]
+        before_report = api.call("getBuildReport")
         revision = api.revision
         for method, params in [
             ("addSkillGroup", {"gems": [{"id": "invented"}]}),
@@ -72,7 +73,10 @@ class AssistantAPI(unittest.TestCase):
             with self.assertRaises(EngineError):
                 api.call(method, params)
             self.assertEqual(api.revision, revision)
-            self.assertEqual(api.call("exportBuild")["xml"], before)
+            after_report = api.call("getBuildReport")
+            for field in ["stats", "config", "groups", "items", "allocatedNodes"]:
+                self.assertEqual(after_report[field], before_report[field], field)
+            self.assertEqual(after_report["snapshot"]["buildInfo"], before_report["snapshot"]["buildInfo"])
         with self.assertRaises(EngineError) as caught:
             api.call("getBuildReport", {"revision": revision - 1})
         self.assertEqual(caught.exception.code, "STALE_REVISION")
@@ -82,6 +86,15 @@ class AssistantAPI(unittest.TestCase):
         second = self.api.call("getCatalog", {"kind": "bases", "limit": 2, "offset": 2})
         self.assertEqual(len(first["entries"]), 2)
         self.assertNotEqual(first["entries"], second["entries"])
+
+    def test_live_session_uses_same_api_and_preserves_manual_changes(self):
+        process = subprocess.run(
+            [sys.executable, "-X", "utf8", str(ROOT / "pob_poe2_mcp/runner.py"),
+             "--pob-dir", str(ENGINE), "--script", str(ROOT / "tests/session_live.lua")],
+            capture_output=True, encoding="utf-8", timeout=90,
+        )
+        self.assertEqual(process.returncode, 0, process.stderr)
+        self.assertIn("LIVE_SESSION_OK", process.stdout)
 
     def test_node_catalog_after_ascendancy_selection(self):
         api = self.api

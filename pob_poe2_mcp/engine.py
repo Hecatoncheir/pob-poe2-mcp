@@ -1,5 +1,6 @@
 """Выбор и явная загрузка совместимого движка без зависимостей от Flutter."""
 
+from dataclasses import dataclass
 import json
 import os
 from pathlib import Path
@@ -8,14 +9,79 @@ import struct
 import subprocess
 import sys
 import tempfile
+import xml.etree.ElementTree as ET
 
 from .errors import EngineError
 
 LOCK = json.loads((Path(__file__).parent / "data/engine-lock.json").read_text(encoding="utf-8"))
 REQUIRED_FILES = (
-    "src/HeadlessWrapper.lua", "src/Launch.lua", "src/TreeData/0_5/tree.json",
+    "src/Launch.lua", "src/TreeData/0_5/tree.json",
     "runtime/lua51.dll", "runtime/lua/dkjson.lua",
 )
+
+
+@dataclass(frozen=True)
+class EngineLayout:
+    root: Path
+    scripts: Path
+    runtime: Path
+    kind: str
+
+    @property
+    def version(self):
+        for manifest in [self.root / "manifest.xml", self.scripts / "manifest.xml"]:
+            if manifest.is_file():
+                version = ET.parse(manifest).find("Version")
+                if version is not None:
+                    return version.get("number", "unknown")
+        return "unknown"
+
+
+def engine_layout(directory):
+    root = Path(directory).expanduser().resolve()
+    if root.is_file():
+        root = root.parent
+    scripts = root / "src" if (root / "src/Launch.lua").is_file() else root
+    runtime = root / "runtime" if (root / "runtime/lua51.dll").is_file() else root
+    required = [scripts / "Launch.lua", scripts / "GameVersions.lua", scripts / "Modules/Main.lua",
+                scripts / "TreeData/0_5/tree.json", runtime / "lua51.dll", runtime / "lua/dkjson.lua"]
+    if not all(path.is_file() for path in required):
+        return None
+    return EngineLayout(root, scripts, runtime, "repository" if scripts != root else "installed")
+
+
+def registry_candidates():
+    if sys.platform != "win32":
+        return
+    import winreg
+    key_path = r"Software\Microsoft\Windows\CurrentVersion\Uninstall"
+    for hive in [winreg.HKEY_CURRENT_USER, winreg.HKEY_LOCAL_MACHINE]:
+        for view in [winreg.KEY_WOW64_64KEY, winreg.KEY_WOW64_32KEY]:
+            try:
+                with winreg.OpenKey(hive, key_path, access=winreg.KEY_READ | view) as key:
+                    yield from uninstall_locations(key, winreg)
+            except OSError:
+                continue
+
+
+def uninstall_locations(key, registry):
+    for index in range(registry.QueryInfoKey(key)[0]):
+        try:
+            with registry.OpenKey(key, registry.EnumKey(key, index)) as entry:
+                name = registry.QueryValueEx(entry, "DisplayName")[0]
+                if "Path of Building" in name and "PoE2" in name:
+                    yield Path(registry.QueryValueEx(entry, "InstallLocation")[0].strip('"'))
+        except OSError:
+            continue
+
+
+def installed_engine_dirs():
+    candidates = list(registry_candidates())
+    for variable in ["APPDATA", "LOCALAPPDATA", "ProgramFiles", "ProgramFiles(x86)"]:
+        base = os.environ.get(variable)
+        if base:
+            candidates.extend(Path(base) / name for name in ["Path of Building Community (PoE2)", "Path of Building (PoE2)"])
+    return list(dict.fromkeys(path.resolve() for path in candidates if engine_layout(path)))
 
 
 def default_engine_dir():
@@ -24,17 +90,23 @@ def default_engine_dir():
 
 
 def resolve_engine_dir(pob_dir=None):
-    return Path(pob_dir or os.environ.get("POB_DIR") or default_engine_dir()).expanduser().resolve()
+    explicit = pob_dir or os.environ.get("POB_DIR")
+    if explicit:
+        path = Path(explicit).expanduser().resolve()
+        return path.parent if path.is_file() else path
+    installed = installed_engine_dirs()
+    if len(installed) > 1:
+        raise EngineError("MULTIPLE_INSTALLATIONS", "Найдены несколько установок PoB; выберите --pob-dir: " + "; ".join(map(str, installed)))
+    return installed[0] if installed else default_engine_dir().resolve()
 
 
 def validate_engine(pob_dir):
     if sys.platform != "win32" or struct.calcsize("P") != 8:
         raise EngineError("UNSUPPORTED_PLATFORM", "Нужны Windows и 64-разрядный Python 3.11 или новее.")
-    missing = [name for name in REQUIRED_FILES if not (pob_dir / name).is_file()]
-    if missing:
+    if not engine_layout(pob_dir):
         raise EngineError(
             "ENGINE_NOT_CONFIGURED",
-            f"Движок PoB не найден в {pob_dir}; отсутствуют: {', '.join(missing)}. "
+            f"Движок PoB не найден в {pob_dir}. Нужна установленная версия PoE2 или репозиторий с src/ и runtime/. "
             "Выполните pob-poe2-mcp setup или укажите --pob-dir / POB_DIR.",
         )
     return pob_dir

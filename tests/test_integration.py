@@ -56,6 +56,10 @@ class AssistantAPI(unittest.TestCase):
         self.assertFalse(check["targetsPassed"])
         self.assertIsNone(check["checks"][1]["actual"])
 
+    def test_capabilities_identify_actual_platform(self):
+        expected = {'win32': 'windows-engine', 'linux': 'linux-engine', 'darwin': 'macos-engine'}
+        self.assertEqual(self.api.capabilities['platform'], expected[sys.platform])
+
     def test_errors_rollback_revision(self):
         api = self.api
         api.call("createBuild", {"level": 1})

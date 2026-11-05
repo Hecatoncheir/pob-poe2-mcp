@@ -13,7 +13,7 @@ MCP для [официального Path of Building — Path of Exile 2](https
 
 Если PoB уже установлен, **Python, pip, Git и второй экземпляр движка не нужны**.
 
-1. Скачайте [pob-poe2-mcp-windows-x64.zip](https://github.com/Hecatoncheir/pob-poe2-mcp/releases/download/v0.4.0/pob-poe2-mcp-windows-x64.zip) и распакуйте в постоянный каталог, например `C:/Tools/`. Внутри появится папка `pob-poe2-mcp`.
+1. Скачайте [pob-poe2-mcp-windows-x64.zip](https://github.com/Hecatoncheir/pob-poe2-mcp/releases/download/v0.4.1/pob-poe2-mcp-windows-x64.zip) и распакуйте в постоянный каталог, например `C:/Tools/`. Внутри появится папка `pob-poe2-mcp`.
 2. Запустите **`check.cmd`**: он автоматически найдёт установленный PoB и проверит расчёт через Lua.
 3. Для работы с открытым окном один раз запустите **`connect-app.cmd`**, затем перезапустите PoB и откройте нужную сборку. Для режима `engine` этот шаг не требуется.
 4. Запустите **`mcp-config.cmd`** и скопируйте показанную настройку в свой MCP-клиент. Она уже содержит правильные абсолютные пути и оба сервера: `pob-engine` и `pob-app`.
@@ -93,7 +93,7 @@ MCP для [официального Path of Building — Path of Exile 2](https
 
 ```powershell
 python -m venv .venv
-./.venv/Scripts/python -m pip install "git+https://github.com/Hecatoncheir/pob-poe2-mcp.git@v0.4.0"
+./.venv/Scripts/python -m pip install "git+https://github.com/Hecatoncheir/pob-poe2-mcp.git@v0.4.1"
 ./.venv/Scripts/python -m pob_poe2_mcp doctor
 ./.venv/Scripts/python -m pob_poe2_mcp config
 ```
@@ -137,7 +137,7 @@ python -m venv .venv
 
 Режим `engine` поддерживает Windows x64, Linux x64 и macOS Apple Silicon. CI запускает настоящий Lua на всех трёх ОС. Режим `app` и PNG через GDI/Direct3D требуют Windows. На Windows проверена обычная официальная установка **PoB 0.23.1**, включая чтение и изменение текущей сборки в настоящем окне, ручные правки и обнаружение устаревшей ревизии. Отдельно проверяются исходники официального репозитория в закреплённой ревизии. Совместимость будущих версий не предполагается автоматически: например, отсутствие заметок узлов в старой версии возвращается как `UNSUPPORTED_OPERATION`.
 
-На Linux/macOS скачайте соответствующий `pob-poe2-mcp-native-*.zip` из того же выпуска, что и исходники, проверьте `SHA256SUMS` и распакуйте его в `pob_poe2_mcp/`: получится каталог `pob_poe2_mcp/native/`. Затем выполните `python3 run.py setup --destination .engine` и `python3 run.py --pob-dir .engine doctor`. Для явного каталога библиотек есть `POB_MCP_NATIVE_DIR`. Библиотеки не устанавливаются в системные каталоги.
+На Linux/macOS скачайте соответствующий `pob-poe2-mcp-native-*.zip` из того же выпуска, что и исходники, проверьте `SHA256SUMS` и распакуйте его в `pob_poe2_mcp/`: получится каталог `pob_poe2_mcp/native/`. Затем выполните `python3 run.py setup --destination .engine` и `python3 run.py doctor --mode engine --pob-dir .engine`. Для явного каталога библиотек есть `POB_MCP_NATIVE_DIR`. Библиотеки не устанавливаются в системные каталоги.
 
 Для самостоятельной сборки на Linux/macOS запустите `python3 tools/build_native.py`: нужны Git, make и компилятор C. Закреплённые исходники и лицензии записаны в `tools/native-lock.json` и архиве. Готовые библиотеки Linux собраны на Ubuntu 22.04; macOS — для arm64 с минимальной системой 11.0. Минимальная система не означает отдельную проверку на каждом её выпуске.
 
@@ -154,8 +154,8 @@ python -X utf8 tools/build_portable.py
 История версий хранится в [CHANGELOG.md](CHANGELOG.md). Для выпуска обновите версию в `pyproject.toml` и `pob_poe2_mcp/__init__.py`, добавьте раздел с датой в changelog, затем отправьте коммит и тег:
 
 ```powershell
-git tag v0.4.0
-git push origin main v0.4.0
+git tag v0.4.1
+git push origin main v0.4.1
 ```
 
 Workflow **«Публикация релиза»** проверит соответствие версий и наличие changelog, выполнит весь CI, соберёт wheel, Windows ZIP и нативные архивы Linux/macOS, затем опубликует GitHub Release с описанием из changelog и файлом `SHA256SUMS`. Ошибка проверок блокирует публикацию. Личный токен не требуется: используется стандартный `GITHUB_TOKEN` с правом записи только в задании публикации.

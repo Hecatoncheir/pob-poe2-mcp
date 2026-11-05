@@ -38,8 +38,13 @@ def build():
     with tempfile.TemporaryDirectory(prefix='pob-native-') as temporary:
         source = checkout(Path(temporary), 'luajit')
         utf8 = checkout(Path(temporary), 'luautf8')
+        zstd = checkout(Path(temporary), 'zstd')
+        run('make', '-C', str(zstd / 'lib'), '-j2', 'libzstd')
         run('make', '-C', str(source), '-j2')
         darwin = sys.platform == 'darwin'
+        zstd_name = 'libzstd.dylib' if darwin else 'libzstd.so'
+        shutil.copy2(zstd / 'lib' / zstd_name, destination / zstd_name)
+        shutil.copy2(zstd / 'LICENSE', destination / 'LICENSE-Zstandard.txt')
         library = 'libluajit-5.1.dylib' if darwin else 'libluajit-5.1.so.2'
         shutil.copy2(source / 'src/libluajit.so', destination / library)
         options = ['-bundle', '-undefined', 'dynamic_lookup'] if darwin else ['-shared', '-fPIC']

@@ -1,4 +1,8 @@
 {
+  "zstd": {
+    "repository": "https://github.com/meta/zstd.git",
+    "revision": "ac66b19e6bd6b83238bf008eecc1298105298532"
+  },
   "luajit": {
     "repository": "https://github.com/LuaJIT/LuaJIT.git",
     "revision": "ea9eb7edb5eac4a9d175d74523db34fac0fa5180"

@@ -7,7 +7,7 @@ from functools import lru_cache
 import struct
 
 from .engine import engine_layout
-from .tree_assets import decompress_zstd
+from .tree_assets import decompress_zstd, zstd_path
 
 
 @dataclass
@@ -143,7 +143,7 @@ class Textures:
             if not path.is_relative_to(self.root):
                 raise ValueError('Текстура находится вне каталога PoB')
             if name.endswith('.dds.zst'):
-                data = decompress_zstd(path.read_bytes(), self.layout.runtime / 'zstd.dll')
+                data = decompress_zstd(path.read_bytes(), zstd_path(self.layout.runtime))
                 self.sources[name] = DDS(data)
             elif name.endswith('.png'):
                 self.sources[name] = png_mip(path)

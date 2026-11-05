@@ -1,8 +1,24 @@
 """Общие данные изображений и чтение Zstandard из runtime PoB."""
 
 import ctypes
+import ctypes.util
+import sys
 from dataclasses import dataclass
 from functools import lru_cache
+from .native_runtime import native_directory
+
+
+def zstd_path(runtime):
+    if sys.platform == 'win32':
+        return runtime / 'zstd.dll'
+    name = 'libzstd.dylib' if sys.platform == 'darwin' else 'libzstd.so'
+    bundled = native_directory() / name
+    if bundled.is_file():
+        return bundled
+    system = ctypes.util.find_library('zstd')
+    if system:
+        return system
+    raise ValueError('Для иконок нужен native-архив MCP с библиотекой Zstandard')
 
 
 @dataclass(frozen=True)

@@ -9,6 +9,7 @@ from pathlib import Path
 from . import __version__
 from .api import BuildAPI, EngineError, MAX_MESSAGE
 from .images import render_build_image, validate_image_args
+from .tree_icons import TreeIcons
 
 MANIFEST = Path(__file__).parent / "data/tools.json"
 TOOLS = json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -21,8 +22,9 @@ METHODS = {
     "pob_node_tooltip": "getNodeTooltip", "pob_export_xml": "exportBuild",
     "pob_render_image": "getBuildImageData",
     "pob_get_tree": "getTreeGeometry",
+    "pob_tree_icons": "getTreeIconAssets",
 }
-READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image", "pob_get_tree"}
+READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image", "pob_get_tree", "pob_tree_icons"}
 
 
 def validate(value, schema):
@@ -65,6 +67,7 @@ class Server:
         self.pob_dir = pob_dir
         self.timeout = timeout
         self.mode = mode
+        self.icons = None
 
     def execute_tool(self, name, args):
         if self.api is None:
@@ -100,6 +103,10 @@ class Server:
 
     def tool_response(self, name, args, result):
         image = None
+        if name == 'pob_tree_icons':
+            if self.icons is None:
+                self.icons = TreeIcons(self.api.pob_dir)
+            result = self.icons.render(result)
         if name == 'pob_render_image':
             image, result = render_build_image(result, args, getattr(self.api, 'pob_dir', None))
         payload = {"revision": self.api.revision, "result": result}

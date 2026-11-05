@@ -504,5 +504,30 @@
       "destructiveHint": false,
       "openWorldHint": false
     }
+  },
+  {
+    "name": "pob_tree_icons",
+    "description": "Оригинальные иконки узлов текущего дерева в PNG RGBA. Имена берите из pob_get_tree; до 32 за запрос.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "icons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 512
+          },
+          "minItems": 1,
+          "maxItems": 32
+        }
+      },
+      "required": [
+        "icons"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
   }
 ]

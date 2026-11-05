@@ -40,4 +40,23 @@ return function(methods)
         result.pointDisplay = build.controls.pointDisplay.str
         return result
     end
+
+    function methods.getTreeIconAssets(params)
+        local result = {}
+        local known = {}
+        for _, node in pairs(build.spec.nodes) do
+            if node.icon then known[node.icon] = true end
+        end
+        for _, key in ipairs(params.icons or {}) do
+            local asset = known[key] and build.spec.tree:GetAssetByName(key)
+            if asset and asset.handle and asset.handle.sourcePath then
+                local uv = asset[2] and {asset[1], asset[2], asset[3], asset[4]} or {0, 0, 1, 1}
+                result[#result + 1] = {key = key, file = asset.handle.sourcePath,
+                    index = asset[2] and (asset[5] or 1) or (asset[1] or 1), uv = uv}
+            else
+                result[#result + 1] = {key = key, error = "Иконка отсутствует в исходном дереве PoB"}
+            end
+        end
+        return {icons = result}
+    end
 end

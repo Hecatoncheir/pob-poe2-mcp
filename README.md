@@ -13,7 +13,7 @@ MCP для [официального Path of Building — Path of Exile 2](https
 
 Если PoB уже установлен, **Python, pip, Git и второй экземпляр движка не нужны**.
 
-1. Скачайте [pob-poe2-mcp-windows-x64.zip](https://github.com/Hecatoncheir/pob-poe2-mcp/releases/download/v0.4.1/pob-poe2-mcp-windows-x64.zip) и распакуйте в постоянный каталог, например `C:/Tools/`. Внутри появится папка `pob-poe2-mcp`.
+1. Скачайте [pob-poe2-mcp-windows-x64.zip](https://github.com/Hecatoncheir/pob-poe2-mcp/releases/download/v0.5.1/pob-poe2-mcp-windows-x64.zip) и распакуйте в постоянный каталог, например `C:/Tools/`. Внутри появится папка `pob-poe2-mcp`.
 2. Запустите **`check.cmd`**: он автоматически найдёт установленный PoB и проверит расчёт через Lua.
 3. Для работы с открытым окном один раз запустите **`connect-app.cmd`**, затем перезапустите PoB и откройте нужную сборку. Для режима `engine` этот шаг не требуется.
 4. Запустите **`mcp-config.cmd`** и скопируйте показанную настройку в свой MCP-клиент. Она уже содержит правильные абсолютные пути и оба сервера: `pob-engine` и `pob-app`.
@@ -93,7 +93,7 @@ MCP для [официального Path of Building — Path of Exile 2](https
 
 ```powershell
 python -m venv .venv
-./.venv/Scripts/python -m pip install "git+https://github.com/Hecatoncheir/pob-poe2-mcp.git@v0.4.1"
+./.venv/Scripts/python -m pip install "git+https://github.com/Hecatoncheir/pob-poe2-mcp.git@v0.5.1"
 ./.venv/Scripts/python -m pob_poe2_mcp doctor
 ./.venv/Scripts/python -m pob_poe2_mcp config
 ```
@@ -154,8 +154,8 @@ python -X utf8 tools/build_portable.py
 История версий хранится в [CHANGELOG.md](CHANGELOG.md). Для выпуска обновите версию в `pyproject.toml` и `pob_poe2_mcp/__init__.py`, добавьте раздел с датой в changelog, затем отправьте коммит и тег:
 
 ```powershell
-git tag v0.4.1
-git push origin main v0.4.1
+git tag v0.5.1
+git push origin main v0.5.1
 ```
 
 Workflow **«Публикация релиза»** проверит соответствие версий и наличие changelog, выполнит весь CI, соберёт wheel, Windows ZIP и нативные архивы Linux/macOS, затем опубликует GitHub Release с описанием из changelog и файлом `SHA256SUMS`. Ошибка проверок блокирует публикацию. Личный токен не требуется: используется стандартный `GITHUB_TOKEN` с правом записи только в задании публикации.

@@ -350,7 +350,7 @@ setfenv(installImageData, getfenv(1))
 installImageData(methods)
 function methods.initialize()
 	local system = jit.os == "OSX" and "macos" or jit.os:lower()
-	return { methods = { "initialize", "createBuild", "getCatalog", "getBuildReport", "getBuildImageData", "addSkillGroup", "addItem", "setConfig", "loadBuild", "getSnapshot", "getWorkbench", "setCustomMods", "exportBuild", "selectMainSkill", "getTree", "getNodeTooltip", "getJewels", "treeOptions", "treeAction", "toggleNode", "shutdown" }, platform = host.live and "windows-app" or system .. "-engine" }
+	return { methods = { "initialize", "createBuild", "getCatalog", "getBuildReport", "getBuildImageData", "getTreeGeometry", "addSkillGroup", "addItem", "setConfig", "loadBuild", "getSnapshot", "getWorkbench", "setCustomMods", "exportBuild", "selectMainSkill", "getTree", "getNodeTooltip", "getJewels", "treeOptions", "treeAction", "toggleNode", "shutdown" }, platform = host.live and "windows-app" or system .. "-engine" }
 end
 function methods.loadBuild(params)
 	validateXML(params.xml)

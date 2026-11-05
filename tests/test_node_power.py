@@ -33,6 +33,7 @@ class NodePower(unittest.TestCase):
         api = self.api
         catalog = api.call('getNodePower', {'action': 'catalog'})['entries']
         self.assertIn('Evasion', {row['id'] for row in catalog})
+        self.assertIn('OffenceDefence', {row['id'] for row in catalog})
         self.assertEqual(len(catalog), len({row['id'] for row in catalog}))
         before, revision = api.call('exportBuild')['xml'], api.revision
         normal = api.call('getTreeGeometry', {'includeScene': True})['scene']
@@ -68,6 +69,25 @@ class NodePower(unittest.TestCase):
         api.call('getNodePower', {'action': 'cancel', 'job': third['job']})
         with self.assertRaises(EngineError):
             api.call('getNodePower', {'action': 'poll', 'job': third['job']})
+
+    def test_combined_heatmap_uses_original_builder(self):
+        report = self.calculate(stat='OffenceDefence', maxDistance=5)
+        self.assertEqual(report['stat'], 'OffenceDefence')
+        self.assertFalse(report['entries'])
+        self.assertTrue(report['scene']['commands'])
+
+    def test_attribute_changes_keep_allocated_nodes(self):
+        api = self.api
+        tree = api.call('getTreeGeometry')
+        target = next(node['id'] for node in tree['nodes'] if node['isAttribute'] and not node['allocated'])
+        api.call('treeAction', {'id': target, 'action': 'allocate', 'attribute': 2})
+        before = api.call('getBuildReport')['allocatedNodes']
+        api.call('treeAction', {'id': target, 'action': 'allocate', 'attribute': 3})
+        self.assertEqual(api.call('getBuildReport')['allocatedNodes'], before)
+        node = next(node for node in api.call('getTreeGeometry')['nodes'] if node['id'] == target)
+        self.assertTrue(node['allocated'])
+        self.assertTrue(node['isAttribute'])
+        self.assertEqual(node['name'], 'Intelligence')
 
     def test_public_mcp_tokens_and_validation(self):
         with_server = Server(pob_dir=ENGINE)

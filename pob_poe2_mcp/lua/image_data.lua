@@ -15,7 +15,7 @@ return function(methods)
         for id, node in pairs(build.spec.nodes) do
             if type(node.x) == "number" and type(node.y) == "number" and node.type ~= "OnlyImage" then
                 nodes[#nodes + 1] = { id = id, x = node.x, y = node.y, name = node.dn or node.name or "",
-                    type = node.type, allocated = node.alloc == true, allocMode = node.allocMode or 0,
+                    type = node.type, allocated = node.alloc == true, isAttribute = node.isAttribute == true, allocMode = node.allocMode or 0,
                     icon = node.icon, drawSize = node.targetSize and node.targetSize.width or 0 }
                 for _, other in ipairs(node.linked or {}) do
                     if id < other.id then edges[#edges + 1] = { id, other.id } end

@@ -4,8 +4,8 @@ return function(methods, fail)
     local function catalog()
         local entries = {}
         for _, stat in ipairs(build.treeTab.powerStatList) do
-            if stat.stat and not stat.ignoreForNodes then
-                entries[#entries + 1] = {id = stat.stat, label = stat.label}
+            if (stat.stat or stat.combinedOffDef) and not stat.ignoreForNodes then
+                entries[#entries + 1] = {id = stat.stat or "OffenceDefence", label = stat.label}
             end
         end
         return {entries = entries}
@@ -20,9 +20,10 @@ return function(methods, fail)
     local function start(params)
         local selection
         for _, stat in ipairs(build.treeTab.powerStatList) do
-            if stat.stat == params.stat and not stat.ignoreForNodes then selection = stat; break end
+            local key = stat.stat or (stat.combinedOffDef and "OffenceDefence")
+            if key == params.stat and not stat.ignoreForNodes then selection = stat; break end
         end
-        if not selection or not selection.stat then fail("INVALID_REQUEST", "Выберите характеристику из каталога") end
+        if not selection then fail("INVALID_REQUEST", "Выберите характеристику из каталога") end
         local depth = params.maxDistance
         if depth ~= nil and (type(depth) ~= "number" or depth % 1 ~= 0 or depth < 1 or depth > 200) then
             fail("INVALID_REQUEST", "Расстояние должно быть целым от 1 до 200")
@@ -52,7 +53,7 @@ return function(methods, fail)
                 entries[#entries + 1] = row
             end
         end
-        local result = {job = job.id, complete = true, progress = 100, stat = job.stat.stat,
+        local result = {job = job.id, complete = true, progress = 100, stat = job.stat.stat or "OffenceDefence",
             label = job.stat.label, maxDistance = job.depth, entries = entries}
         if params.includeScene then
             local capture = dofile(POB_MCP_PACKAGE_DIR .. "/lua/tree_scene.lua")

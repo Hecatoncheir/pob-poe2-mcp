@@ -27,7 +27,7 @@ class Release(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate("v9.9.9")
 
-    def test_checksums_require_both_packages_and_ignore_other_files(self):
+    def test_checksums_require_all_platforms_and_ignore_other_files(self):
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary)
             wheel = directory / f"pob_poe2_mcp-{CURRENT_VERSION}-py3-none-any.whl"
@@ -35,11 +35,15 @@ class Release(unittest.TestCase):
             with self.assertRaises(ValueError):
                 prepare(CURRENT_TAG, directory)
             (directory / "pob-poe2-mcp-windows-x64.zip").write_bytes(b"zip")
+            with self.assertRaises(ValueError):
+                prepare(CURRENT_TAG, directory)
+            for target in ['linux-x64', 'macos-arm64']:
+                (directory / f'pob-poe2-mcp-native-{target}.zip').write_bytes(b'native')
             (directory / "private.txt").write_text("Не публиковать", encoding="utf-8")
             packages = prepare(CURRENT_TAG, directory)
-            self.assertEqual(len(packages), 2)
+            self.assertEqual(len(packages), 4)
             sums = (directory / "SHA256SUMS").read_text(encoding="utf-8")
-            self.assertEqual(len(sums.splitlines()), 2)
+            self.assertEqual(len(sums.splitlines()), 4)
             self.assertNotIn("private", sums)
             self.assertTrue((directory / "RELEASE_NOTES.md").read_text(encoding="utf-8").strip())
 

@@ -47,7 +47,12 @@ def validate(tag, root=ROOT):
 def prepare(tag, directory, root=ROOT):
     notes = validate(tag, root)
     version = version_from_tag(tag)
-    packages = [directory / f"pob_poe2_mcp-{version}-py3-none-any.whl", directory / "pob-poe2-mcp-windows-x64.zip"]
+    packages = [directory / f"pob_poe2_mcp-{version}-py3-none-any.whl"]
+    packages.extend(directory / name for name in (
+        'pob-poe2-mcp-windows-x64.zip',
+        'pob-poe2-mcp-native-linux-x64.zip',
+        'pob-poe2-mcp-native-macos-arm64.zip',
+    ))
     for package in packages:
         if not package.is_file():
             raise ValueError(f"Нет собранного пакета: {package}")

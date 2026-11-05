@@ -41,7 +41,7 @@ def build():
         run('make', '-C', str(source), '-j2')
         darwin = sys.platform == 'darwin'
         library = 'libluajit-5.1.dylib' if darwin else 'libluajit-5.1.so.2'
-        shutil.copy2(source / 'src' / ('libluajit.dylib' if darwin else 'libluajit.so'), destination / library)
+        shutil.copy2(source / 'src/libluajit.so', destination / library)
         options = ['-bundle', '-undefined', 'dynamic_lookup'] if darwin else ['-shared', '-fPIC']
         run('cc', *options, '-O2', '-I' + str(source / 'src'), str(utf8 / 'lutf8lib.c'), '-o', str(destination / 'lua-utf8.so'))
         shutil.copy2(source / 'COPYRIGHT', destination / 'LICENSE-LuaJIT.txt')

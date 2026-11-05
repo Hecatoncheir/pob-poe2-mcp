@@ -26,8 +26,9 @@ METHODS = {
     "pob_tree_icons": "getTreeIconAssets",
     "pob_tree_textures": None,
     "pob_tree_hover": "getTreeHover",
+    "pob_node_power": "getNodePower",
 }
-READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image", "pob_get_tree", "pob_tree_icons", "pob_tree_textures", "pob_tree_hover"}
+READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image", "pob_get_tree", "pob_tree_icons", "pob_tree_textures", "pob_tree_hover", "pob_node_power"}
 
 
 def validate(value, schema):
@@ -77,6 +78,8 @@ class Server:
         if self.api is None:
             self.api = BuildAPI(pob_dir=self.pob_dir, timeout=self.timeout, mode=self.mode)
         try:
+            if name == 'pob_node_power' and self.mode != 'engine':
+                raise ValueError('Отчёт узлов требует отдельной сессии engine')
             if name == 'pob_tree_textures':
                 if self.scene_assets is None:
                     raise ValueError('Сначала загрузите готовую сцену дерева')
@@ -111,7 +114,7 @@ class Server:
 
     def tool_response(self, name, args, result):
         image = None
-        if name in ('pob_get_tree', 'pob_tree_hover') and 'scene' in result:
+        if name in ('pob_get_tree', 'pob_tree_hover', 'pob_node_power') and 'scene' in result:
             if self.scene_assets is None:
                 self.scene_assets = SceneAssets(self.api.pob_dir)
             result['scene'] = self.scene_assets.prepare(result['scene'])

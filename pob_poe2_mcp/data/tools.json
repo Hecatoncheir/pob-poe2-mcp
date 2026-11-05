@@ -575,5 +575,56 @@
     "annotations": {
       "readOnlyHint": true
     }
+  },
+  {
+    "name": "pob_node_power",
+    "description": "Каталог характеристик и поэтапный отчёт влияния узлов через штатный Lua PowerBuilder. Только engine. start → poll до complete; cancel отменяет. Включает оригинальную тепловую карту и строки отчёта, без изменения XML.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "catalog",
+            "start",
+            "poll",
+            "cancel"
+          ]
+        },
+        "stat": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "maxDistance": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200
+        },
+        "job": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "allocation": {
+          "type": "string",
+          "enum": [
+            "all",
+            "allocated",
+            "unallocated"
+          ]
+        },
+        "includeScene": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "action"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
   }
 ]

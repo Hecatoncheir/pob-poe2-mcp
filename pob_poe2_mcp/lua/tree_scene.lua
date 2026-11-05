@@ -16,6 +16,7 @@ return function(build, params)
     end
     local scale = math.min((width - 100) / math.max(600, maxX - minX), (height - 100) / math.max(600, maxY - minY)) * (params.zoom or 1)
     local viewer = construct("PassiveTreeView")
+    viewer.showHeatMap = params.power == true
     viewer.AddNodeTooltip = function() end
     viewer.zoom = scale * tree.size / math.min(width, height)
     viewer.zoomX, viewer.zoomY = -(minX + maxX) / 2 * scale, -(minY + maxY) / 2 * scale

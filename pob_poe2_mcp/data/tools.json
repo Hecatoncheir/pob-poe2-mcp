@@ -496,7 +496,11 @@
     "description": "Компактная геометрия настоящего дерева Lua: координаты, связи и выбранные узлы. Без PNG и игровых формул во внешнем интерфейсе.",
     "inputSchema": {
       "type": "object",
-      "properties": {},
+      "properties": {
+        "includeScene": {
+          "type": "boolean"
+        }
+      },
       "additionalProperties": false
     },
     "annotations": {
@@ -523,6 +527,26 @@
       },
       "required": [
         "icons"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "pob_tree_textures",
+    "description": "Текстура готовой сцены PoB в PNG RGBA. Токен берите из scene.commands[].texture инструмента pob_get_tree(includeScene=true).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string",
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "token"
       ],
       "additionalProperties": false
     },

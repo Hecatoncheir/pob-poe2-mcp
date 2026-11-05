@@ -1,4 +1,8 @@
 {
+  "bcdec": {
+    "repository": "https://github.com/iOrange/bcdec.git",
+    "revision": "80859ed3b7afb1c527a2a99d70c61457bea72d0c"
+  },
   "zstd": {
     "repository": "https://github.com/meta/zstd.git",
     "revision": "ac66b19e6bd6b83238bf008eecc1298105298532"

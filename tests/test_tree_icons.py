@@ -13,6 +13,25 @@ from test_integration import HAS_ENGINE, ENGINE
 
 
 class IconCodec(unittest.TestCase):
+    @unittest.skipUnless(HAS_ENGINE, 'Нужен настоящий Lua')
+    def test_ready_scene_and_every_original_texture(self):
+        server = Server(pob_dir=ENGINE)
+        self.addCleanup(server.close)
+        server.initialized = True
+        server.execute_tool('pob_create_build', {'level': 90})
+        revision = server.api.revision
+        response = server.handle('tools/call', {'name': 'pob_get_tree', 'arguments': {'includeScene': True}})
+        self.assertFalse(response['isError'], response)
+        scene = response['structuredContent']['result']['scene']
+        self.assertGreater(len(scene['commands']), 10000)
+        self.assertGreater(len(server.scene_assets.assets), 100)
+        for token in server.scene_assets.assets:
+            data = server.execute_tool('pob_tree_textures', {'token': token})
+            self.assertTrue(base64.b64decode(data['png']).startswith(b'\x89PNG'))
+        self.assertEqual(server.api.revision, revision)
+        with self.assertRaises(ValueError):
+            server.execute_tool('pob_tree_textures', {'token': '../../outside'})
+
     def test_bc1_colors_and_transparency(self):
         red = Mip(4, 4, 71, 8, struct.pack('<HHI', 0xf800, 0, 0))
         self.assertEqual(decode_bc1(red), bytes([255, 0, 0, 255]) * 16)

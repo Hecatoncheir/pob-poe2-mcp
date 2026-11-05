@@ -34,10 +34,15 @@ return function(methods)
         return result
     end
 
-    function methods.getTreeGeometry()
+    function methods.getTreeGeometry(params)
         local result = imageTree()
         result.version = build.spec.treeVersion
         result.pointDisplay = build.controls.pointDisplay.str
+        if params and params.includeScene then
+            local capture = dofile(POB_MCP_PACKAGE_DIR .. "/lua/tree_scene.lua")
+            setfenv(capture, getfenv(1))
+            result.scene = capture(build, {treeScope = "full", width = 1856, height = 2034})
+        end
         return result
     end
 

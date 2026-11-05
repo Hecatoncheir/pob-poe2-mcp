@@ -10,6 +10,7 @@ from . import __version__
 from .api import BuildAPI, EngineError, MAX_MESSAGE
 from .images import render_build_image, validate_image_args
 from .tree_icons import TreeIcons
+from .tree_scene_assets import SceneAssets
 
 MANIFEST = Path(__file__).parent / "data/tools.json"
 TOOLS = json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -23,6 +24,7 @@ METHODS = {
     "pob_render_image": "getBuildImageData",
     "pob_get_tree": "getTreeGeometry",
     "pob_tree_icons": "getTreeIconAssets",
+    "pob_tree_textures": None,
 }
 READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image", "pob_get_tree", "pob_tree_icons"}
 
@@ -68,11 +70,16 @@ class Server:
         self.timeout = timeout
         self.mode = mode
         self.icons = None
+        self.scene_assets = None
 
     def execute_tool(self, name, args):
         if self.api is None:
             self.api = BuildAPI(pob_dir=self.pob_dir, timeout=self.timeout, mode=self.mode)
         try:
+            if name == 'pob_tree_textures':
+                if self.scene_assets is None:
+                    raise ValueError('Сначала загрузите готовую сцену дерева')
+                return self.scene_assets.read(args['token'])
             if name == 'pob_render_image' and self.mode == 'app':
                 return self.app_image_data(args)
             return self.api.check(args.get("targets")) if name == "pob_check_build" else self.api.call(METHODS[name], args)
@@ -103,6 +110,10 @@ class Server:
 
     def tool_response(self, name, args, result):
         image = None
+        if name == 'pob_get_tree' and 'scene' in result:
+            if self.scene_assets is None:
+                self.scene_assets = SceneAssets(self.api.pob_dir)
+            result['scene'] = self.scene_assets.prepare(result['scene'])
         if name == 'pob_tree_icons':
             if self.icons is None:
                 self.icons = TreeIcons(self.api.pob_dir)

@@ -39,9 +39,13 @@ def build():
         source = checkout(Path(temporary), 'luajit')
         utf8 = checkout(Path(temporary), 'luautf8')
         zstd = checkout(Path(temporary), 'zstd')
+        bcdec = checkout(Path(temporary), 'bcdec')
         run('make', '-C', str(zstd / 'lib'), '-j2', 'libzstd')
         run('make', '-C', str(source), '-j2')
         darwin = sys.platform == 'darwin'
+        codec = 'libpob-textures.dylib' if darwin else 'libpob-textures.so'
+        run('cc', '-dynamiclib' if darwin else '-shared', '-fPIC', '-O2', '-I' + str(bcdec), str(ROOT / 'tools/decode_bc7.c'), '-o', str(destination / codec))
+        shutil.copy2(bcdec / 'LICENSE', destination / 'LICENSE-bcdec.txt')
         zstd_name = 'libzstd.dylib' if darwin else 'libzstd.so'
         shutil.copy2(zstd / 'lib' / zstd_name, destination / zstd_name)
         shutil.copy2(zstd / 'LICENSE', destination / 'LICENSE-Zstandard.txt')

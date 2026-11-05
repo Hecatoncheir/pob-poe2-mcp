@@ -1,5 +1,15 @@
 -- Данные одного кадра для изображений; формулы и состояния остаются в PoB.
 return function(methods)
+    local json = require("dkjson")
+    local baseCommands, baseRevision
+    local function commandKey(command)
+        return json.encode({command.file, command.index, command.positions, command.uv, command.color, command.blend, command.clamp})
+    end
+    local function captureTree(hoverId)
+        local capture = dofile(POB_MCP_PACKAGE_DIR .. "/lua/tree_scene.lua")
+        setfenv(capture, getfenv(1))
+        return capture(build, {treeScope = "full", width = 1856, height = 2034, hoverId = hoverId})
+    end
     local function imageTree()
         local nodes, edges = {}, {}
         for id, node in pairs(build.spec.nodes) do
@@ -39,11 +49,26 @@ return function(methods)
         result.version = build.spec.treeVersion
         result.pointDisplay = build.controls.pointDisplay.str
         if params and params.includeScene then
-            local capture = dofile(POB_MCP_PACKAGE_DIR .. "/lua/tree_scene.lua")
-            setfenv(capture, getfenv(1))
-            result.scene = capture(build, {treeScope = "full", width = 1856, height = 2034})
+            result.scene = captureTree()
+            baseCommands, baseRevision = {}, params.revision
+            for _, command in ipairs(result.scene.commands) do baseCommands[commandKey(command)] = true end
         end
         return result
+    end
+
+    function methods.getTreeHover(params)
+        build.spec:BuildAllDependsAndPaths()
+        if not baseCommands or baseRevision ~= params.revision then
+            methods.getTreeGeometry({includeScene = true, revision = params.revision})
+        end
+        local scene = captureTree(params.id)
+        local tooltip = methods.getNodeTooltip({id = params.id, compare = params.compare ~= false})
+        local overlay = {}
+        for _, command in ipairs(scene.commands) do
+            if not baseCommands[commandKey(command)] then overlay[#overlay + 1] = command end
+        end
+        scene.commands = overlay
+        return {id = params.id, tooltip = tooltip, scene = scene}
     end
 
     function methods.getTreeIconAssets(params)

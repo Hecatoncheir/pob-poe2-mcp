@@ -16,6 +16,7 @@ return function(build, params)
     end
     local scale = math.min((width - 100) / math.max(600, maxX - minX), (height - 100) / math.max(600, maxY - minY)) * (params.zoom or 1)
     local viewer = construct("PassiveTreeView")
+    viewer.AddNodeTooltip = function() end
     viewer.zoom = scale * tree.size / math.min(width, height)
     viewer.zoomX, viewer.zoomY = -(minX + maxX) / 2 * scale, -(minY + maxY) / 2 * scale
     viewer.zoomLevel = math.log(viewer.zoom) / math.log(1.2)
@@ -52,7 +53,11 @@ return function(build, params)
     replace("SetDrawLayer", function(l, s) layer, subLayer = l or layer, s or 0 end)
     replace("GetDrawLayer", function() return layer, subLayer end)
     replace("SetBlendMode", function(mode) blend = mode end)
-    replace("GetCursorPos", function() return -10000, -10000 end)
+    replace("GetCursorPos", function()
+        local node = params.hoverId and spec.nodes[params.hoverId]
+        if node then return node.x * scale + viewer.zoomX + width / 2, node.y * scale + viewer.zoomY + height / 2 end
+        return -10000, -10000
+    end)
     replace("IsKeyDown", function() return false end)
     replace("GetTime", function() return 0 end)
     replace("DrawString", function() end)
@@ -81,6 +86,6 @@ return function(build, params)
         if a.subLayer ~= b.subLayer then return a.subLayer < b.subLayer end
         return a.order < b.order
     end)
-    return {width = width, height = height, scale = scale, offsetX = viewer.zoomX + width / 2,
+    return {hoveredNodeId = viewer.hoverNode and viewer.hoverNode.id, width = width, height = height, scale = scale, offsetX = viewer.zoomX + width / 2,
         offsetY = viewer.zoomY + height / 2, commands = commands}
 end

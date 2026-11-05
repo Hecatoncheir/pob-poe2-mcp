@@ -553,5 +553,27 @@
     "annotations": {
       "readOnlyHint": true
     }
+  },
+  {
+    "name": "pob_tree_hover",
+    "description": "Оригинальная подсказка Lua и готовая подсветка пути/зависимых узлов при наведении, без изменения сборки.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "compare": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
   }
 ]

@@ -25,8 +25,9 @@ METHODS = {
     "pob_get_tree": "getTreeGeometry",
     "pob_tree_icons": "getTreeIconAssets",
     "pob_tree_textures": None,
+    "pob_tree_hover": "getTreeHover",
 }
-READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image", "pob_get_tree", "pob_tree_icons"}
+READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image", "pob_get_tree", "pob_tree_icons", "pob_tree_textures", "pob_tree_hover"}
 
 
 def validate(value, schema):
@@ -110,7 +111,7 @@ class Server:
 
     def tool_response(self, name, args, result):
         image = None
-        if name == 'pob_get_tree' and 'scene' in result:
+        if name in ('pob_get_tree', 'pob_tree_hover') and 'scene' in result:
             if self.scene_assets is None:
                 self.scene_assets = SceneAssets(self.api.pob_dir)
             result['scene'] = self.scene_assets.prepare(result['scene'])

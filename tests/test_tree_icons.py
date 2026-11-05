@@ -14,6 +14,28 @@ from test_integration import HAS_ENGINE, ENGINE
 
 class IconCodec(unittest.TestCase):
     @unittest.skipUnless(HAS_ENGINE, 'Нужен настоящий Lua')
+    def test_hover_uses_original_path_without_changing_xml_or_revision(self):
+        server = Server(pob_dir=ENGINE)
+        self.addCleanup(server.close)
+        server.initialized = True
+        server.execute_tool('pob_create_build', {'level': 90, 'classId': 1})
+        xml = server.execute_tool('pob_export_xml', {})['xml']
+        revision = server.api.revision
+        server.handle('tools/call', {'name': 'pob_get_tree', 'arguments': {'includeScene': True}})
+        nodes = server.execute_tool('pob_catalog', {'kind': 'nodes', 'query': 'Damage', 'limit': 50})['entries']
+        node = nodes[0]
+        response = server.handle('tools/call', {'name': 'pob_tree_hover', 'arguments': {'id': node['id']}})
+        self.assertFalse(response['isError'], response)
+        result = response['structuredContent']['result']
+        self.assertEqual(result['scene']['hoveredNodeId'], node['id'])
+        self.assertGreater(len(result['tooltip']['path']), 1)
+        self.assertGreater(len(result['scene']['commands']), 2)
+        self.assertLess(len(result['scene']['commands']), 1000)
+        self.assertTrue(result['tooltip']['lines'])
+        self.assertEqual(server.execute_tool('pob_export_xml', {})['xml'], xml)
+        self.assertEqual(server.api.revision, revision)
+
+    @unittest.skipUnless(HAS_ENGINE, 'Нужен настоящий Lua')
     def test_ready_scene_and_every_original_texture(self):
         server = Server(pob_dir=ENGINE)
         self.addCleanup(server.close)

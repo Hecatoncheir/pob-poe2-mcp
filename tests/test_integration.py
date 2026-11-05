@@ -13,7 +13,7 @@ from pob_poe2_mcp.server import TOOLS, validate
 
 ROOT = Path(__file__).resolve().parents[1]
 ENGINE = resolve_engine_dir()
-HAS_ENGINE = sys.platform == "win32" and engine_layout(ENGINE) is not None
+HAS_ENGINE = engine_layout(ENGINE) is not None
 
 
 @unittest.skipUnless(HAS_ENGINE, "Нужен движок: задайте POB_DIR или выполните setup")
@@ -192,6 +192,9 @@ class MCP(unittest.TestCase):
         self.assertTrue(responses[4]["result"]["isError"])
         self.assertIn("<PathOfBuilding2>", responses[5]["result"]["structuredContent"]["result"]["xml"])
         rendered = responses[6]['result']
+        if sys.platform != 'win32':
+            self.assertTrue(rendered['isError'], rendered)
+            return
         self.assertFalse(rendered['isError'], rendered)
         self.assertEqual(rendered['content'][1]['type'], 'image')
         self.assertEqual(rendered['content'][1]['mimeType'], 'image/png')

@@ -40,7 +40,7 @@ def colorref(color):
 @lru_cache(maxsize=1)
 def libraries():
     if sys.platform != 'win32':
-        raise EngineError('UNSUPPORTED_PLATFORM', 'Создание PNG требует Windows, как и runtime PoB')
+        raise EngineError('UNSUPPORTED_PLATFORM', 'Создание PNG пока требует Windows GDI; расчёты Lua работают отдельно')
     gdi, user = ctypes.WinDLL('gdi32', use_last_error=True), ctypes.WinDLL('user32', use_last_error=True)
     handle, integer, pointer = ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p
     signatures = {

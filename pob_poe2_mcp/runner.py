@@ -1,12 +1,16 @@
-"""Запуск Lua-сценария через имеющийся Windows runtime без установки пакетов."""
+"""Запуск исходного Lua в нативном runtime Windows, Linux или macOS."""
 
 import argparse
 import ctypes
+from contextlib import nullcontext
+import sys
 import os
 from pathlib import Path
 
 
 PACKAGE_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(PACKAGE_DIR.parent))
+from pob_poe2_mcp.native_runtime import check_native_runtime, native_directory
 
 
 def main():
@@ -17,11 +21,11 @@ def main():
     root = args.pob_dir.resolve()
     script = args.script.resolve()
     scripts = root / "src" if (root / "src/Launch.lua").is_file() else root
-    runtime = root / "runtime" if (root / "runtime/lua51.dll").is_file() else root
-    if os.name != "nt":
-        parser.error("Этот адаптер предназначен для Windows runtime проекта.")
-    with os.add_dll_directory(str(runtime)):
-        lua = ctypes.CDLL(str(runtime / "lua51.dll"))
+    runtime = root / "runtime" if (root / "runtime/lua/dkjson.lua").is_file() else root
+    library = check_native_runtime(runtime)
+    context = os.add_dll_directory(str(runtime)) if os.name == "nt" else nullcontext()
+    with context:
+        lua = ctypes.CDLL(library, mode=getattr(ctypes, "RTLD_GLOBAL", 0))
         lua.luaL_newstate.restype = ctypes.c_void_p
         lua.luaL_openlibs.argtypes = [ctypes.c_void_p]
         lua.luaL_loadstring.argtypes = [ctypes.c_void_p, ctypes.c_char_p]
@@ -44,12 +48,18 @@ def main():
             runtime_path = str(runtime).replace("\\", "/")
             if "]]" in runtime_path:
                 raise ValueError("Недопустимый путь runtime.")
-            code = f'''POB_MCP_PACKAGE_DIR = [[{package_path}]]
+            native_path = str(native_directory()).replace("\\", "/")
+            if "]]" in native_path:
+                raise ValueError("Недопустимый путь нативного runtime.")
+            extension = "dll" if os.name == "nt" else "so"
+            code = f'''POB_MCP_NATIVE_DIR = [[{native_path}]]
+POB_MCP_NATIVE_EXTENSION = "{extension}"
+POB_MCP_PACKAGE_DIR = [[{package_path}]]
 POB_MCP_RUNTIME_DIR = [[{runtime_path}]]
 POB_MCP_HEADLESS = true
 ''' + '''
 package.path = POB_MCP_RUNTIME_DIR .. "/lua/?.lua;" .. POB_MCP_RUNTIME_DIR .. "/lua/?/init.lua;" .. package.path
-package.cpath = POB_MCP_RUNTIME_DIR .. "/?.dll;" .. package.cpath
+package.cpath = POB_MCP_NATIVE_DIR .. "/?." .. POB_MCP_NATIVE_EXTENSION .. ";" .. POB_MCP_RUNTIME_DIR .. "/?." .. POB_MCP_NATIVE_EXTENSION .. ";" .. package.cpath
 arg = {}
 local originalLoadfile = loadfile
 function loadfile(path)

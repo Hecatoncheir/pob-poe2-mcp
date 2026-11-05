@@ -7,3 +7,5 @@ dist/
 .engine/
 *.xml
 *.log
+
+pob_poe2_mcp/native/

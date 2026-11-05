@@ -12,6 +12,7 @@ import tempfile
 import xml.etree.ElementTree as ET
 
 from .errors import EngineError
+from .native_runtime import check_native_runtime
 
 LOCK = json.loads((Path(__file__).parent / "data/engine-lock.json").read_text(encoding="utf-8"))
 REQUIRED_FILES = (
@@ -42,9 +43,11 @@ def engine_layout(directory):
     if root.is_file():
         root = root.parent
     scripts = root / "src" if (root / "src/Launch.lua").is_file() else root
-    runtime = root / "runtime" if (root / "runtime/lua51.dll").is_file() else root
+    runtime = root / "runtime" if (root / "runtime/lua/dkjson.lua").is_file() else root
     required = [scripts / "Launch.lua", scripts / "GameVersions.lua", scripts / "Modules/Main.lua",
-                scripts / "TreeData/0_5/tree.json", runtime / "lua51.dll", runtime / "lua/dkjson.lua"]
+                scripts / "TreeData/0_5/tree.json", runtime / "lua/dkjson.lua"]
+    if sys.platform == "win32":
+        required.append(runtime / "lua51.dll")
     if not all(path.is_file() for path in required):
         return None
     return EngineLayout(root, scripts, runtime, "repository" if scripts != root else "installed")
@@ -101,14 +104,13 @@ def resolve_engine_dir(pob_dir=None):
 
 
 def validate_engine(pob_dir):
-    if sys.platform != "win32" or struct.calcsize("P") != 8:
-        raise EngineError("UNSUPPORTED_PLATFORM", "Нужны Windows и 64-разрядный Python 3.11 или новее.")
     if not engine_layout(pob_dir):
         raise EngineError(
             "ENGINE_NOT_CONFIGURED",
             f"Движок PoB не найден в {pob_dir}. Нужна установленная версия PoE2 или репозиторий с src/ и runtime/. "
             "Выполните pob-poe2-mcp setup или укажите --pob-dir / POB_DIR.",
         )
+    check_native_runtime(engine_layout(pob_dir).runtime)
     return pob_dir
 
 
@@ -121,8 +123,6 @@ def run_git(directory, *args):
 
 def setup_engine(destination=None):
     """Загрузить закреплённую ревизию в новый каталог, не меняя существующий."""
-    if sys.platform != "win32" or struct.calcsize("P") != 8:
-        raise EngineError("UNSUPPORTED_PLATFORM", "Готовый движок поддерживает Windows x64.")
     target = Path(destination).expanduser().resolve() if destination else default_engine_dir().resolve()
     if target.exists():
         raise EngineError("DESTINATION_EXISTS", f"Каталог уже существует: {target}. Укажите новый --destination.")

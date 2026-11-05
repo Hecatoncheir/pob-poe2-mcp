@@ -17,6 +17,36 @@ permissions:
   contents: read
 
 jobs:
+  unix-engine:
+    name: Настоящий Lua — ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, macos-15]
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ inputs.ref || github.ref }}
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.13'
+      - name: Собрать нативные библиотеки
+        run: python tools/build_native.py
+      - name: Загрузить закреплённый PoB
+        run: python run.py setup --destination .engine
+      - name: Проверить расчёт, XML и MCP
+        env:
+          POB_DIR: ${{ github.workspace }}/.engine
+        run: |
+          python -X utf8 run.py doctor
+          python -X utf8 -m unittest discover -s tests -v
+          python -X utf8 examples/build_fireball.py
+      - uses: actions/upload-artifact@v7.0.2
+        with:
+          name: native-${{ matrix.os }}
+          path: dist/pob-poe2-mcp-native-*.zip
+
   transport:
     name: Транспорт — ${{ matrix.os }}, Python ${{ matrix.python }}
     runs-on: ${{ matrix.os }}

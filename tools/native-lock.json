@@ -1,0 +1,10 @@
+{
+  "luajit": {
+    "repository": "https://github.com/LuaJIT/LuaJIT.git",
+    "revision": "ea9eb7edb5eac4a9d175d74523db34fac0fa5180"
+  },
+  "luautf8": {
+    "repository": "https://github.com/starwing/luautf8.git",
+    "revision": "a47b1433473a2509d77ad28f59a976716d187927"
+  }
+}

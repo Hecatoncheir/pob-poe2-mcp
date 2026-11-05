@@ -22,7 +22,7 @@ class NativeRuntime(unittest.TestCase):
                 (root / name).touch()
                 (root / 'lua-utf8.so').touch()
                 with patch('sys.platform', platform), patch.dict(os.environ, {'POB_MCP_NATIVE_DIR': temporary}, clear=True):
-                    self.assertEqual(check_native_runtime(Path('runtime')), str(root / name))
+                    self.assertEqual(check_native_runtime(Path('runtime')), str((root / name).resolve()))
 
     def test_missing_utf8_module_is_an_actionable_error(self):
         with tempfile.TemporaryDirectory() as temporary, patch('sys.platform', 'linux'):

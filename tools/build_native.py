@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import os
 from pathlib import Path
 import platform
 import shutil
@@ -32,6 +33,8 @@ def build():
         raise ValueError('На Windows используется runtime исходного PoB')
     destination = ROOT / 'pob_poe2_mcp/native'
     destination.mkdir(exist_ok=True)
+    if sys.platform == 'darwin':
+        os.environ.setdefault('MACOSX_DEPLOYMENT_TARGET', '11.0')
     with tempfile.TemporaryDirectory(prefix='pob-native-') as temporary:
         source = checkout(Path(temporary), 'luajit')
         utf8 = checkout(Path(temporary), 'luautf8')

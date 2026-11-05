@@ -1,0 +1,3610 @@
+{
+  "CharacterAscendancyLineConnectorActive": {
+    "width": 1435,
+    "height": 29
+  },
+  "CharacterAscendancyLineConnectorIntermediate": {
+    "width": 1435,
+    "height": 29
+  },
+  "CharacterAscendancyLineConnectorNormal": {
+    "width": 1435,
+    "height": 29
+  },
+  "CharacterAscendancyOrbit1Active": {
+    "width": 91,
+    "height": 90
+  },
+  "CharacterAscendancyOrbit1Intermediate": {
+    "width": 91,
+    "height": 90
+  },
+  "CharacterAscendancyOrbit1Normal": {
+    "width": 91,
+    "height": 90
+  },
+  "CharacterAscendancyOrbit2Active": {
+    "width": 176,
+    "height": 176
+  },
+  "CharacterAscendancyOrbit2Intermediate": {
+    "width": 176,
+    "height": 176
+  },
+  "CharacterAscendancyOrbit2Normal": {
+    "width": 176,
+    "height": 176
+  },
+  "CharacterAscendancyOrbit3Active": {
+    "width": 346,
+    "height": 346
+  },
+  "CharacterAscendancyOrbit3Intermediate": {
+    "width": 346,
+    "height": 346
+  },
+  "CharacterAscendancyOrbit3Normal": {
+    "width": 346,
+    "height": 346
+  },
+  "CharacterAscendancyOrbit4Active": {
+    "width": 501,
+    "height": 502
+  },
+  "CharacterAscendancyOrbit4Intermediate": {
+    "width": 501,
+    "height": 502
+  },
+  "CharacterAscendancyOrbit4Normal": {
+    "width": 501,
+    "height": 502
+  },
+  "CharacterAscendancyOrbit5Active": {
+    "width": 671,
+    "height": 671
+  },
+  "CharacterAscendancyOrbit5Intermediate": {
+    "width": 671,
+    "height": 671
+  },
+  "CharacterAscendancyOrbit5Normal": {
+    "width": 671,
+    "height": 671
+  },
+  "CharacterAscendancyOrbit6Active": {
+    "width": 853,
+    "height": 853
+  },
+  "CharacterAscendancyOrbit6Intermediate": {
+    "width": 853,
+    "height": 853
+  },
+  "CharacterAscendancyOrbit6Normal": {
+    "width": 853,
+    "height": 853
+  },
+  "CharacterAscendancyOrbit7Active": {
+    "width": 263,
+    "height": 263
+  },
+  "CharacterAscendancyOrbit7Intermediate": {
+    "width": 263,
+    "height": 263
+  },
+  "CharacterAscendancyOrbit7Normal": {
+    "width": 263,
+    "height": 263
+  },
+  "CharacterAscendancyOrbit8Active": {
+    "width": 1090,
+    "height": 1091
+  },
+  "CharacterAscendancyOrbit8Intermediate": {
+    "width": 1090,
+    "height": 1091
+  },
+  "CharacterAscendancyOrbit8Normal": {
+    "width": 1090,
+    "height": 1091
+  },
+  "CharacterAscendancyOrbit9Active": {
+    "width": 1333,
+    "height": 1333
+  },
+  "CharacterAscendancyOrbit9Intermediate": {
+    "width": 1333,
+    "height": 1333
+  },
+  "CharacterAscendancyOrbit9Normal": {
+    "width": 1333,
+    "height": 1333
+  },
+  "CharacterLineConnectorActive": {
+    "width": 1435,
+    "height": 29
+  },
+  "CharacterLineConnectorIntermediate": {
+    "width": 1435,
+    "height": 29
+  },
+  "CharacterLineConnectorNormal": {
+    "width": 1435,
+    "height": 29
+  },
+  "CharacterOrbit1Active": {
+    "width": 91,
+    "height": 90
+  },
+  "CharacterOrbit1Intermediate": {
+    "width": 91,
+    "height": 90
+  },
+  "CharacterOrbit1Normal": {
+    "width": 91,
+    "height": 90
+  },
+  "CharacterOrbit2Active": {
+    "width": 176,
+    "height": 176
+  },
+  "CharacterOrbit2Intermediate": {
+    "width": 176,
+    "height": 176
+  },
+  "CharacterOrbit2Normal": {
+    "width": 176,
+    "height": 176
+  },
+  "CharacterOrbit3Active": {
+    "width": 346,
+    "height": 346
+  },
+  "CharacterOrbit3Intermediate": {
+    "width": 346,
+    "height": 346
+  },
+  "CharacterOrbit3Normal": {
+    "width": 346,
+    "height": 346
+  },
+  "CharacterOrbit4Active": {
+    "width": 501,
+    "height": 502
+  },
+  "CharacterOrbit4Intermediate": {
+    "width": 501,
+    "height": 502
+  },
+  "CharacterOrbit4Normal": {
+    "width": 501,
+    "height": 502
+  },
+  "CharacterOrbit5Active": {
+    "width": 671,
+    "height": 671
+  },
+  "CharacterOrbit5Intermediate": {
+    "width": 671,
+    "height": 671
+  },
+  "CharacterOrbit5Normal": {
+    "width": 671,
+    "height": 671
+  },
+  "CharacterOrbit6Active": {
+    "width": 853,
+    "height": 853
+  },
+  "CharacterOrbit6Intermediate": {
+    "width": 853,
+    "height": 853
+  },
+  "CharacterOrbit6Normal": {
+    "width": 853,
+    "height": 853
+  },
+  "CharacterOrbit7Active": {
+    "width": 263,
+    "height": 263
+  },
+  "CharacterOrbit7Intermediate": {
+    "width": 263,
+    "height": 263
+  },
+  "CharacterOrbit7Normal": {
+    "width": 263,
+    "height": 263
+  },
+  "CharacterOrbit8Active": {
+    "width": 1090,
+    "height": 1091
+  },
+  "CharacterOrbit8Intermediate": {
+    "width": 1090,
+    "height": 1091
+  },
+  "CharacterOrbit8Normal": {
+    "width": 1090,
+    "height": 1091
+  },
+  "CharacterOrbit9Active": {
+    "width": 1333,
+    "height": 1333
+  },
+  "CharacterOrbit9Intermediate": {
+    "width": 1333,
+    "height": 1333
+  },
+  "CharacterOrbit9Normal": {
+    "width": 1333,
+    "height": 1333
+  },
+  "CharacterPlannedLineConnectorActive": {
+    "width": 1435,
+    "height": 29
+  },
+  "CharacterPlannedLineConnectorIntermediate": {
+    "width": 1435,
+    "height": 29
+  },
+  "CharacterPlannedLineConnectorNormal": {
+    "width": 1435,
+    "height": 29
+  },
+  "CharacterPlannedOrbit1Active": {
+    "width": 91,
+    "height": 90
+  },
+  "CharacterPlannedOrbit1Intermediate": {
+    "width": 91,
+    "height": 90
+  },
+  "CharacterPlannedOrbit1Normal": {
+    "width": 91,
+    "height": 90
+  },
+  "CharacterPlannedOrbit2Active": {
+    "width": 176,
+    "height": 176
+  },
+  "CharacterPlannedOrbit2Intermediate": {
+    "width": 176,
+    "height": 176
+  },
+  "CharacterPlannedOrbit2Normal": {
+    "width": 176,
+    "height": 176
+  },
+  "CharacterPlannedOrbit3Active": {
+    "width": 346,
+    "height": 346
+  },
+  "CharacterPlannedOrbit3Intermediate": {
+    "width": 346,
+    "height": 346
+  },
+  "CharacterPlannedOrbit3Normal": {
+    "width": 346,
+    "height": 346
+  },
+  "CharacterPlannedOrbit4Active": {
+    "width": 501,
+    "height": 502
+  },
+  "CharacterPlannedOrbit4Intermediate": {
+    "width": 501,
+    "height": 502
+  },
+  "CharacterPlannedOrbit4Normal": {
+    "width": 501,
+    "height": 502
+  },
+  "CharacterPlannedOrbit5Active": {
+    "width": 671,
+    "height": 671
+  },
+  "CharacterPlannedOrbit5Intermediate": {
+    "width": 671,
+    "height": 671
+  },
+  "CharacterPlannedOrbit5Normal": {
+    "width": 671,
+    "height": 671
+  },
+  "CharacterPlannedOrbit6Active": {
+    "width": 853,
+    "height": 853
+  },
+  "CharacterPlannedOrbit6Intermediate": {
+    "width": 853,
+    "height": 853
+  },
+  "CharacterPlannedOrbit6Normal": {
+    "width": 853,
+    "height": 853
+  },
+  "CharacterPlannedOrbit7Active": {
+    "width": 263,
+    "height": 263
+  },
+  "CharacterPlannedOrbit7Intermediate": {
+    "width": 263,
+    "height": 263
+  },
+  "CharacterPlannedOrbit7Normal": {
+    "width": 263,
+    "height": 263
+  },
+  "CharacterPlannedOrbit8Active": {
+    "width": 1090,
+    "height": 1091
+  },
+  "CharacterPlannedOrbit8Intermediate": {
+    "width": 1090,
+    "height": 1091
+  },
+  "CharacterPlannedOrbit8Normal": {
+    "width": 1090,
+    "height": 1091
+  },
+  "CharacterPlannedOrbit9Active": {
+    "width": 1333,
+    "height": 1333
+  },
+  "CharacterPlannedOrbit9Intermediate": {
+    "width": 1333,
+    "height": 1333
+  },
+  "CharacterPlannedOrbit9Normal": {
+    "width": 1333,
+    "height": 1333
+  },
+  "ClassesAbyssal Lich": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesAcolyte of Chayula": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesAmazon": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesBlood Mage": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesChronomancer": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesDeadeye": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesDisciple of Varashta": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesDruid": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesGemling Legionnaire": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesHuntress": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesInfernalist": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesInvoker": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesLich": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesMartial Artist": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesMercenary": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesMonk": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesOracle": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesPathfinder": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesRanger": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesRitualist": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesShaman": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesSmith of Kitava": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesSorceress": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesSpirit Walker": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesStormweaver": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesTactician": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesTitan": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesWarbringer": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesWarrior": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesWitch": {
+    "width": 1500,
+    "height": 1500
+  },
+  "ClassesWitchhunter": {
+    "width": 1500,
+    "height": 1500
+  },
+  "AscendancyMiddle": {
+    "width": 90,
+    "height": 90
+  },
+  "PSSkillFrame": {
+    "width": 102,
+    "height": 102
+  },
+  "PSSkillFrameActive": {
+    "width": 102,
+    "height": 102
+  },
+  "PSSkillFrameHighlighted": {
+    "width": 102,
+    "height": 102
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/oraclepassiveskillscreenpassiveframeactive.dds": {
+    "width": 102,
+    "height": 102
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/oraclepassiveskillscreenpassiveframecanallocate.dds": {
+    "width": 102,
+    "height": 102
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/oraclepassiveskillscreenpassiveframenormal.dds": {
+    "width": 102,
+    "height": 102
+  },
+  "JewelFrameAllocated": {
+    "width": 151,
+    "height": 152
+  },
+  "JewelFrameCanAllocate": {
+    "width": 151,
+    "height": 152
+  },
+  "JewelFrameUnallocated": {
+    "width": 151,
+    "height": 152
+  },
+  "NotableFrameAllocated": {
+    "width": 151,
+    "height": 152
+  },
+  "NotableFrameCanAllocate": {
+    "width": 151,
+    "height": 152
+  },
+  "NotableFrameUnallocated": {
+    "width": 151,
+    "height": 152
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/abyss/abysslichpassiveskillscreenjewelsocketactive.dds": {
+    "width": 151,
+    "height": 152
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/abyss/abysslichpassiveskillscreenjewelsocketcanallocate.dds": {
+    "width": 151,
+    "height": 152
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/abyss/abysslichpassiveskillscreenjewelsocketnormal.dds": {
+    "width": 151,
+    "height": 152
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/deliriumpassiveskillscreenjewelsocketactive.dds": {
+    "width": 151,
+    "height": 152
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/deliriumpassiveskillscreenjewelsocketcanallocate.dds": {
+    "width": 151,
+    "height": 152
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/deliriumpassiveskillscreenjewelsocketnormal.dds": {
+    "width": 151,
+    "height": 152
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/lichpassiveskillscreenjewelsocketactive.dds": {
+    "width": 151,
+    "height": 152
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/lichpassiveskillscreenjewelsocketcanallocate.dds": {
+    "width": 151,
+    "height": 152
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/lichpassiveskillscreenjewelsocketnormal.dds": {
+    "width": 151,
+    "height": 152
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/oraclepassiveskillscreennotableframeactive.dds": {
+    "width": 151,
+    "height": 152
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/oraclepassiveskillscreennotableframecanallocate.dds": {
+    "width": 151,
+    "height": 152
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/oraclepassiveskillscreennotableframenormal.dds": {
+    "width": 151,
+    "height": 152
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/delirium/voicesjewel/voicesjewelframe.dds": {
+    "width": 153,
+    "height": 153
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/anointpassiveskillscreenframelargeallocated.dds": {
+    "width": 159,
+    "height": 159
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/anointpassiveskillscreenframelargecanallocate.dds": {
+    "width": 159,
+    "height": 159
+  },
+  "art/textures/interface/2d/2dart/uiimages/ingame/anointpassiveskillscreenframelargenormal.dds": {
+    "width": 159,
+    "height": 159
+  },
+  "Abyssal LichFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "Abyssal LichFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "Abyssal LichFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "Acolyte of ChayulaFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "Acolyte of ChayulaFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "Acolyte of ChayulaFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "AmazonFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "AmazonFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "AmazonFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "Blood MageFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "Blood MageFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "Blood MageFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "ChronomancerFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "ChronomancerFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "ChronomancerFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "DeadeyeFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "DeadeyeFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "DeadeyeFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "Disciple of VarashtaFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "Disciple of VarashtaFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "Disciple of VarashtaFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "Gemling LegionnaireFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "Gemling LegionnaireFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "Gemling LegionnaireFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "InfernalistFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "InfernalistFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "InfernalistFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "InvokerFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "InvokerFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "InvokerFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "LichFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "LichFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "LichFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "Martial ArtistFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "Martial ArtistFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "Martial ArtistFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "OracleFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "OracleFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "OracleFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "PathfinderFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "PathfinderFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "PathfinderFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "RitualistFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "RitualistFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "RitualistFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "ShamanFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "ShamanFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "ShamanFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "Smith of KitavaFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "Smith of KitavaFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "Smith of KitavaFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "Spirit WalkerFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "Spirit WalkerFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "Spirit WalkerFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "StormweaverFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "StormweaverFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "StormweaverFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "TacticianFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "TacticianFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "TacticianFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "TitanFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "TitanFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "TitanFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "WarbringerFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "WarbringerFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "WarbringerFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "WitchhunterFrameSmallAllocated": {
+    "width": 159,
+    "height": 160
+  },
+  "WitchhunterFrameSmallCanAllocate": {
+    "width": 159,
+    "height": 160
+  },
+  "WitchhunterFrameSmallNormal": {
+    "width": 159,
+    "height": 160
+  },
+  "Abyssal LichFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "Abyssal LichFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "Abyssal LichFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "Acolyte of ChayulaFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "Acolyte of ChayulaFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "Acolyte of ChayulaFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "AmazonFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "AmazonFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "AmazonFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "Blood MageFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "Blood MageFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "Blood MageFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "ChronomancerFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "ChronomancerFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "ChronomancerFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "DeadeyeFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "DeadeyeFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "DeadeyeFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "Disciple of VarashtaFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "Disciple of VarashtaFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "Disciple of VarashtaFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "Gemling LegionnaireFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "Gemling LegionnaireFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "Gemling LegionnaireFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "InfernalistFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "InfernalistFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "InfernalistFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "InvokerFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "InvokerFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "InvokerFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "LichFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "LichFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "LichFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "Martial ArtistFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "Martial ArtistFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "Martial ArtistFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "OracleFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "OracleFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "OracleFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "PathfinderFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "PathfinderFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "PathfinderFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "RitualistFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "RitualistFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "RitualistFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "ShamanFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "ShamanFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "ShamanFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "Smith of KitavaFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "Smith of KitavaFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "Smith of KitavaFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "Spirit WalkerFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "Spirit WalkerFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "Spirit WalkerFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "StormweaverFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "StormweaverFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "StormweaverFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "TacticianFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "TacticianFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "TacticianFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "TitanFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "TitanFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "TitanFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "WarbringerFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "WarbringerFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "WarbringerFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "WitchhunterFrameLargeAllocated": {
+    "width": 206,
+    "height": 204
+  },
+  "WitchhunterFrameLargeCanAllocate": {
+    "width": 206,
+    "height": 204
+  },
+  "WitchhunterFrameLargeNormal": {
+    "width": 206,
+    "height": 204
+  },
+  "KeystoneFrameAllocated": {
+    "width": 217,
+    "height": 221
+  },
+  "KeystoneFrameCanAllocate": {
+    "width": 217,
+    "height": 221
+  },
+  "KeystoneFrameUnallocated": {
+    "width": 217,
+    "height": 221
+  },
+  "PSGroupBackground1": {
+    "width": 359,
+    "height": 359
+  },
+  "PSGroupBackgroundSmallBlank": {
+    "width": 359,
+    "height": 359
+  },
+  "PSGroupBackground2": {
+    "width": 465,
+    "height": 465
+  },
+  "PSGroupBackgroundMediumBlank": {
+    "width": 465,
+    "height": 465
+  },
+  "PSStartNodeBackgroundInactive": {
+    "width": 526,
+    "height": 526
+  },
+  "PSGroupBackground3": {
+    "width": 739,
+    "height": 374
+  },
+  "PSGroupBackgroundLargeBlank": {
+    "width": 739,
+    "height": 374
+  },
+  "Against the Darkness": {
+    "width": 151,
+    "height": 152
+  },
+  "Controlled Metamorphosis": {
+    "width": 151,
+    "height": 152
+  },
+  "Diamond": {
+    "width": 151,
+    "height": 152
+  },
+  "Emerald": {
+    "width": 151,
+    "height": 152
+  },
+  "Flesh Crucible": {
+    "width": 151,
+    "height": 152
+  },
+  "From Nothing": {
+    "width": 151,
+    "height": 152
+  },
+  "Heart of the Well": {
+    "width": 151,
+    "height": 152
+  },
+  "Heroic Tragedy": {
+    "width": 151,
+    "height": 152
+  },
+  "Megalomaniac": {
+    "width": 151,
+    "height": 152
+  },
+  "Prism of Belief": {
+    "width": 151,
+    "height": 152
+  },
+  "Ruby": {
+    "width": 151,
+    "height": 152
+  },
+  "Sapphire": {
+    "width": 151,
+    "height": 152
+  },
+  "The Adorned": {
+    "width": 151,
+    "height": 152
+  },
+  "Time-Lost Diamond": {
+    "width": 151,
+    "height": 152
+  },
+  "Time-Lost Emerald": {
+    "width": 151,
+    "height": 152
+  },
+  "Time-Lost Ruby": {
+    "width": 151,
+    "height": 152
+  },
+  "Time-Lost Sapphire": {
+    "width": 151,
+    "height": 152
+  },
+  "Timeless Jewel": {
+    "width": 151,
+    "height": 152
+  },
+  "Undying Hate": {
+    "width": 151,
+    "height": 152
+  },
+  "Voices": {
+    "width": 151,
+    "height": 152
+  },
+  "Art/2DArt/SkillIcons/passives/EternalYouth.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/GlancingBlows.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MiracleMaker.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryAccuracyPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryArmourAndEnergyShieldPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryArmourAndEvasionPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryArmourPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryAttackPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryAttributesPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryAxePattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryBannerPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryBleedingPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryBlindPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryBlockPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryBowPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryBrandPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryBucklersPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryCasterPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryChaosPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryChargesPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryCharmsPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryColdPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryCompanionsPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryCriticalsPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryCursePattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryDamageOverTimePattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryDualWieldPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryDurationPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryElementalPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryEnergyPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryEvasionAndEnergyShieldPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryEvasionPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryFirePattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryFlaskPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryFortifyPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryImpalePattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryInstillationsPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryLeechPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryLifePattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryLightningPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryLinkPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryMacePattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryManaPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryMarkPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryMinionDefencePattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryMinionOffencePattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryPhysicalPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryPoisonPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryProjectilePattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryRecoveryPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryReservationPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryResistancesAndAilmentProtectionPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryShieldPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasterySpearsPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasterySpellSuppressionPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryStaffPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryStunPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasterySwordPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryThornsPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryTotemPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryTrapsPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryTwoHandsPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/UIImages/InGame/PassiveMastery/MasteryBackgroundGraphic/MasteryWarcryPattern": {
+    "width": 774,
+    "height": 766
+  },
+  "Art/2DArt/SkillIcons/passives/AcolyteofChayula/AcolyteOfChayulaBreachFlameDoubles.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AcolyteofChayula/AcolyteOfChayulaBreachWalk.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AcolyteofChayula/AcolyteOfChayulaDarknessProtectsLonger.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AcolyteofChayula/AcolyteOfChayulaExtraChaosDamage.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AcolyteofChayula/AcolyteOfChayulaExtraChaosDamageBlue.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AcolyteofChayula/AcolyteOfChayulaExtraChaosDamagePerDarkness.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AcolyteofChayula/AcolyteOfChayulaExtraChaosDamageRed.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AcolyteofChayula/AcolyteOfChayulaExtraChaosResistance.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AcolyteofChayula/AcolyteOfChayulaFlameSelector.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AcolyteofChayula/AcolyteOfChayulaManaLeechInstant.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AcolyteofChayula/AcolyteOfChayulaReplaceSpiritWithDarkness.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AcolyteofChayula/AcolyteOfChayulaSpecialNode.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AcolyteofChayula/AcolyteOfChayulaUnravelling.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Amazon/AmazonConsumeFrenzyChargeGainElementalInstillation.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Amazon/AmazonDoubleEvasionfromGlovesBootsHelmsHalvedBodyArmour.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Amazon/AmazonElementalDamageReductionperElementalInstillation.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Amazon/AmazonExcessChancetoHitConvertedtoCritHitChance.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Amazon/AmazonGainPhysicalDamageWeaponsAccuracy.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Amazon/AmazonIncreasedLifeRecoveryRatePerMissingLife.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Amazon/AmazonLifeFlasksRecoverManaViceVersa.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Amazon/AmazonRareUniqueBloodlusted.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Amazon/AmazonSpeedBloodlustedEnemy.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Annihilation.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ArchonGenericNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ArchonofUndeathNoteble.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ArmourElementalDamageDeflect.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ArmourElementalDamageEnergyShieldRecharge.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AspectOfTheLynx.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AuraNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriPrimalMonkeyNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriPrimalOwlNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriPrimalSnakeNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriSacredFoxNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriSacredRabbitNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriVividCatNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriVividStagNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriVividWolfNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriWildBearNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriWildBoarNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriWildOxNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/BannerAreaNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Blood2.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Bloodmage/BloodMageCritDamagePerLife.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Bloodmage/BloodMageCurseInfiniteDuration.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Bloodmage/BloodMageDamageLeechedLife.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Bloodmage/BloodMageGainLifeEnergyShield.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Bloodmage/BloodMageHigherSpellBaseCritStrike.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Bloodmage/BloodMageLeaveBloodOrbs.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Bloodmage/BloodMageLifeLoss.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Bloodmage/BloodMageSaguineTides.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Bloodmage/BloodPhysicalDamageExtraGore.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/BowDamage.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/BucklersNotable1.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/BulwarkKeystone.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ChainingProjectiles.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ChannellingAttacksNotable2.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ChaosDamage2.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/CharmNotable1.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ClawsOfTheMagpie.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ColdAndFireHybridNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/CompanionsNotable1.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/CrimsonAssaultKeystone.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/CriticalStrikesNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/CursemitigationclusterNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DancewithDeathKeystone.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DeadEye/DeadeyeDealMoreProjectileDamageClose.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DeadEye/DeadeyeDealMoreProjectileDamageFarAway.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DeadEye/DeadeyeFrenzyChargesGeneration.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DeadEye/DeadeyeFrenzyChargesHaveMoreEffect.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DeadEye/DeadeyeGrantsTwoAdditionalProjectiles.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DeadEye/DeadeyeLingeringMirage.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DeadEye/DeadeyeMarkEnemiesSpread.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DeadEye/DeadeyeMoreAccuracy.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DeadEye/DeadeyeProjectileDamageChoose.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DeadEye/DeadeyeTailwind.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/ElementalDamageTakenFromMana.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/EnergyShieldPhyDmgReduction.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/FireDjinnEmberSlash.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/FireDjinnFlameRunes.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/FireDjinnMeteoricSlam.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/FocusStaff.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/MoreEnergyShieldRechargeRate.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/SandDjinnCorpseBeetles.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/SandDjinnDaggerslamSkill.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/SandDjinnExplosiveTeleport.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/SummonFireDjinn.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/SummonSandDjinn.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/SummonWaterDjinn.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/TimelostJewelsLargerRadius.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/WaterDjinnChiilldedGroundBurst.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/WaterDjinnCommandOasis.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/WaterDjinnESRechargeCommand.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DruidAlternateEnergyShield.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DruidAnimism.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DruidGenericShapeshiftNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DruidRageKeystone.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DruidShapeshiftBearNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DruidShapeshiftWolfNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DruidShapeshiftWyvernNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/DruidWildsurgeIncantation.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ElementalDamagewithAttacks2.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ElementalDominion2.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ElementalResistance2.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/EnergyShieldRechargeDeflect.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/EvasionAndBlindNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/FireSpellsBecomeChaosSpellsKeystone.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/FlaskNotableCritStrikeRecharge.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/FlaskNotableFlasksLastLonger.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Gemling/GemlingBarrier.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Gemling/GemlingBuffSkillsReserveLessSpirit.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Gemling/GemlingHighestAttributeSatisfiesGemRequirements.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Gemling/GemlingInherentBonusesFromAttributesDouble.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Gemling/GemlingLevelAllSkillGems.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Gemling/GemlingLevelDexSkillGems.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Gemling/GemlingLevelIntSkillGems.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Gemling/GemlingLevelStrSkillGems.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Gemling/GemlingMaxElementalResistanceSupportColour.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Gemling/GemlingSameSupportMultipleTimes.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Gemling/GemlingSkillsAdditionalSupport.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/GiantBloodKeystone.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Harrier.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/HeartstopperKeystone.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Hearty.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/HiredKiller2.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/HollowPalmTechniqueKeystone.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Hunter.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/IncreasedAttackDamageNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/IncreasedChaosDamage.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/IncreasedManaCostNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/IncreasedMaximumLifeNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/IncreasedPhysicalDamage.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Infernalist/FuryManifest.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Infernalist/InfernalFamiliar.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Infernalist/InfernalistConvertLifeToEnergyShield.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Infernalist/InfernalistConvertLifeToMana.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Infernalist/InfernalistConvertLifeToSpirit.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Infernalist/InfernalistInfernalHeat.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Infernalist/InfernalistTransformIntoDemon1.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Infernalist/InfernalistTransformIntoDemon2.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Infernalist/MoltenFury.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Infernalist/ScorchTheEarth.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/InstillationsNotable1.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Invoker/InvokerChillChanceBasedOnDamage.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Invoker/InvokerCriticalStrikesIgnoreResistances.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Invoker/InvokerEnergyDoubled.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Invoker/InvokerEvasionEnergyShieldGrantsSpirit.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Invoker/InvokerEvasionGrantsPhysicalDamageReduction.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Invoker/InvokerGrantsMeditate.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Invoker/InvokerShockMagnitude.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Invoker/InvokerUnboundAvatar.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Invoker/InvokerWildStrike.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/KeystoneAvatarOfFire.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/KeystoneBloodMagic.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/KeystoneChaosInoculation.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/KeystoneConduit.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/KeystoneEldritchBattery.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/KeystoneElementalEquilibrium.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/KeystoneIronReflexes.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/KeystonePainAttunement.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/KeystoneResoluteTechnique.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/KeystoneUnwaveringStance.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/KeystoneWhispersOfDoom.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Lich/LichApplyAdditionalCurses.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Lich/LichCursedEnemiesExplodeChaos.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Lich/LichImprovedUnholyMight.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Lich/LichLifeCannotChangeWhileES.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Lich/LichManaRegenBasedOnMaxLife.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Lich/LichSpellCostESandMoreDMG.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Lich/LichSpellsConsumePowerCharges.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Lich/LichUnholyMight.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/LifeandMana.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MartialArtist/MartialArtistAdditionalComboHit.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MartialArtist/MartialArtistAllAttacksGenerateCombo.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MartialArtist/MartialArtistCarrySoectralBell.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MartialArtist/MartialArtistCoveredinStone.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MartialArtist/MartialArtistExtraRunes.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MartialArtist/MartialArtistHandWraps.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MartialArtist/MartialArtistMantraofIllusions.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MartialArtist/MartialArtistSpectralBell.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Meleerange.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MineManaReservationNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MonkAccuracyChakra.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MonkElementalChakra.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MonkEnergyShieldChakra.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MonkHealthChakra.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MonkManaChakra.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MonkStrengthChakra.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MonkStunChakra.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MovementSpeedandEvasion.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MultipleBeastCompanionsKeystone.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/NecromanticTalismanKeystone.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/OasisKeystone2.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Oracle/OracleDiffChoices.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Oracle/OracleEnemiesActionsUnlucky.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Oracle/OracleLifeManaHits.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Oracle/OraclePassiveTreeAllocation.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Oracle/OracleRerollingCrit.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Oracle/OracleRipFromTime.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Oracle/OracleSpellFlux.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Oracle/OracleTotemLimit.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderAdditionalPoints.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderBrewConcoction.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderBrewConcoctionBleed.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderBrewConcoctionCold.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderBrewConcoctionFire.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderBrewConcoctionLightning.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderBrewConcoctionPoison.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderCannotBeSlowed.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderEnemiesMultiplePoisons.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderEvasionDmgReducVsElementalDmg.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderLifeFlasks.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderMoreMovemenSpeedUsingSkills.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderMultichoicePath.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderPathoftheSorceress.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderPathoftheWarrior.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PhysicalDamageOverTimeNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Poison.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PressurePoints.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Primalist/PrimalistBloodBoils.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Primalist/PrimalistDrainManaActivateCharms.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Primalist/PrimalistIncreasedEffectOfJewellery.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Primalist/PrimalistLifeLeechFromElementalOrChaos.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Primalist/PrimalistPlusOneMaxCharm.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Primalist/PrimalistPlusOneRingSlot.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Primalist/PrimalistStabCorpse.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Primalist/PrimalistStabCorpseHand.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ProjectileDmgNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ProjectilesNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/PuppeteerNoteble.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/RageNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/RemnantNotable.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ResonanceKeystone.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Shaman/ShamanAdaptToElements.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Shaman/ShamanEvenMoreAdaptation.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Shaman/ShamanGainSpiritEmptyCharmSlot.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Shaman/ShamanPickEleDmg.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Shaman/ShamanRageAffectsSpells.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Shaman/ShamanRageonHit.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Shaman/ShamanRunesTalismans.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Shaman/ShamanUnleashTheElements.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaCanOnlyWearNormalRarityBodyArmour.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaCreateMinionMeleeWeapon.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaFireResistAppliesToColdLightning.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaImbueMainHandWeapon.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaImprovedFireResistAppliesToColdLightning.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaNormalArmourBonus1.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaNormalArmourBonus10.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaNormalArmourBonus11.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaNormalArmourBonus12.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaNormalArmourBonus2.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaNormalArmourBonus3.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaNormalArmourBonus4.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaNormalArmourBonus5.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaNormalArmourBonus6.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaNormalArmourBonus7.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaNormalArmourBonus8.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithOfKitavaNormalArmourBonus9.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithofKitavaTriggerFireSpellsMeleeWeapon.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SorceressInvocationSpellsKeystone.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SpearsNotable1.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SpellMultiplyer2.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/SpellSupressionNotable1.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Storm Weaver.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Stormweaver/AllDamageCanChill.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Stormweaver/AllDamageCanShock.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Stormweaver/ChillAddditionalTime.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Stormweaver/GrantsArcaneSurge.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Stormweaver/GrantsElementalStorm.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Stormweaver/ImprovedArcaneSurge.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Stormweaver/ImprovedElementalStorm.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Stormweaver/ShockAddditionalTime.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Stormweaver/StormweaverRemnant1.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Stormweaver/StormweaverRemnant2.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Tactician/TacticianAlliesGainAttack.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Tactician/TacticianDeathFromAboveCommand.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Tactician/TacticianEvasionArmourHigher.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Tactician/TacticianGainStunThresholdArmour.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Tactician/TacticianLessSpiritCostBuff.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Tactician/TacticianMultipleBanners.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Tactician/TacticianPinnedEnemiesCannotAct.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Tactician/TacticianProjectileBuildsPin.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Tactician/TacticianTotemAura.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Tactician/TacticianTotems.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Temporalist/TemporalistChanceSkillNoCooldownSkill.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Temporalist/TemporalistFasterRecoup.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Temporalist/TemporalistGainMoreCastSpeed8Seconds.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Temporalist/TemporalistGrantsReloadCooldownsSkill.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Temporalist/TemporalistGrantsTemporalRiftSkill.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Temporalist/TemporalistGrantsTimeStopSkill.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Temporalist/TemporalistNearbyEnemiesProjectilesSlowed.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Temporalist/TemporalistSynchronisationofPain.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ThornsNotable1.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Titan/TitanAdditionalInventory.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Titan/TitanMoreBodyArmour.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Titan/TitanMoreMaxLife.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Titan/TitanMountainSplitter.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Titan/TitanSlamSkillsAftershock.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Titan/TitanSlamSkillsFistOfWar.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Titan/TitanSmallPassiveDoubled.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Titan/TitanYourHitsCrushEnemies.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Trap.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Warbringer/WarbringerBlockChance.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Warbringer/WarbringerBreakEnemyArmour.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Warbringer/WarbringerCanBlockAllDamageShieldNotRaised.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Warbringer/WarbringerDamageTakenByTotems.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Warbringer/WarbringerEncasedInJade.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Warbringer/WarbringerEnemyArmourBrokenBelowZero.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Warbringer/WarbringerTotemsDefendedByAncestors.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Warbringer/WarbringerWarcryExplodesCorpses.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Warrior.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Wildspeaker/WildspeakerBonusPerSocketedTalisman.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Wildspeaker/WildspeakerCompanionDmgWeapon.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Wildspeaker/WildspeakerOwlFeatherHigherCritDmg.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Wildspeaker/WildspeakerOwlFeathers.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Wildspeaker/WildspeakerSacredWisp.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Wildspeaker/WildspeakerTameBeastTargetUnique.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Wildspeaker/WildspeakerVividStags.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Wildspeaker/WildspeakerVividWisps.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Wildspeaker/WildspeakerWildBear.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Witchhunter/WitchunterArmourEvasionConvertedSpellAegis.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Witchhunter/WitchunterCullingStrike.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Witchhunter/WitchunterDamageMonsterMissingFocus.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Witchhunter/WitchunterDrainMonsterFocus.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Witchhunter/WitchunterMonsterHolyExplosion.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Witchhunter/WitchunterRemovePercentageFullLifeEnemies.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Witchhunter/WitchunterSpecPoints.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/Witchhunter/WitchunterStrongerSpellAegis.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/ashfrostandstorm.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/bodysoul.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/deepwisdom.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/eagleeye.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/executioner.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/finesse.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/flameborn.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/frostborn.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/heroicspirit.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/legstrength.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/lifeleech.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/liferegentoenergyshield.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/newnewattackspeed.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/steelspan.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/stormborn.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/strongarm.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/totemmax.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/vaalpact.dds": {
+    "width": 128,
+    "height": 128
+  },
+  "Art/2DArt/SkillIcons/passives/MasteryBlank.dds": {
+    "width": 172,
+    "height": 172
+  },
+  "Art/2DArt/SkillIcons/passives/Infernalist/Fireblood.dds": {
+    "width": 176,
+    "height": 176
+  },
+  "Art/2DArt/SkillIcons/ExplosiveGrenade.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/WitchBoneStorm.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/icongroundslam.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/2handeddamage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/AcolyteofChayula/AcolyteOfChayulaNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Amazon/AmazonNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ArchonGeneric.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ArchonofUndeathNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/AreaDmgNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ArmourAndEnergyShieldNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ArmourAndEvasionNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ArmourBreak1BuffIcon.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ArmourBreak2BuffIcon.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Ascendants/SkillPoint.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriPrimalMonkey.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriPrimalOwl.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriPrimalSnake.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriSacredFox.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriSacredRabbit.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriVividCat.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriVividStag.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriVividWolf.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriWildBear.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriWildBoar.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/AzmeriWildOx.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/BannerResourceAreaNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Bloodmage/BloodMageNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/BucklerNode1.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ChannellingAttacksNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ChannellingDamage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ChannellingSpeed.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ChaosDamage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ChaosDamagenode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/CharmNode1.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ColdDamagenode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ColdFireNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ColdLightningNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ColdResistNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/CompanionsNode1.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/CorpseDamage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/CurseEffectNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/CursemitigationclusterNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/DeadEye/DeadeyeNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/DiscipleoftheDjinn/DjinnNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/DruidGenericShapeshiftNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/DruidShapeshiftBearNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/DruidShapeshiftWolfNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/DruidShapeshiftWyvernNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ElementalDamagenode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/EnduranceFrenzyPowerChargeNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/EnergyShieldNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/EnergyShieldRechargeDeflectNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/EvasionNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/EvasionandEnergyShieldNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/FireDamagenode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/FireResistNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Gemling/GemlingNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/GreenAttackSmallPassive.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/HeraldBuffEffectNode2.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/IncreasedAttackDamageNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/IncreasedProjectileSpeedNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Infernalist/InfernalistNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Inquistitor/IncreasedElementalDamageAttackCasteSpeed.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/InstillationsNode1.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Invoker/InvokerNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Lich/LichNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/LifeRecoupNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/LightningDamagenode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/LightningResistNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ManaLeechThemedNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/MarkNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/MartialArtist/MartialArtistNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/MeleeAoENode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/MineAreaOfEffectNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/MinionAccuracyDamage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/MinionChaosResistanceNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/MinionElementalResistancesNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/MinionsandManaNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/NodeDualWieldingDamage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Oracle/OracleNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/PathFinder/PathfinderNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/PhysicalDamageChaosNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/PhysicalDamageNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/PhysicalDamageOverTimeNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Primalist/PrimalistNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ProjectileDmgNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/PuppeteerNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Rage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/RangedTotemDamage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ReducedSkillEffectDurationNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Remnant.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Shaman/ShamanNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ShieldNodeOffensive.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/SkillGemSlotsNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/SmithofKitava/SmithofKitavaNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/SpearsNode1.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/SpellSuppresionNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Stormweaver/StormweaverNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Tactician/TacticianNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Temporalist/TemporalistNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/ThornsNode1.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Titan/TitanNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/WarCryEffect.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Warbringer/WarbringerNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Wildspeaker/WildspeakerNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/Witchhunter/WitchunterNode.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/accuracydex.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/accuracystr.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/areaofeffect.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/attackspeed.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/attackspeedbow.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/auraareaofeffect.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/auraeffect.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/avoidchilling.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/axedmgspeed.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/blankDex.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/blankInt.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/blankStr.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/blockstr.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/castspeed.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/chargedex.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/chargeint.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/chargestr.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/colddamage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/coldresist.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/criticaldaggerint.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/criticalstrikechance.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/criticalstrikechance2.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/damage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/damage_blue.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/damageaxe.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/damagedualwield.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/damagespells.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/damagestaff.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/damagesword.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/dmgreduction.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/elementaldamage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/energyshield.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/evade.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/firedamage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/firedamageint.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/firedamagestr.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/fireresist.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/flaskdex.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/flaskint.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/flaskstr.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/increasedrunspeeddex.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/knockback.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/life1.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/lifepercentage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/lightningint.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/lightningstr.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/macedmg.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/mana.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/manaregeneration.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/manastr.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/minionattackspeed.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/miniondamageBlue.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/minionlife.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/minionstr.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/onehanddamage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/plusattribute.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/plusdexterity.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/plusintelligence.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/plusstrength.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/projectilespeed.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/shieldblock.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/spellcritical.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/stun2h.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/stunstr.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/tempint.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/totemandbrandlife.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/trapdamage.dds": {
+    "width": 64,
+    "height": 64
+  },
+  "Art/2DArt/SkillIcons/passives/trapsmax.dds": {
+    "width": 64,
+    "height": 64
+  }
+}

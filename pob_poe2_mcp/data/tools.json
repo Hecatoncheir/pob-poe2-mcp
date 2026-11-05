@@ -1,0 +1,424 @@
+[
+  {
+    "name": "pob_catalog",
+    "description": "Каталог исходного Lua: точные ID камней, классов, узлов, настроек и слотов. Пагинация; доступен до создания сборки.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "gems",
+            "classes",
+            "nodes",
+            "config",
+            "slots",
+            "bases"
+          ]
+        },
+        "query": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200
+        },
+        "offset": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100000
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_create_build",
+    "description": "Создать новую сборку оригинальным newBuild; заменяет текущую сессию. Уровень задаётся в ручном режиме.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "level": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "classId": {
+          "type": "integer"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_import_xml",
+    "description": "Загрузить полный XML PathOfBuilding2 и рассчитать его через Lua. Заменяет текущую сборку.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "xml": {
+          "type": "string",
+          "maxLength": 4194304
+        }
+      },
+      "required": [
+        "xml"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_add_skill_group",
+    "description": "Добавить группу из точных ID каталога gems. Совместимость и ошибки нужно проверить pob_check_build.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "gems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "level": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 40
+              },
+              "quality": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "enabled": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 12
+        }
+      },
+      "required": [
+        "gems"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_add_item",
+    "description": "Распознать текст предмета через Item Lua, добавить и при заданном slot надеть с проверкой IsItemValidForSlot.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "raw": {
+          "type": "string",
+          "maxLength": 65536
+        },
+        "slot": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "raw"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_set_config",
+    "description": "Установить условия расчёта по точным именам, типам и значениям каталога config. Выполняет ConfigTab:BuildModList.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "values"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_set_custom_mods",
+    "description": "Заменить текст пользовательских модификаторов; это предположения автора, а не предметы. Явно раскрывайте их в отчёте.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "maxLength": 65536
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_tree_action",
+    "description": "Действие оригинального дерева: назначение пути, возврат, атрибут, заметка. IDs берите из каталога nodes. Атрибуты: 1 сила, 2 ловкость, 3 интеллект. Для мастерства нужен mastery из каталога узла.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "action": {
+          "type": "string",
+          "enum": [
+            "allocate",
+            "refund",
+            "toggle",
+            "right",
+            "note"
+          ]
+        },
+        "attribute": {
+          "type": "integer",
+          "enum": [
+            1,
+            2,
+            3
+          ]
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 65536
+        },
+        "mastery": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "action"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_tree_options",
+    "description": "Класс, восхождение, набор и оружейный режим через PassiveSpec; изменение класса с узлами требует connect или reset.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "class": {
+          "type": "integer"
+        },
+        "ascendancy": {
+          "type": "integer"
+        },
+        "spec": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "mode": {
+          "type": "integer",
+          "enum": [
+            0,
+            1,
+            2
+          ]
+        },
+        "reset": {
+          "type": "boolean"
+        },
+        "connect": {
+          "type": "boolean"
+        },
+        "specAction": {
+          "type": "string",
+          "enum": [
+            "new",
+            "clone",
+            "rename",
+            "delete"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "compare": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_select_main_skill",
+    "description": "Выбрать основную группу или активное умение по id из snapshot.buildInfo отчёта.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "control": {
+          "type": "string",
+          "enum": [
+            "groups",
+            "skills"
+          ]
+        },
+        "id": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "control",
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_node_tooltip",
+    "description": "Оригинальный AddNodeTooltip: свойства, путь и расчётные изменения узла.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "compare": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_check_build",
+    "description": "Подробный отчёт Lua: показатели, условия, камни/ошибки, предметы/неподдержанные строки, слоты, узлы и предупреждения. targets сравнивает числа с целями, не доказывает легальность сборки.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "targets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stat": {
+                "type": "string"
+              },
+              "min": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "stat"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 100
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_export_xml",
+    "description": "Экспорт оригинальным SaveDB; возвращает XML без записи файла.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  }
+]

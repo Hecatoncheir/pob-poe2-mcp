@@ -1,0 +1,63 @@
+name: Проверки MCP
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  transport:
+    name: Транспорт — ${{ matrix.os }}, Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Проверить транспорт без движка
+        run: python -X utf8 -m unittest discover -s tests -v
+
+  windows-engine:
+    name: Установка пакета и настоящий Lua
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Подготовить изолированное окружение
+        shell: pwsh
+        run: |
+          python -m venv .venv-test
+          ./.venv-test/Scripts/python -m pip install setuptools==80.9.0
+          ./.venv-test/Scripts/python -m pip wheel --no-deps --no-build-isolation --wheel-dir dist .
+          ./.venv-test/Scripts/python -m pip install --no-deps (Get-Item dist/*.whl).FullName
+      - name: Загрузить закреплённый движок
+        run: python -X utf8 run.py setup --destination .engine
+      - name: Проверить пакет вне рабочего каталога
+        shell: pwsh
+        run: |
+          $env:POB_DIR = (Resolve-Path .engine).Path
+          $installedPython = (Resolve-Path .venv-test/Scripts/python.exe).Path
+          Push-Location $env:RUNNER_TEMP
+          & $installedPython -m pob_poe2_mcp doctor
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Pop-Location
+      - name: Проверить API и MCP с настоящим Lua
+        shell: pwsh
+        run: |
+          $env:POB_DIR = (Resolve-Path .engine).Path
+          python -X utf8 -m unittest discover -s tests -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -X utf8 examples/build_fireball.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pob-poe2-mcp-wheel
+          path: dist/*.whl

@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Существующий тег, например v0.2.0"
+        description: "Существующий тег, например v0.3.0"
         required: true
         type: string
 

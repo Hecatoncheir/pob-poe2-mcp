@@ -87,6 +87,39 @@ class AssistantAPI(unittest.TestCase):
         self.assertEqual(len(first["entries"]), 2)
         self.assertNotEqual(first["entries"], second["entries"])
 
+    def test_image_data_is_consistent_and_does_not_modify_build(self):
+        api = self.api
+        api.call('createBuild', {'classId': 2, 'level': 90})
+        before = api.call('exportBuild')['xml']
+        revision = api.revision
+        image_data = api.call('getBuildImageData', {'view': 'tree'})
+        self.assertGreater(len(image_data['tree']['nodes']), 100)
+        self.assertGreater(len(image_data['tree']['edges']), 100)
+        allocated = {node['id'] for node in image_data['tree']['nodes'] if node['allocated']}
+        self.assertEqual(allocated, set(image_data['report']['allocatedNodes']))
+        self.assertEqual(image_data['report']['snapshot']['buildInfo']['level'], 90)
+        self.assertEqual(api.revision, revision)
+        self.assertEqual(api.call('exportBuild')['xml'], before)
+        node = next(node for node in image_data['tree']['nodes'] if node['type'] == 'Notable')
+        detailed = api.call('getBuildImageData', {'view': 'node', 'id': node['id']})
+        self.assertTrue(detailed['tooltip']['lines'])
+        self.assertEqual(api.call('exportBuild')['xml'], before)
+
+    def test_original_tree_icons_scale_with_viewport_and_zoom(self):
+        api = self.api
+        api.call('createBuild', {'classId': 2, 'level': 90})
+        before = api.call('exportBuild')['xml']
+        regular = api.call('getBuildImageData', {'view': 'tree', 'width': 800, 'height': 600})['scene']
+        enlarged = api.call('getBuildImageData', {'view': 'tree', 'width': 1600, 'height': 1100, 'zoom': 2})['scene']
+
+        def frame_width(scene):
+            frame = next(command for command in scene['commands'] if command['file'].endswith('_64_64_BC1.dds.zst'))
+            return max(frame['positions'][::2]) - min(frame['positions'][::2])
+
+        self.assertGreater(enlarged['scale'], regular['scale'])
+        self.assertAlmostEqual(frame_width(regular) / regular['scale'], frame_width(enlarged) / enlarged['scale'])
+        self.assertEqual(api.call('exportBuild')['xml'], before)
+
     def test_live_session_uses_same_api_and_preserves_manual_changes(self):
         process = subprocess.run(
             [sys.executable, "-X", "utf8", str(ROOT / "pob_poe2_mcp/runner.py"),
@@ -142,6 +175,7 @@ class MCP(unittest.TestCase):
             {"id": 4, "method": "tools/call", "params": {"name": "pob_check_build", "arguments": {"targets": [{"stat": "Life", "min": 1}]}}},
             {"id": 5, "method": "tools/call", "params": {"name": "pob_create_build", "arguments": {"level": 101}}},
             {"id": 6, "method": "tools/call", "params": {"name": "pob_export_xml", "arguments": {}}},
+            {"id": 7, "method": "tools/call", "params": {"name": "pob_render_image", "arguments": {"view": "stats", "query": "Life", "width": 640, "height": 480}}},
         ]
         with tempfile.TemporaryDirectory() as directory:
             process = subprocess.run(
@@ -152,11 +186,16 @@ class MCP(unittest.TestCase):
             )
         self.assertEqual(process.returncode, 0, process.stderr)
         responses = [json.loads(line) for line in process.stdout.splitlines()]
-        self.assertEqual(len(responses), 6)
+        self.assertEqual(len(responses), 7)
         self.assertEqual(len(responses[1]["result"]["tools"]), len(TOOLS))
         self.assertTrue(responses[3]["result"]["structuredContent"]["result"]["targetsPassed"])
         self.assertTrue(responses[4]["result"]["isError"])
         self.assertIn("<PathOfBuilding2>", responses[5]["result"]["structuredContent"]["result"]["xml"])
+        rendered = responses[6]['result']
+        self.assertFalse(rendered['isError'], rendered)
+        self.assertEqual(rendered['content'][1]['type'], 'image')
+        self.assertEqual(rendered['content'][1]['mimeType'], 'image/png')
+        self.assertEqual(rendered['structuredContent']['revision'], responses[5]['result']['structuredContent']['revision'])
 
 
 if __name__ == "__main__":

@@ -25,6 +25,7 @@ class BuildAPI:
         else:
             raise ValueError("Режим должен быть engine или app")
         self.timeout = timeout
+        self.closed = False
         self.revision = 0
         self.counter = 0
         self.lock = threading.Lock()
@@ -47,9 +48,13 @@ class BuildAPI:
                 self.responses.put(json.loads(line))
         except Exception as error:
             self.responses.put(error)
+        finally:
+            self.transport.reader.close()
 
     def call(self, method, params=None):
         with self.lock:
+            if self.closed:
+                raise EngineError("ENGINE_STOPPED", "Соединение закрыто")
             self.counter += 1
             request = {"protocol": 1, "id": str(self.counter), "method": method,
                        "params": {"revision": self.revision, **(params or {})}}
@@ -95,7 +100,9 @@ class BuildAPI:
                 "targetsPassed": all(check["passed"] for check in checks) if checks else None}
 
     def close(self):
-        self.transport.close()
+        if not self.closed:
+            self.closed = True
+            self.transport.close()
 
     def __enter__(self):
         return self

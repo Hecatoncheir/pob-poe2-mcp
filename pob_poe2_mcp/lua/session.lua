@@ -345,8 +345,11 @@ end
 local installMethods = dofile(POB_MCP_PACKAGE_DIR .. "/lua/assistant_methods.lua")
 setfenv(installMethods, getfenv(1))
 installMethods(methods, fail, snapshot, finishTreeChange)
+local installImageData = dofile(POB_MCP_PACKAGE_DIR .. "/lua/image_data.lua")
+setfenv(installImageData, getfenv(1))
+installImageData(methods)
 function methods.initialize()
-	return { methods = { "initialize", "createBuild", "getCatalog", "getBuildReport", "addSkillGroup", "addItem", "setConfig", "loadBuild", "getSnapshot", "getWorkbench", "setCustomMods", "exportBuild", "selectMainSkill", "getTree", "getNodeTooltip", "getJewels", "treeOptions", "treeAction", "toggleNode", "shutdown" }, platform = host.live and "windows-app" or "windows-engine" }
+	return { methods = { "initialize", "createBuild", "getCatalog", "getBuildReport", "getBuildImageData", "addSkillGroup", "addItem", "setConfig", "loadBuild", "getSnapshot", "getWorkbench", "setCustomMods", "exportBuild", "selectMainSkill", "getTree", "getNodeTooltip", "getJewels", "treeOptions", "treeAction", "toggleNode", "shutdown" }, platform = host.live and "windows-app" or "windows-engine" }
 end
 function methods.loadBuild(params)
 	validateXML(params.xml)

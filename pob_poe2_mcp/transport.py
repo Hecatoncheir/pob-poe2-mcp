@@ -67,5 +67,5 @@ class AppTransport:
             self.connection.shutdown(socket.SHUT_RDWR)
         except OSError:
             pass
-        self.reader.close()
+        # Читающий поток сам закроет reader: здесь close может ждать его блокировку.
         self.connection.close()

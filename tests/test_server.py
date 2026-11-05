@@ -37,7 +37,7 @@ class Configuration(unittest.TestCase):
     def test_lock_and_tool_manifest(self):
         self.assertEqual(len(LOCK["revision"]), 40)
         self.assertEqual({tool["name"] for tool in TOOLS}, set(METHODS) | {"pob_check_build"})
-        self.assertEqual(len(TOOLS), 13)
+        self.assertEqual(len(TOOLS), 14)
 
     def test_timeout_rejects_nan_infinity_and_nonpositive_values(self):
         for value in ["nan", "inf", "-inf", "0", "-1"]:
@@ -68,7 +68,7 @@ class Transport(unittest.TestCase):
             self.request("ping", request_id=4),
         ])
         self.assertEqual(len(responses), 4)
-        self.assertEqual(len(responses[1]["result"]["tools"]), 13)
+        self.assertEqual(len(responses[1]["result"]["tools"]), 14)
         self.assertTrue(responses[2]["result"]["isError"])
         self.assertIn(json.loads(responses[2]["result"]["content"][0]["text"])["code"],
                       ["ENGINE_NOT_CONFIGURED", "UNSUPPORTED_PLATFORM"])

@@ -1,12 +1,14 @@
 """MCP stdio для создания и проверки PoB-сборок; stdout содержит только JSON-RPC."""
 
 import json
+import base64
 import math
 import sys
 from pathlib import Path
 
 from . import __version__
 from .api import BuildAPI, EngineError, MAX_MESSAGE
+from .images import render_build_image, validate_image_args
 
 MANIFEST = Path(__file__).parent / "data/tools.json"
 TOOLS = json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -17,7 +19,9 @@ METHODS = {
     "pob_set_custom_mods": "setCustomMods", "pob_tree_action": "treeAction",
     "pob_tree_options": "treeOptions", "pob_select_main_skill": "selectMainSkill",
     "pob_node_tooltip": "getNodeTooltip", "pob_export_xml": "exportBuild",
+    "pob_render_image": "getBuildImageData",
 }
+READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image"}
 
 
 def validate(value, schema):
@@ -61,6 +65,48 @@ class Server:
         self.timeout = timeout
         self.mode = mode
 
+    def execute_tool(self, name, args):
+        if self.api is None:
+            self.api = BuildAPI(pob_dir=self.pob_dir, timeout=self.timeout, mode=self.mode)
+        try:
+            if name == 'pob_render_image' and self.mode == 'app':
+                return self.app_image_data(args)
+            return self.api.check(args.get("targets")) if name == "pob_check_build" else self.api.call(METHODS[name], args)
+        except (EngineError, ValueError):
+            if self.mode == "app" and self.api.closed:
+                self.api = None
+            raise
+
+    def app_image_data(self, args):
+        report = self.api.call('getBuildReport')
+        if args.get('view', 'overview') not in ('tree', 'node'):
+            return {'report': report}
+        xml = self.api.call('exportBuild')['xml']
+        with BuildAPI(pob_dir=self.api.pob_dir, timeout=self.timeout) as engine:
+            engine.call('loadBuild', {'xml': xml})
+            data = engine.call('getBuildImageData', args)
+        data['report'] = report
+        return data
+
+    def call_tool(self, name, args):
+        previous_api = self.api
+        try:
+            return self.execute_tool(name, args)
+        except (EngineError, ValueError):
+            if previous_api is None or self.api is not None or name not in READ_ONLY_TOOLS:
+                raise
+        return self.execute_tool(name, args)
+
+    def tool_response(self, name, args, result):
+        image = None
+        if name == 'pob_render_image':
+            image, result = render_build_image(result, args, getattr(self.api, 'pob_dir', None))
+        payload = {"revision": self.api.revision, "result": result}
+        content = [{"type": "text", "text": json.dumps(payload, ensure_ascii=False)}]
+        if image is not None:
+            content.append({"type": "image", "mimeType": "image/png", "data": base64.b64encode(image).decode('ascii')})
+        return {"content": content, "structuredContent": payload, "isError": False}
+
     def handle(self, method, params):
         if method == "initialize":
             self.initialized = True
@@ -84,11 +130,10 @@ class Server:
             raise ValueError("Неизвестный инструмент")
         try:
             validate(args, tool["inputSchema"])
-            if self.api is None:
-                self.api = BuildAPI(pob_dir=self.pob_dir, timeout=self.timeout, mode=self.mode)
-            result = self.api.check(args.get("targets")) if name == "pob_check_build" else self.api.call(METHODS[name], args)
-            payload = {"revision": self.api.revision, "result": result}
-            return {"content": [{"type": "text", "text": json.dumps(payload, ensure_ascii=False)}], "structuredContent": payload, "isError": False}
+            if name == 'pob_render_image':
+                validate_image_args(args)
+            result = self.call_tool(name, args)
+            return self.tool_response(name, args, result)
         except (EngineError, ValueError) as error:
             return {"content": [{"type": "text", "text": json.dumps({"code": getattr(error, "code", "INVALID_ARGUMENTS"), "message": str(error)}, ensure_ascii=False)}], "isError": True}
 

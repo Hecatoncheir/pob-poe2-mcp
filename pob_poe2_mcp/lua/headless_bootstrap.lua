@@ -32,6 +32,8 @@ function dofile(path)
 			local handle = originalNewImageHandle()
 			local originalLoad = handle.Load
 			function handle:Load(filename, ...)
+				self.sourcePath = filename
+				self.sourceFlags = {...}
 				self.filename = filename:match("[^/]+$")
 				originalLoad(self, filename, ...)
 			end

@@ -20,8 +20,9 @@ METHODS = {
     "pob_tree_options": "treeOptions", "pob_select_main_skill": "selectMainSkill",
     "pob_node_tooltip": "getNodeTooltip", "pob_export_xml": "exportBuild",
     "pob_render_image": "getBuildImageData",
+    "pob_get_tree": "getTreeGeometry",
 }
-READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image"}
+READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image", "pob_get_tree"}
 
 
 def validate(value, schema):

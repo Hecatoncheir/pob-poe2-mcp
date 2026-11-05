@@ -60,6 +60,17 @@ class AssistantAPI(unittest.TestCase):
         expected = {'win32': 'windows-engine', 'linux': 'linux-engine', 'darwin': 'macos-engine'}
         self.assertEqual(self.api.capabilities['platform'], expected[sys.platform])
 
+    def test_public_tree_geometry_uses_real_nodes_and_edges(self):
+        self.api.call('createBuild', {'level': 90})
+        tree = self.api.call('getTreeGeometry')
+        ids = {node['id'] for node in tree['nodes']}
+        self.assertGreater(len(ids), 1000)
+        self.assertTrue(tree['edges'])
+        self.assertTrue(all(a in ids and b in ids for a, b in tree['edges']))
+        self.assertTrue(all(isinstance(node['x'], (int, float)) for node in tree['nodes']))
+        self.assertTrue(tree['version'])
+        self.assertIn('pob_get_tree', {tool['name'] for tool in TOOLS})
+
     def test_errors_rollback_revision(self):
         api = self.api
         api.call("createBuild", {"level": 1})

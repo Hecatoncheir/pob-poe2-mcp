@@ -33,4 +33,11 @@ return function(methods)
         end
         return result
     end
+
+    function methods.getTreeGeometry()
+        local result = imageTree()
+        result.version = build.spec.treeVersion
+        result.pointDisplay = build.controls.pointDisplay.str
+        return result
+    end
 end

@@ -429,20 +429,80 @@
       "properties": {
         "view": {
           "type": "string",
-          "enum": ["overview", "tree", "stats", "skills", "items", "config", "notes", "warnings", "node", "item", "all"]
+          "enum": [
+            "overview",
+            "tree",
+            "stats",
+            "skills",
+            "items",
+            "config",
+            "notes",
+            "warnings",
+            "node",
+            "item",
+            "all"
+          ]
         },
-        "id": {"type": "integer", "minimum": 1},
-        "page": {"type": "integer", "minimum": 1, "maximum": 100000},
-        "query": {"type": "string", "maxLength": 200},
-        "width": {"type": "integer", "minimum": 640, "maximum": 2400},
-        "height": {"type": "integer", "minimum": 480, "maximum": 2400},
-        "treeScope": {"type": "string", "enum": ["allocated", "full"]},
-        "showLabels": {"type": "boolean"},
-        "zoom": {"type": "number", "minimum": 0.25, "maximum": 8}
+        "id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "page": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100000
+        },
+        "query": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 640,
+          "maximum": 2400
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 480,
+          "maximum": 2400
+        },
+        "treeScope": {
+          "type": "string",
+          "enum": [
+            "allocated",
+            "full"
+          ]
+        },
+        "showLabels": {
+          "type": "boolean"
+        },
+        "zoom": {
+          "type": "number",
+          "minimum": 0.25,
+          "maximum": 8
+        }
       },
       "required": [],
       "additionalProperties": false
     },
-    "annotations": {"readOnlyHint": true, "destructiveHint": false, "openWorldHint": false}
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_get_tree",
+    "description": "Компактная геометрия настоящего дерева Lua: координаты, связи и выбранные узлы. Без PNG и игровых формул во внешнем интерфейсе.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
   }
 ]

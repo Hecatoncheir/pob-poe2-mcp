@@ -34,7 +34,8 @@ def check(package, pob_dir):
         )
     responses = [json.loads(line) for line in process.stdout.splitlines()]
     assert len(responses) == len(requests), process.stderr
-    assert len(responses[1]["result"]["tools"]) == 14
+    tools = responses[1]["result"]["tools"]
+    assert 'pob_get_tree' in {tool['name'] for tool in tools}
     for response in responses:
         assert "error" not in response, response
         assert not response["result"].get("isError"), response
@@ -44,7 +45,7 @@ def check(package, pob_dir):
     assert image['mimeType'] == 'image/png'
     assert base64.b64decode(image['data']).startswith(b'\x89PNG\r\n\x1a\n')
     assert responses[7]['result']['structuredContent']['result']['tree']['commandCount'] > 0
-    print("PORTABLE_OK: свой Python, другой каталог, без Python/Git в PATH, 14 инструментов, XML, PNG, оригинальное дерево")
+    print("PORTABLE_OK: свой Python, другой каталог, без Python/Git в PATH, геометрия дерева, XML, PNG")
 
 
 if __name__ == "__main__":

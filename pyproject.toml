@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pob-poe2-mcp"
-version = "0.5.1"
+version = "0.5.2"
 description = "Локальный MCP-сервер Path of Building для Path of Exile 2"
 readme = "README.md"
 requires-python = ">=3.11"

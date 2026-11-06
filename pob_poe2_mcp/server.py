@@ -32,6 +32,7 @@ METHODS = {
     "pob_gem_icons": "getGemIconAssets",
     "pob_gem_supports": None,
     "pob_update_skill_group": "updateSkillGroup",
+    "pob_delete_skill_group": "deleteSkillGroup",
 }
 READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image", "pob_get_tree", "pob_tree_icons", "pob_tree_textures", "pob_tree_hover", "pob_node_power"}
 READ_ONLY_TOOLS.update({'pob_gem_icons', 'pob_gem_supports'})

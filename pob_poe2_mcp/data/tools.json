@@ -777,5 +777,27 @@
       "destructiveHint": true,
       "openWorldHint": false
     }
+  },
+  {
+    "name": "pob_delete_skill_group",
+    "description": "Удалить указанную группу исходным SkillListControl.OnSelDelete; пересчитать основное умение. Для отмены восстановите XML из истории.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "groupId": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "groupId"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "openWorldHint": false
+    }
   }
 ]

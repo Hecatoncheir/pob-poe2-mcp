@@ -51,4 +51,26 @@ function methods.updateSkillGroup(params)
 	result.groupId = params.groupId
 	return result
 end
+function methods.deleteSkillGroup(params)
+	local groups = build.skillsTab.socketGroupList
+	local group = groups[params.groupId]
+	if not group then fail("INVALID_REQUEST", "Группа не найдена") end
+	if group.source then fail("INVALID_REQUEST", "Группа создана предметом; измените источник умения") end
+	local count = #groups
+	local control = build.skillsTab.controls.groupList
+	local previousConfirm = rawget(main, "OpenConfirmPopup")
+	-- API уже содержит явное намерение удалить; выполняется только исходное подтверждение этой операции.
+	main.OpenConfirmPopup = function(_, title, message, button, callback)
+		if title ~= "Delete Socket Group" or type(callback) ~= "function" then fail("INVALID_REQUEST", "Неожиданный диалог удаления") end
+		callback()
+	end
+	local ok, problem = pcall(function()
+		control.selIndex, control.selValue = params.groupId, group
+		control:OnSelDelete(params.groupId, group)
+	end)
+	main.OpenConfirmPopup = previousConfirm
+	if not ok then error(problem, 0) end
+	if #groups ~= count - 1 then fail("CALCULATION_FAILED", "Исходный PoB не удалил группу") end
+	return finish()
+end
 end

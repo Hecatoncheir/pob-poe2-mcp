@@ -61,3 +61,24 @@ class EditGroups(unittest.TestCase):
         report = self.api.call('getBuildReport')
         self.assertEqual(len(report['groups']), 2)
         self.assertEqual(len(report['groups'][0]['gems']), 1)
+
+    def test_delete_updates_main_selection_and_removes_last_group(self):
+        self.api.call('selectMainSkill', {'control': 'groups', 'id': 2})
+        self.api.call('deleteSkillGroup', {'groupId': 1})
+        report = self.api.call('getBuildReport')
+        self.assertEqual(len(report['groups']), 1)
+        self.assertEqual(report['groups'][0]['customLabel'], 'Вторая')
+        self.assertEqual(report['snapshot']['buildInfo']['groups']['selected'], 1)
+        self.api.call('deleteSkillGroup', {'groupId': 1})
+        self.assertEqual(self.api.call('getBuildReport')['groups'], [])
+
+    def test_delete_selected_last_group_and_reject_bad_id(self):
+        self.api.call('selectMainSkill', {'control': 'groups', 'id': 2})
+        self.api.call('deleteSkillGroup', {'groupId': 2})
+        before = self.api.call('getBuildReport')
+        self.assertEqual(before['snapshot']['buildInfo']['groups']['selected'], 1)
+        revision = self.api.revision
+        with self.assertRaises(EngineError):
+            self.api.call('deleteSkillGroup', {'groupId': 99})
+        self.assertEqual(self.api.revision, revision)
+        self.assertEqual(self.api.call('getBuildReport')['groups'], before['groups'])

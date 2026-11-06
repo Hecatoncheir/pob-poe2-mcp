@@ -31,6 +31,7 @@ METHODS = {
     "pob_node_power": "getNodePower",
     "pob_gem_icons": "getGemIconAssets",
     "pob_gem_supports": None,
+    "pob_update_skill_group": "updateSkillGroup",
 }
 READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image", "pob_get_tree", "pob_tree_icons", "pob_tree_textures", "pob_tree_hover", "pob_node_power"}
 READ_ONLY_TOOLS.update({'pob_gem_icons', 'pob_gem_supports'})
@@ -85,7 +86,7 @@ class Server:
             self.api = BuildAPI(pob_dir=self.pob_dir, timeout=self.timeout, mode=self.mode)
         try:
             if name == 'pob_gem_supports':
-                return compatible_supports(self.api, args['gems'], self.timeout)
+                return compatible_supports(self.api, args['gems'], self.timeout, args.get('groupId'))
             if name == 'pob_node_power' and self.mode != 'engine':
                 raise ValueError('Отчёт узлов требует отдельной сессии engine')
             if name == 'pob_tree_textures':

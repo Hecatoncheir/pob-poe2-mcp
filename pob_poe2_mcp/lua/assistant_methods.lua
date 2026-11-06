@@ -127,8 +127,8 @@ return function(methods, fail, snapshot, finish)
 		local groups, items, slots, warnings = {}, {}, {}, {}
 		for id, group in ipairs(build.skillsTab.socketGroupList) do
 			local gems = {}
-			for _, gem in ipairs(group.gemList) do gems[#gems + 1] = { id = gem.gemId, skillId = gem.skillId, name = gem.nameSpec, level = gem.level, quality = gem.quality, enabled = gem.enabled, support = gem.gemData and gem.gemData.grantedEffect.support == true or false, error = gem.errMsg } end
-			groups[#groups + 1] = { id = id, label = clean(group.displayLabel), enabled = group.enabled, gems = gems }
+			for index, gem in ipairs(group.gemList) do gems[#gems + 1] = { sourceIndex = index, id = gem.gemId, skillId = gem.skillId, name = gem.nameSpec, level = gem.level, quality = gem.quality, enabled = gem.enabled, support = gem.gemData and gem.gemData.grantedEffect.support == true or false, error = gem.errMsg } end
+			groups[#groups + 1] = { id = id, label = clean(group.displayLabel), customLabel = group.label or "", source = group.source, enabled = group.enabled, gems = gems }
 		end
 		for id, item in pairs(build.itemsTab.items) do
 			local unsupported = {}

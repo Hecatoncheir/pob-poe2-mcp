@@ -120,6 +120,11 @@
               },
               "enabled": {
                 "type": "boolean"
+              },
+              "sourceIndex": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12
               }
             },
             "required": [
@@ -680,6 +685,76 @@
               },
               "enabled": {
                 "type": "boolean"
+              },
+              "sourceIndex": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 12
+        },
+        "groupId": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "gems"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_update_skill_group",
+    "description": "Изменить выбранную группу через исходный SkillsTab; сохраняет её слот, состояние, выбор частей и дополнительные поля сохранённых камней. Передавайте sourceIndex из отчёта для сохранённых камней.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "groupId": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "gems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "level": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 40
+              },
+              "quality": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "sourceIndex": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12
               }
             },
             "required": [
@@ -692,13 +767,14 @@
         }
       },
       "required": [
+        "groupId",
         "gems"
       ],
       "additionalProperties": false
     },
     "annotations": {
-      "readOnlyHint": true,
-      "destructiveHint": false,
+      "readOnlyHint": false,
+      "destructiveHint": true,
       "openWorldHint": false
     }
   }

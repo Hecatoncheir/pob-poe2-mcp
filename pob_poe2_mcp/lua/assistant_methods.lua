@@ -135,10 +135,10 @@ return function(methods, fail, snapshot, finish)
 			for _, list in ipairs({ item.implicitModLines or {}, item.explicitModLines or {}, item.enchantModLines or {}, item.buffModLines or {} }) do
 				for _, line in ipairs(list) do if line.extra or not line.modList or #line.modList == 0 then unsupported[#unsupported + 1] = { line = line.line, extra = line.extra } end end
 			end
-			items[#items + 1] = { id = id, name = item.title or item.name, base = item.baseName, rarity = item.rarity, raw = item.raw, unsupported = unsupported }
+			items[#items + 1] = { id = id, name = item.title or item.name, base = item.baseName, rarity = item.rarity, raw = item:BuildRaw(), unsupported = unsupported }
 		end
 		table.sort(items, function(a, b) return a.id < b.id end)
-		for _, slot in ipairs(build.itemsTab.orderedSlots) do slots[#slots + 1] = { name = slot.slotName, itemId = slot.selItemId, active = slot.active } end
+		for _, slot in ipairs(build.itemsTab.orderedSlots) do slots[#slots + 1] = { name = slot.slotName, itemId = slot.selItemId, active = slot.active, visible = slot:IsShown() == true, nodeId = slot.nodeId, weaponSet = slot.weaponSet, label = slot.label } end
 		for _, line in ipairs(build.controls.warnings.lines or {}) do warnings[#warnings + 1] = clean(line) end
 		local allocated = {}
 		for id in pairs(build.spec.allocNodes) do allocated[#allocated + 1] = id end
@@ -166,6 +166,6 @@ return function(methods, fail, snapshot, finish)
 		end
 		return { source = "original-lua", snapshot = snapshot(), stats = scalars(build.calcsTab.mainOutput), config = scalars(build.configTab.input), configPlaceholders = scalars(build.configTab.placeholder), groups = groups, items = items, slots = slots, warnings = warnings, allocatedNodes = allocated, pointDisplay = clean(build.controls.pointDisplay.str), notes = build.notesTab.controls.edit.buf,
 			customMods = customMods, sets = sets, activeSets = { tree = build.treeTab.activeSpec, skills = build.skillsTab.activeSkillSetId, items = build.itemsTab.activeItemSetId, config = build.configTab.activeConfigSetId },
-			validationScope = "Lua calculation and exposed warnings; not a guarantee of in-game legality or performance" }
+			weaponSet = build.itemsTab.activeItemSet.useSecondWeaponSet and 2 or 1, validationScope = "Lua calculation and exposed warnings; not a guarantee of in-game legality or performance" }
 	end
 end

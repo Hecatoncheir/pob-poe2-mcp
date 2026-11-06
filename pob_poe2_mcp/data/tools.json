@@ -799,5 +799,88 @@
       "destructiveHint": true,
       "openWorldHint": false
     }
+  },
+  {
+    "name": "pob_inspect_item",
+    "description": "Описание Item/ItemsTab Lua и совместимые слоты без изменения сборки. Нужен raw либо itemId; slot задаёт контекст описания.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "raw": {
+          "type": "string",
+          "maxLength": 65536
+        },
+        "itemId": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "slot": {
+          "type": "string",
+          "maxLength": 200
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_equip_item",
+    "description": "Надеть raw либо сохранённый itemId в slot исходными методами PoB. itemId=0 снимает предмет, оставляя его в списке сборки.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "raw": {
+          "type": "string",
+          "maxLength": 65536
+        },
+        "itemId": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "slot": {
+          "type": "string",
+          "maxLength": 200
+        }
+      },
+      "required": [
+        "slot"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_select_weapon_set",
+    "description": "Выбрать набор оружия I/II штатной кнопкой ItemsTab и пересчитать сборку.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "integer",
+          "enum": [
+            1,
+            2
+          ]
+        }
+      },
+      "required": [
+        "index"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "openWorldHint": false
+    }
   }
 ]

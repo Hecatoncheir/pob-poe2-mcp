@@ -362,7 +362,7 @@ setfenv(installNodePower, getfenv(1))
 installNodePower(methods, fail)
 function methods.initialize()
 	local system = jit.os == "OSX" and "macos" or jit.os:lower()
-	return { methods = { "initialize", "createBuild", "getCatalog", "getGemIconAssets", "getCompatibleSupports", "updateSkillGroup", "deleteSkillGroup", "inspectItem", "equipItem", "selectWeaponSet", "getBuildReport", "getBuildImageData", "getTreeGeometry", "getTreeIconAssets", "getTreeHover", "getNodePower", "addSkillGroup", "addItem", "setConfig", "loadBuild", "getSnapshot", "getWorkbench", "setCustomMods", "exportBuild", "selectMainSkill", "getTree", "getNodeTooltip", "getJewels", "treeOptions", "treeAction", "toggleNode", "shutdown" }, platform = host.live and "windows-app" or system .. "-engine" }
+	return { methods = { "initialize", "createBuild", "getCatalog", "getGemIconAssets", "getGemTooltip", "getCompatibleSupports", "updateSkillGroup", "deleteSkillGroup", "inspectItem", "equipItem", "selectWeaponSet", "getBuildReport", "getBuildImageData", "getTreeGeometry", "getTreeIconAssets", "getTreeHover", "getNodePower", "addSkillGroup", "addItem", "setConfig", "loadBuild", "getSnapshot", "getWorkbench", "setCustomMods", "exportBuild", "selectMainSkill", "getTree", "getNodeTooltip", "getJewels", "treeOptions", "treeAction", "toggleNode", "shutdown" }, platform = host.live and "windows-app" or system .. "-engine" }
 end
 function methods.loadBuild(params)
 	validateXML(params.xml)

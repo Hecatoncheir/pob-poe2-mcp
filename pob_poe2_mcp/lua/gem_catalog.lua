@@ -1,6 +1,40 @@
 -- Каталог и совместимость используют данные и проверку исходного PoB.
 return function(methods, fail)
 local assets
+local gemTooltip
+local function tooltipInstance(params)
+	if params.groupId ~= nil or params.sourceIndex ~= nil then
+		if params.id ~= nil or params.level ~= nil or params.quality ~= nil then fail("INVALID_REQUEST", "Укажите камень группы либо отдельный ID с уровнем и качеством") end
+		local group = build.skillsTab.socketGroupList[params.groupId]
+		local instance = group and group.gemList[params.sourceIndex]
+		if not instance or not instance.gemData then fail("INVALID_REQUEST", "Камень группы не найден") end
+		local result = {}
+		for key, value in pairs(instance) do result[key] = value end
+		return result
+	end
+	local gem = build.data.gems[params.id]
+	if not gem or not gem.grantedEffect then fail("INVALID_REQUEST", "Неизвестный ID камня") end
+	return { gemData = gem, gemId = params.id, nameSpec = gem.name, skillId = gem.grantedEffectId,
+		level = params.level or 1, quality = params.quality or 0, count = 1,
+		enabled = true, enableGlobal1 = true, enableGlobal2 = true, corruptLevel = 0, corrupted = false }
+end
+function methods.getGemTooltip(params)
+	local instance = tooltipInstance(params)
+	local collector = { lines = {} }
+	function collector:AddLine(size, text)
+		if type(text) == "string" and text:match("%S") then
+			text = text:gsub("^(%^x%x%x%x%x%x%x)%s+", "%1"):gsub("^%s+", "")
+			self.lines[#self.lines + 1] = { size = size, text = text }
+		end
+	end
+	function collector:AddSeparator()
+		if #self.lines > 0 and not self.lines[#self.lines].separator then self.lines[#self.lines + 1] = { separator = true } end
+	end
+	gemTooltip = gemTooltip or LoadModule("Classes/GemTooltip")
+	gemTooltip.AddGemTooltip(collector, build, instance)
+	if collector.lines[#collector.lines] and collector.lines[#collector.lines].separator then table.remove(collector.lines) end
+	return { source = "original-lua", lines = collector.lines }
+end
 local function iconAsset(gem)
 	if not assets then
 		assets = {}

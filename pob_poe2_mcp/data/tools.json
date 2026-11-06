@@ -882,5 +882,42 @@
       "destructiveHint": true,
       "openWorldHint": false
     }
+  },
+  {
+    "name": "pob_gem_tooltip",
+    "description": "Описание камня исходным GemTooltip. Для установленного камня укажите groupId и sourceIndex; для каталога или черновика — id, level и quality. XML и ревизия не изменяются.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "level": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 40
+        },
+        "quality": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "groupId": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sourceIndex": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
   }
 ]

@@ -345,6 +345,9 @@ end
 local installMethods = dofile(POB_MCP_PACKAGE_DIR .. "/lua/assistant_methods.lua")
 setfenv(installMethods, getfenv(1))
 installMethods(methods, fail, snapshot, finishTreeChange)
+local installGemCatalog = dofile(POB_MCP_PACKAGE_DIR .. "/lua/gem_catalog.lua")
+setfenv(installGemCatalog, getfenv(1))
+installGemCatalog(methods, fail)
 local installImageData = dofile(POB_MCP_PACKAGE_DIR .. "/lua/image_data.lua")
 setfenv(installImageData, getfenv(1))
 installImageData(methods)
@@ -353,7 +356,7 @@ setfenv(installNodePower, getfenv(1))
 installNodePower(methods, fail)
 function methods.initialize()
 	local system = jit.os == "OSX" and "macos" or jit.os:lower()
-	return { methods = { "initialize", "createBuild", "getCatalog", "getBuildReport", "getBuildImageData", "getTreeGeometry", "getTreeIconAssets", "getTreeHover", "getNodePower", "addSkillGroup", "addItem", "setConfig", "loadBuild", "getSnapshot", "getWorkbench", "setCustomMods", "exportBuild", "selectMainSkill", "getTree", "getNodeTooltip", "getJewels", "treeOptions", "treeAction", "toggleNode", "shutdown" }, platform = host.live and "windows-app" or system .. "-engine" }
+	return { methods = { "initialize", "createBuild", "getCatalog", "getGemIconAssets", "getCompatibleSupports", "getBuildReport", "getBuildImageData", "getTreeGeometry", "getTreeIconAssets", "getTreeHover", "getNodePower", "addSkillGroup", "addItem", "setConfig", "loadBuild", "getSnapshot", "getWorkbench", "setCustomMods", "exportBuild", "selectMainSkill", "getTree", "getNodeTooltip", "getJewels", "treeOptions", "treeAction", "toggleNode", "shutdown" }, platform = host.live and "windows-app" or system .. "-engine" }
 end
 function methods.loadBuild(params)
 	validateXML(params.xml)

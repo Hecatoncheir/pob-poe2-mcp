@@ -1,0 +1,2275 @@
+{
+  "source": "https://poe2db.tw/us/Support_Gems",
+  "sourceSha256": "14b18cd64197005e45fb1bc4d0bdef3e83cdecc2bd7498955687aa0c6e7261ad",
+  "copyright": "Grinding Gear Games",
+  "icons": {
+    "Metadata/Items/Gems/SkillGemAbidingHexSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PowerChargetogiveCurseDurationSupport.webp",
+      "sha256": "18cf2536c31664ad0922898610d8792a5cd262ce3689b85c87766cff83f7c7c9"
+    },
+    "Metadata/Items/Gems/SkillGemAcrimonySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AcrimonySupport.webp",
+      "sha256": "b4780aa1094b8553ec295902fdebbd5d93e11c18ea2b09372faeafd8631020e0"
+    },
+    "Metadata/Items/Gems/SkillGemAddedChaosDamageSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AddedChaosDamageSupport.webp",
+      "sha256": "f3ff603a6c704de50fe8fe316c05e7c485e19dfeeef206017697215dad1f2e54"
+    },
+    "Metadata/Items/Gems/SkillGemAddedColdDamageSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AddedColdDamageSupport.webp",
+      "sha256": "2d5dec5abe1d4ea554c6fd0991da2fd700f6e51bfae3b4369acfb5a52d26d8cf"
+    },
+    "Metadata/Items/Gems/SkillGemAddedFireDamageSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AddedFireDamageSupport.webp",
+      "sha256": "97a8ee2acabc0c04dc9c9a085f1ab2f064cd5cb6b4b2aa79ee3f57581778f1d1"
+    },
+    "Metadata/Items/Gems/SkillGemAddedLightningDamageSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AddedLightningDamageSupport.webp",
+      "sha256": "6d1144261a3eb87729c842a31616e3c5392c120868174a183246efcfeedb9d31"
+    },
+    "Metadata/Items/Gems/SkillGemAdhesiveGrenadesSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/StickyBombSupport.webp",
+      "sha256": "87aa390ca284e75c12b08c915ae7a15416726af1d51ba1cec4df48f50224ce6b"
+    },
+    "Metadata/Items/Gems/SkillGemAdhesiveGrenadesSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/StickyBombSupport.webp",
+      "sha256": "87aa390ca284e75c12b08c915ae7a15416726af1d51ba1cec4df48f50224ce6b"
+    },
+    "Metadata/Items/Gems/SkillGemAdmixtureSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MixedMaladiesSupport.webp",
+      "sha256": "b00980303e19848f29d7bf7a425d1be5cc3dd386ecc83cc5bc8b5f63dd4ba7ec"
+    },
+    "Metadata/Items/Gems/SkillGemAdvancingStormSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MovingStorms.webp",
+      "sha256": "0435525f032b6ca3f450a6620a2fed726495fd2455cf54b05d903c68f5916539"
+    },
+    "Metadata/Items/Gems/SkillGemAftershockChanceSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AftershockSupport.webp",
+      "sha256": "fef560049b8839332df59960203af93f94359c453cce7524214f0f405f4ae2ba"
+    },
+    "Metadata/Items/Gems/SkillGemAftershockChanceSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AftershockSupport.webp",
+      "sha256": "fef560049b8839332df59960203af93f94359c453cce7524214f0f405f4ae2ba"
+    },
+    "Metadata/Items/Gems/SkillGemAhnsCitadelSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageAhnChisel.webp",
+      "sha256": "a803158e43d488e75dbce88d9603f7a51b4244d8fdcae650d2f582d764becfb8"
+    },
+    "Metadata/Items/Gems/SkillGemAilithLineageSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/Monastic.webp",
+      "sha256": "61d57fc44d50d61b7ff15d9d34ab57b88e59f150e622e265a8f86a301b429496"
+    },
+    "Metadata/Items/Gems/SkillGemAlignmentSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AlignmentSupport.webp",
+      "sha256": "0e9c89e6ba953815691b165f182a5eb4eed634626af8fc91f2ee8a667315865b"
+    },
+    "Metadata/Items/Gems/SkillGemAlignmentSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AlignmentSupport.webp",
+      "sha256": "0e9c89e6ba953815691b165f182a5eb4eed634626af8fc91f2ee8a667315865b"
+    },
+    "Metadata/Items/Gems/SkillGemAlignmentSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AlignmentSupport.webp",
+      "sha256": "0e9c89e6ba953815691b165f182a5eb4eed634626af8fc91f2ee8a667315865b"
+    },
+    "Metadata/Items/Gems/SkillGemAmanamusTitheSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageAmanamu.webp",
+      "sha256": "551eb1e884dfd7307a730eb43744e56c05d409ed4a55558fc3fa6549f32cde33"
+    },
+    "Metadata/Items/Gems/SkillGemAmbrosiaSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AmbrosiaSupport.webp",
+      "sha256": "f6cffdce69f08d72b5cdc2e359f2ee33c2b0b240071fe0c756bc859da19b1344"
+    },
+    "Metadata/Items/Gems/SkillGemAmbrosiaSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AmbrosiaSupport.webp",
+      "sha256": "f6cffdce69f08d72b5cdc2e359f2ee33c2b0b240071fe0c756bc859da19b1344"
+    },
+    "Metadata/Items/Gems/SkillGemAmbushSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AmbushSupport.webp",
+      "sha256": "6b054a98a66cd94a80662b123f1d8b3b61c654be233d481d6799a3da6f0f7c39"
+    },
+    "Metadata/Items/Gems/SkillGemAmmoConservationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChanceToNotConsumeAmmoSupport.webp",
+      "sha256": "7b28479e807a3304c75705c370459e9b99cc1dad9c08a6985a59a89fc00b3525"
+    },
+    "Metadata/Items/Gems/SkillGemAmmoConservationSupportFour": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/AmmoConservation.webp",
+      "sha256": "77600c157c089e4dd1d0f12881e9285006cea261d8b627e9a1a48f189ad6f46d"
+    },
+    "Metadata/Items/Gems/SkillGemAmmoConservationSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChanceToNotConsumeAmmoSupport.webp",
+      "sha256": "7b28479e807a3304c75705c370459e9b99cc1dad9c08a6985a59a89fc00b3525"
+    },
+    "Metadata/Items/Gems/SkillGemAmmoConservationSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChanceToNotConsumeAmmoSupport.webp",
+      "sha256": "7b28479e807a3304c75705c370459e9b99cc1dad9c08a6985a59a89fc00b3525"
+    },
+    "Metadata/Items/Gems/SkillGemAncestralAidSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AncestralAidSupport.webp",
+      "sha256": "98c1593af4c35939e164df919e424959883c5884be360cfa345907c9868558d9"
+    },
+    "Metadata/Items/Gems/SkillGemAncestralCallSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AncestralCallSupport.webp",
+      "sha256": "fe391aad5cfa31035a4874a11c9fcc6847327dbf3f09f0b777df5e640ff628b3"
+    },
+    "Metadata/Items/Gems/SkillGemAncestralCallSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AncestralCallSupport.webp",
+      "sha256": "fe391aad5cfa31035a4874a11c9fcc6847327dbf3f09f0b777df5e640ff628b3"
+    },
+    "Metadata/Items/Gems/SkillGemArakaalisLustSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageArakaali.webp",
+      "sha256": "f3f02e2521610fa8aa612b788c27ace24eccbe43a93a98d38c1185fdd2a84bce"
+    },
+    "Metadata/Items/Gems/SkillGemArbitersIngitionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageArbiter.webp",
+      "sha256": "8aff6e1315742cf6e4aca4b18c99858c8ef2dc74c12b33323907a4b0db0009eb"
+    },
+    "Metadata/Items/Gems/SkillGemArbitersReachSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/MothersWard.webp",
+      "sha256": "4c22095282df46b30a52eb7b4ff25966e54979a48b35b72a2c9010cda6d9a014"
+    },
+    "Metadata/Items/Gems/SkillGemArcaneSurgeSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ArcaneSurgeSupport.webp",
+      "sha256": "f8dea05f914681930dddb47bc3e95e2ed377d8691f2ce17ad668bcaa1ed5db54"
+    },
+    "Metadata/Items/Gems/SkillGemArmourBreakSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ArmourBreakSupport.webp",
+      "sha256": "27574f0ce08acbdd6374b138bd90b668501b3d2a52023bdf460547f3d9352666"
+    },
+    "Metadata/Items/Gems/SkillGemArmourBreakSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ArmourBreakSupport.webp",
+      "sha256": "27574f0ce08acbdd6374b138bd90b668501b3d2a52023bdf460547f3d9352666"
+    },
+    "Metadata/Items/Gems/SkillGemArmourBreakSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ArmourBreakSupport.webp",
+      "sha256": "27574f0ce08acbdd6374b138bd90b668501b3d2a52023bdf460547f3d9352666"
+    },
+    "Metadata/Items/Gems/SkillGemArmourDemolisherSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IncreasedArmourBreakSupport.webp",
+      "sha256": "2478e83fefa872a61ee1cb0e204799a8948b74439aa97b82e8e81bb61e9fee89"
+    },
+    "Metadata/Items/Gems/SkillGemArmourDemolisherSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IncreasedArmourBreakSupport.webp",
+      "sha256": "2478e83fefa872a61ee1cb0e204799a8948b74439aa97b82e8e81bb61e9fee89"
+    },
+    "Metadata/Items/Gems/SkillGemArmourExplosionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ArmourExplosionSupport.webp",
+      "sha256": "06ecbc88fac42933d5832f1a4a293ea617e547003c3195a4dad12ac70489630f"
+    },
+    "Metadata/Items/Gems/SkillGemArmsLengthSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ArmsLengthSupport.webp",
+      "sha256": "e732f682c9a0abe4bddb38c28815d644df5f50ddf14c41fa6eca162cfd62bf7a"
+    },
+    "Metadata/Items/Gems/SkillGemAstralProjectionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AstralProjectionSupport.webp",
+      "sha256": "4711ac5b2e7c906ca30c70130e9a66dbf0ccb1ae14ae60c4699c44b01b1495c7"
+    },
+    "Metadata/Items/Gems/SkillGemAtaluiBloodlettingSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageLifetap.webp",
+      "sha256": "44ce87c6189738b08b1f05eb8f98c5125f404f9947a2cdf0b3c7a503a90c4316"
+    },
+    "Metadata/Items/Gems/SkillGemAtzirisAllureSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageAtziri.webp",
+      "sha256": "b0d2d9734db9bffb1229f3d2060aecb2e62c7dafa86141725fd36b764c1a0fc0"
+    },
+    "Metadata/Items/Gems/SkillGemAtzirisCommunionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/AtziriCommunion.webp",
+      "sha256": "00a4454462674390fa31dcb66e305b0a02bef5abad0d624f75cee5d5a6cb6c1a"
+    },
+    "Metadata/Items/Gems/SkillGemAtzirisImpatienceSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/AtziriImpatience.webp",
+      "sha256": "22875bd3ff3d798054259c0c9de0f2edc1c5a24154bc04bcb2ab4c4ef6d6e057"
+    },
+    "Metadata/Items/Gems/SkillGemAutoReloadSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AutoReloadSupport.webp",
+      "sha256": "a9fe28b2bd896cb9d440090150567079244d3fac9a060bad1388bcaaff1ecdff"
+    },
+    "Metadata/Items/Gems/SkillGemBarbsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BarbsSupport.webp",
+      "sha256": "b9bb0585cd378e747387ead1fb88602c64fbc707749a38a0a4a620f6f72e529b"
+    },
+    "Metadata/Items/Gems/SkillGemBarbsSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BarbsSupport.webp",
+      "sha256": "b9bb0585cd378e747387ead1fb88602c64fbc707749a38a0a4a620f6f72e529b"
+    },
+    "Metadata/Items/Gems/SkillGemBarbsSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BarbsSupport.webp",
+      "sha256": "b9bb0585cd378e747387ead1fb88602c64fbc707749a38a0a4a620f6f72e529b"
+    },
+    "Metadata/Items/Gems/SkillGemBattershoutSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BattershoutSupport.webp",
+      "sha256": "3a75b819e357cd71b51ee6def824720bb09d505fe9b6a232e1525f2f0ae0a9a1"
+    },
+    "Metadata/Items/Gems/SkillGemBeheadSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BeheadSupport.webp",
+      "sha256": "7e436426d1dca7866136cfda08e07a97743a04edec9b1d4b239258b40ab4033e"
+    },
+    "Metadata/Items/Gems/SkillGemBeheadSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BeheadSupport.webp",
+      "sha256": "7e436426d1dca7866136cfda08e07a97743a04edec9b1d4b239258b40ab4033e"
+    },
+    "Metadata/Items/Gems/SkillGemBhatairsVengeanceSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/ShatteredFang.webp",
+      "sha256": "452e9035a53bef2c54dfdf6feff684a7c2138d9d81730b634b8a22d97cae8dca"
+    },
+    "Metadata/Items/Gems/SkillGemBiddingSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BiddingSupport.webp",
+      "sha256": "a2b8dfafbbbf8c5ee0724724252013a1939ee416772511e07fc7315c31ce352f"
+    },
+    "Metadata/Items/Gems/SkillGemBiddingSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BiddingSupport.webp",
+      "sha256": "a2b8dfafbbbf8c5ee0724724252013a1939ee416772511e07fc7315c31ce352f"
+    },
+    "Metadata/Items/Gems/SkillGemBiddingSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BiddingSupport.webp",
+      "sha256": "a2b8dfafbbbf8c5ee0724724252013a1939ee416772511e07fc7315c31ce352f"
+    },
+    "Metadata/Items/Gems/SkillGemBitingFrostSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BitingFrostSupport.webp",
+      "sha256": "9813bc2be194429ae84385cf78e8bcd061b6becef8439b8aac95b27951169da9"
+    },
+    "Metadata/Items/Gems/SkillGemBitingFrostSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BitingFrostSupport.webp",
+      "sha256": "9813bc2be194429ae84385cf78e8bcd061b6becef8439b8aac95b27951169da9"
+    },
+    "Metadata/Items/Gems/SkillGemBlazingCriticalSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BlazingCritsSupport.webp",
+      "sha256": "e6c785e0a227767834c822dddcf96436317b2c41f3915944c494498eb3d070bf"
+    },
+    "Metadata/Items/Gems/SkillGemBleedSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChanceToBleedSupport.webp",
+      "sha256": "bd79a971cd6122c2337c76cf95e76b3afc06694cd758fdb971447c5d1c1388f9"
+    },
+    "Metadata/Items/Gems/SkillGemBleedSupportFour": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChanceToBleedSupport.webp",
+      "sha256": "bd79a971cd6122c2337c76cf95e76b3afc06694cd758fdb971447c5d1c1388f9"
+    },
+    "Metadata/Items/Gems/SkillGemBleedSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChanceToBleedSupport.webp",
+      "sha256": "bd79a971cd6122c2337c76cf95e76b3afc06694cd758fdb971447c5d1c1388f9"
+    },
+    "Metadata/Items/Gems/SkillGemBleedSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChanceToBleedSupport.webp",
+      "sha256": "bd79a971cd6122c2337c76cf95e76b3afc06694cd758fdb971447c5d1c1388f9"
+    },
+    "Metadata/Items/Gems/SkillGemBlindSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BlindSupport.webp",
+      "sha256": "d47e6c8bec4bddc4699fbabcacf8b430b2b6170693cecd4d0d5219a69da317ed"
+    },
+    "Metadata/Items/Gems/SkillGemBlindSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BlindSupport.webp",
+      "sha256": "d47e6c8bec4bddc4699fbabcacf8b430b2b6170693cecd4d0d5219a69da317ed"
+    },
+    "Metadata/Items/Gems/SkillGemBlindsideSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BlindsideSupport.webp",
+      "sha256": "c0997e2c34f4cb16c5777245ddb900d22a5dfc95f7a623a6fa59e1717decdd86"
+    },
+    "Metadata/Items/Gems/SkillGemBloodFountainSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FontOfBloodSupport.webp",
+      "sha256": "3767d7522cecdfa1860b1a0e4d7069aec651dd3dbf328c7dfc64469ff35a5aa1"
+    },
+    "Metadata/Items/Gems/SkillGemBloodMagicSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BloodMagicSupport.webp",
+      "sha256": "a6a8e4af87b813f34736bd2c5e827917caf003d5b73485b224aea265bb860451"
+    },
+    "Metadata/Items/Gems/SkillGemBloodlustSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BloodlustSupport.webp",
+      "sha256": "701d107b0539045f8e15c51e2a0b5ee2c0dfba64fa8f4789957e9b12b0928ce5"
+    },
+    "Metadata/Items/Gems/SkillGemBoneShrapnelSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BoneShrapnelSupport.webp",
+      "sha256": "ed30d7686873e3733826f6fa20e090f4cbeafc7e92a7958acf0a22a67aa18dd8"
+    },
+    "Metadata/Items/Gems/SkillGemBoundlessEnergySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ImpetusSupport.webp",
+      "sha256": "b13585f6db0cc96dcb86a16081fee8f77780789e951bbfc875938516e0d39a12"
+    },
+    "Metadata/Items/Gems/SkillGemBoundlessEnergySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ImpetusSupport.webp",
+      "sha256": "b13585f6db0cc96dcb86a16081fee8f77780789e951bbfc875938516e0d39a12"
+    },
+    "Metadata/Items/Gems/SkillGemBountySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LifeFlaskSupport.webp",
+      "sha256": "75abd0a91e30aff191c166628003d2eff192ef912ea2dc6312be0156ed6be62e"
+    },
+    "Metadata/Items/Gems/SkillGemBountySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LifeFlaskSupport.webp",
+      "sha256": "75abd0a91e30aff191c166628003d2eff192ef912ea2dc6312be0156ed6be62e"
+    },
+    "Metadata/Items/Gems/SkillGemBrambleslamSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BriarpatchSupport.webp",
+      "sha256": "614828cc198acaa38bc2489536efab63e84bc3047dbae7b3d7c0b86675486fd5"
+    },
+    "Metadata/Items/Gems/SkillGemBranchingFissuresSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BranchingFissuresSupport.webp",
+      "sha256": "d4affa85acf37827e3aa57d88bfd551f96bc4f6bccd601041b48eb28bfdcd6a3"
+    },
+    "Metadata/Items/Gems/SkillGemBranchingFissuresSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BranchingFissuresSupport.webp",
+      "sha256": "d4affa85acf37827e3aa57d88bfd551f96bc4f6bccd601041b48eb28bfdcd6a3"
+    },
+    "Metadata/Items/Gems/SkillGemBreachlordsAmalgamSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/BreachlordsAmalgam.webp",
+      "sha256": "2844515d1958374cae5f0186c238ee3c9dd7adc0f87c55cf40bfc8ee42c9e20d"
+    },
+    "Metadata/Items/Gems/SkillGemBreachlordsRiftSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/BreachlordsRemorse.webp",
+      "sha256": "4c29bc4acc6879ef31f40a75ed65d0e76b91f27677240f7c73af34a6864cd820"
+    },
+    "Metadata/Items/Gems/SkillGemBrinkSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BrinkSupport.webp",
+      "sha256": "622afc27db1fa38140096acbb8e88d6f69921fe09f550287b9795436abcc6628"
+    },
+    "Metadata/Items/Gems/SkillGemBrinkSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BrinkSupport.webp",
+      "sha256": "622afc27db1fa38140096acbb8e88d6f69921fe09f550287b9795436abcc6628"
+    },
+    "Metadata/Items/Gems/SkillGemBrittleArmourSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BrittleArmour.webp",
+      "sha256": "265bc76fe4425e085305bd9cf79097278da1f47031f86a578140d355d1dbf4b1"
+    },
+    "Metadata/Items/Gems/SkillGemBrutalitySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BrutalitySupport.webp",
+      "sha256": "4962534dd1cd432d5bb7c8e197ef124932d92fb0a597402c8d11458b01e5e543"
+    },
+    "Metadata/Items/Gems/SkillGemBrutalitySupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BrutalitySupport.webp",
+      "sha256": "4962534dd1cd432d5bb7c8e197ef124932d92fb0a597402c8d11458b01e5e543"
+    },
+    "Metadata/Items/Gems/SkillGemBrutalitySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BrutalitySupport.webp",
+      "sha256": "4962534dd1cd432d5bb7c8e197ef124932d92fb0a597402c8d11458b01e5e543"
+    },
+    "Metadata/Items/Gems/SkillGemBrutusBrainSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageMeatshield.webp",
+      "sha256": "4b3bacb7c78c9dc264a2d97767b99c10cfdc5c32bc349fa91197489d9c37ff70"
+    },
+    "Metadata/Items/Gems/SkillGemBurgeonSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChannellingDamageSupport.webp",
+      "sha256": "9bb67a8d6ebb49120d86a7a335cdb2e2bbd7473d4224c0df4d0ede207d2dd54e"
+    },
+    "Metadata/Items/Gems/SkillGemBurgeonSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChannellingDamageSupport.webp",
+      "sha256": "9bb67a8d6ebb49120d86a7a335cdb2e2bbd7473d4224c0df4d0ede207d2dd54e"
+    },
+    "Metadata/Items/Gems/SkillGemBurningRunesSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BurningRunesSupport.webp",
+      "sha256": "6c225c0e72b91cc5704b88e8058d6b75ed28a9685f666a58a620f79b56c39b3f"
+    },
+    "Metadata/Items/Gems/SkillGemCadenceSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MeasuredSpeedSupport.webp",
+      "sha256": "ab7ae7e8a599d7dcf52302fcfceefba58fe30aab5f8aae0c396f98e46c298b44"
+    },
+    "Metadata/Items/Gems/SkillGemCaltropsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CaltropsSupport.webp",
+      "sha256": "b20f84e74895798aa95b73892e828294d3d810925c92a1a45d3bbf471aaa40f6"
+    },
+    "Metadata/Items/Gems/SkillGemCannibalismSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CannibalismSupport.webp",
+      "sha256": "69d062eaa7f3d555a20c5b1b2292b694d5a0647b2779a66d3c06d1b72d960d77"
+    },
+    "Metadata/Items/Gems/SkillGemCannibalismSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CannibalismSupport.webp",
+      "sha256": "69d062eaa7f3d555a20c5b1b2292b694d5a0647b2779a66d3c06d1b72d960d77"
+    },
+    "Metadata/Items/Gems/SkillGemCatalysingElementsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CatalysingElementsSupport.webp",
+      "sha256": "49ea1ca3162f4222f65c810fa3c14f49dcc5c3a15a7290506f8169bc34b3e509"
+    },
+    "Metadata/Items/Gems/SkillGemCatharsisSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CleanseSupport.webp",
+      "sha256": "0e895d655c68f59fe602a06f56c1df5c7743e30bf2c25f086dbd4a2f64073482"
+    },
+    "Metadata/Items/Gems/SkillGemCathasBrillianceSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/CathasBrilliance.webp",
+      "sha256": "f96ad584c5119ce4bc532a30488c8bf3cb9c180d304ba995ec0f920580072d17"
+    },
+    "Metadata/Items/Gems/SkillGemChainSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChainSupport.webp",
+      "sha256": "032721af5a975fd49d7bdeabc38da4bd3ea7fc6267a4612b8e5003154b40162b"
+    },
+    "Metadata/Items/Gems/SkillGemChainSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChainSupport.webp",
+      "sha256": "032721af5a975fd49d7bdeabc38da4bd3ea7fc6267a4612b8e5003154b40162b"
+    },
+    "Metadata/Items/Gems/SkillGemChainSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChainSupport.webp",
+      "sha256": "032721af5a975fd49d7bdeabc38da4bd3ea7fc6267a4612b8e5003154b40162b"
+    },
+    "Metadata/Items/Gems/SkillGemChaosMasterySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChaosMasterySupport.webp",
+      "sha256": "15b9ab102e8197351a3bc34dd1227f2b21699c01083741e2801a7c8d79832c07"
+    },
+    "Metadata/Items/Gems/SkillGemChaoticFreezeSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChaoticFreezeSupport.webp",
+      "sha256": "aafaea3981b070cbd4ba1cd4d7274031b695071a08774aa43ccf224a54f66af6"
+    },
+    "Metadata/Items/Gems/SkillGemChargeInhibitionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/InhibitorSupport.webp",
+      "sha256": "abd79c82fd82b932a244d7a741f0b87099ae8697d93877536163d09a54d8b33f"
+    },
+    "Metadata/Items/Gems/SkillGemChargeProfusionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MultipleChargesSupport.webp",
+      "sha256": "2d6c70153d25f04e7908220a68f840f4995d21ca1799dc62a1182a6a69d1bdf7"
+    },
+    "Metadata/Items/Gems/SkillGemChargeProfusionSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MultipleChargesSupport.webp",
+      "sha256": "2d6c70153d25f04e7908220a68f840f4995d21ca1799dc62a1182a6a69d1bdf7"
+    },
+    "Metadata/Items/Gems/SkillGemChargedMarkSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChargedMark.webp",
+      "sha256": "7770c78ecc9fbeef7234b62812fc13f449c7700206e57d1dc806ccfd94c2654f"
+    },
+    "Metadata/Items/Gems/SkillGemChargedShotsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChargedShotsSupport.webp",
+      "sha256": "c71535a2c843a652fff1bfdb532d3753072b53ae8d5cee709da405de5cafd8b0"
+    },
+    "Metadata/Items/Gems/SkillGemChargedShotsSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChargedShotsSupport.webp",
+      "sha256": "c71535a2c843a652fff1bfdb532d3753072b53ae8d5cee709da405de5cafd8b0"
+    },
+    "Metadata/Items/Gems/SkillGemCharmBountySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CharmBountySupport.webp",
+      "sha256": "d1381857bf1e0b0f750e0f070f8c029d7ed1224e92f1c0c704302c1d8433c10a"
+    },
+    "Metadata/Items/Gems/SkillGemChillingIceSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FrozenNexusSupport.webp",
+      "sha256": "73b284eaaa5c5fec3344e71b0aed32947443842657589a41eb187512113f2463"
+    },
+    "Metadata/Items/Gems/SkillGemCirelsCultivationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/Greatwood.webp",
+      "sha256": "25cc8e9571f9f7e1686084a5a2472929fdd7d45cf5a36a8d418ac8b1754a9ff1"
+    },
+    "Metadata/Items/Gems/SkillGemClaritySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ClaritySupport.webp",
+      "sha256": "738aa15116c193d51df8e974967e962dc7f7260340098eb069197be4338ac2f9"
+    },
+    "Metadata/Items/Gems/SkillGemClaritySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ClaritySupport.webp",
+      "sha256": "738aa15116c193d51df8e974967e962dc7f7260340098eb069197be4338ac2f9"
+    },
+    "Metadata/Items/Gems/SkillGemClashSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ClashSupport.webp",
+      "sha256": "d2911d0addf7f2b27a0859c788647f027d6c585f095f2cf320acc226ba917ba7"
+    },
+    "Metadata/Items/Gems/SkillGemCloseCombatSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CloseCombatSupport.webp",
+      "sha256": "25abaf9f9463627440f7bd0a09bd6a7ee05a99da7a5f3c39a556e73fdf55ad4d"
+    },
+    "Metadata/Items/Gems/SkillGemCloseCombatSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CloseCombatSupport.webp",
+      "sha256": "25abaf9f9463627440f7bd0a09bd6a7ee05a99da7a5f3c39a556e73fdf55ad4d"
+    },
+    "Metadata/Items/Gems/SkillGemColdExposureSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ColdExposureSupport.webp",
+      "sha256": "1e0e625f8f8d6ade8c7ed328a70205a9ef721732e476d83a5f813f91b9f51167"
+    },
+    "Metadata/Items/Gems/SkillGemColdMasterySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ColdMasterySupport.webp",
+      "sha256": "9889c49c6202aece209d407d6b3b53a519704b43f56fc2498ab21f569fd85d6f"
+    },
+    "Metadata/Items/Gems/SkillGemColdPenetrationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ColdPenetrationSupport.webp",
+      "sha256": "0b52c94071ca584a29ff008a266afd0ea20807c174ad2f8a81b74840d231468a"
+    },
+    "Metadata/Items/Gems/SkillGemCombatReloadSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/Azadian.webp",
+      "sha256": "a9e3ab63c8a1f3459afa24e04f65c82e569e661f2b407fea6a36a0aaffce8490"
+    },
+    "Metadata/Items/Gems/SkillGemComboFinisherSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ComboFinisherSupport.webp",
+      "sha256": "ab0955153cf90c72f1c32e6657b48f6595622f8d508fcfd02ae870d8b90c2384"
+    },
+    "Metadata/Items/Gems/SkillGemComboFinisherSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ComboFinisherSupport.webp",
+      "sha256": "ab0955153cf90c72f1c32e6657b48f6595622f8d508fcfd02ae870d8b90c2384"
+    },
+    "Metadata/Items/Gems/SkillGemCommandmentSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PureCommandSupport.webp",
+      "sha256": "1f07d436286efa5cc65268320f6442de6abe7d37656ed2615de4d1b0f204663f"
+    },
+    "Metadata/Items/Gems/SkillGemCommiserateSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CommiserateSupport.webp",
+      "sha256": "0b05740dfb268985f8f81718141059386c46eb3872c28b6ac99f474cf465c659"
+    },
+    "Metadata/Items/Gems/SkillGemCompressedDurationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LessDurationSupport.webp",
+      "sha256": "42bbcbb0ecd5f8921443b8e05adaf6d59f08fdf22aa991b48869aad15226350f"
+    },
+    "Metadata/Items/Gems/SkillGemCompressedDurationSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LessDurationSupport.webp",
+      "sha256": "42bbcbb0ecd5f8921443b8e05adaf6d59f08fdf22aa991b48869aad15226350f"
+    },
+    "Metadata/Items/Gems/SkillGemConcentratedAreaSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ConcentratedEffectSupport.webp",
+      "sha256": "b64d40a50eff37db27ca2a3e887fa6c37e8ffa87a0d72dbaf3767ca505480d65"
+    },
+    "Metadata/Items/Gems/SkillGemConcoctSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ConcoctSupport.webp",
+      "sha256": "97d275b3edf4a1b5f52aa144d1603b0c9c22ebd0f0ca59974e1b3357edfcb06b"
+    },
+    "Metadata/Items/Gems/SkillGemConcoctSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ConcoctSupport.webp",
+      "sha256": "97d275b3edf4a1b5f52aa144d1603b0c9c22ebd0f0ca59974e1b3357edfcb06b"
+    },
+    "Metadata/Items/Gems/SkillGemConcussiveRunesSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExpeditionPummel.webp",
+      "sha256": "f0bfca78e698c0304bf69d00e255a0ab3f9a95301f7ca640d1f27514252cf0ca"
+    },
+    "Metadata/Items/Gems/SkillGemConcussiveSpellsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DazeonCrit.webp",
+      "sha256": "687a73a3aad9e0b91d995ed729ac3ab33c1b232684960444a69679d150db48f6"
+    },
+    "Metadata/Items/Gems/SkillGemConsideredCastingSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ConsideredCastingSupport.webp",
+      "sha256": "910c9dfb64811633daf5ca0d9c23db88d1384dd536ff2b844fba43c622a3a00b"
+    },
+    "Metadata/Items/Gems/SkillGemControlledDestructionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ControlledDestructionSupport.webp",
+      "sha256": "94775dd2e7f5a96ba85387e068fb99cefdcc1b444572e8d8135abbfa8e837341"
+    },
+    "Metadata/Items/Gems/SkillGemControlledHazardSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ControlledHazard.webp",
+      "sha256": "1eb882095b050195f0cae2afe0ad028445a2ebe4aa448b4768ab9cc4d0e2299e"
+    },
+    "Metadata/Items/Gems/SkillGemCoolHeadedSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CoolHeadedSupport.webp",
+      "sha256": "c0fe2baa4f572f1672ff4441c73317a5581cee5936d76b2e29044d3451554326"
+    },
+    "Metadata/Items/Gems/SkillGemCooldownRecoverySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CooldownReductionSupport.webp",
+      "sha256": "50686ac1cc2305661215cf3cf788b6415d2a3fac19a767c0cef40e64ab9c22a8"
+    },
+    "Metadata/Items/Gems/SkillGemCooldownRecoverySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CooldownReductionSupport.webp",
+      "sha256": "50686ac1cc2305661215cf3cf788b6415d2a3fac19a767c0cef40e64ab9c22a8"
+    },
+    "Metadata/Items/Gems/SkillGemCorpseConservationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CorpseConservationSupport.webp",
+      "sha256": "2c472d024515504a12821162ef64d44974078fd9c604b8a76921952f3fbbc88c"
+    },
+    "Metadata/Items/Gems/SkillGemCorrosion": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CorrosionSupport.webp",
+      "sha256": "60bd518e109bfed816d39990703d6c1e6cd23f746557c592297d94da8c9bcdad"
+    },
+    "Metadata/Items/Gems/SkillGemCorruptingCrySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CorruptingCrySupport.webp",
+      "sha256": "6c82bceb20859098244870826e11d29c0fb5f660fef7bcf46718b1f8c0ab4f16"
+    },
+    "Metadata/Items/Gems/SkillGemCorruptingCrySupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/Paquate.webp",
+      "sha256": "47056aa0c92217a37dab306371ff58388dba3382d8aab8130ffda23c693f8e6a"
+    },
+    "Metadata/Items/Gems/SkillGemCorruptingCrySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CorruptingCrySupport.webp",
+      "sha256": "6c82bceb20859098244870826e11d29c0fb5f660fef7bcf46718b1f8c0ab4f16"
+    },
+    "Metadata/Items/Gems/SkillGemCracklingBarrierSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LightningThornsSupport.webp",
+      "sha256": "b13c2d035a356e2ac0427deaae14b9860495db164056e9850b292d490d04f7b9"
+    },
+    "Metadata/Items/Gems/SkillGemCraterSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FissureOnLandingSupport.webp",
+      "sha256": "04611fe60c2d95cae5d7f7b33372a0f2846d600fa637b20e680ff01d79e36706"
+    },
+    "Metadata/Items/Gems/SkillGemCrazedMinionsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CrazedMinionsSupport.webp",
+      "sha256": "ba3d2ffd43d8a10e974ec56fa14c4ffadb6f8f9cb2f02ab74353caa4a5123104"
+    },
+    "Metadata/Items/Gems/SkillGemCreepingChillSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CreepingChillSupport.webp",
+      "sha256": "6874c8165ec15fee9ed1544c5847eb5d6098cf2ed74094d4e139ff983220c8e9"
+    },
+    "Metadata/Items/Gems/SkillGemCrescendoSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExtendedCombo.webp",
+      "sha256": "dd1b80e0993b75bdeaaa0a65d97c6a429ea46de61057f9c1a7de3b720bf96702"
+    },
+    "Metadata/Items/Gems/SkillGemCrescendoSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExtendedCombo.webp",
+      "sha256": "dd1b80e0993b75bdeaaa0a65d97c6a429ea46de61057f9c1a7de3b720bf96702"
+    },
+    "Metadata/Items/Gems/SkillGemCrescendoSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExtendedCombo.webp",
+      "sha256": "dd1b80e0993b75bdeaaa0a65d97c6a429ea46de61057f9c1a7de3b720bf96702"
+    },
+    "Metadata/Items/Gems/SkillGemCrystallineShardsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CrystallineShardsSupport.webp",
+      "sha256": "2b0169d5b6b12be80bf1423f0addd82d37f4d240f606aefccbc26393b67af58f"
+    },
+    "Metadata/Items/Gems/SkillGemCullingStrikeSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CullingStrikeSupport.webp",
+      "sha256": "050043969edd0304c17659d567b21c278b79d5653b517b56fecb7935d842826a"
+    },
+    "Metadata/Items/Gems/SkillGemCullingStrikeSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CullingStrikeSupport.webp",
+      "sha256": "050043969edd0304c17659d567b21c278b79d5653b517b56fecb7935d842826a"
+    },
+    "Metadata/Items/Gems/SkillGemCulminationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CulminationSupport.webp",
+      "sha256": "6481a21410085ba30605582ce481a3be9507669a45aa9550f46f6dfc25b46991"
+    },
+    "Metadata/Items/Gems/SkillGemCulminationSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CulminationSupport.webp",
+      "sha256": "6481a21410085ba30605582ce481a3be9507669a45aa9550f46f6dfc25b46991"
+    },
+    "Metadata/Items/Gems/SkillGemCurseEffectSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CurseEffectSupport.webp",
+      "sha256": "0b393e84d596cb1166ffedc40da9925f1427e88a6be2e2a9f734209fd2b7104c"
+    },
+    "Metadata/Items/Gems/SkillGemCursedGroundSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CursedGroundSupport.webp",
+      "sha256": "7bacf59d576d0950b1c3e1a663ea9a649afe9a85d4bd6a2c95874673c5e54ecb"
+    },
+    "Metadata/Items/Gems/SkillGemDangerousResolveSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DangerousResolveSupport.webp",
+      "sha256": "888672525205b88bb56cf3fb021ddd0d1f9743f99b8c5e18c56afdc3b941ccb7"
+    },
+    "Metadata/Items/Gems/SkillGemDanseMacabreSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DanseMacabreSupport.webp",
+      "sha256": "fce6f6e6a40915d8bd803e896bba0f968e9a56667adbc5f1a9689d2eabb733f3"
+    },
+    "Metadata/Items/Gems/SkillGemDaressosPassionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageDaresso.webp",
+      "sha256": "7fefbb200537110af5f8f9d53d8ddb8cb1b5330b1a7587be2e1731e987071029"
+    },
+    "Metadata/Items/Gems/SkillGemDauntlessSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/UnmovingSupport.webp",
+      "sha256": "6d1ce8dd8090bc7ceb1ce4be09cc5d33b4454deeb2f9f621217c4ff152ba6deb"
+    },
+    "Metadata/Items/Gems/SkillGemDazeSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DazingSupport.webp",
+      "sha256": "ec0339404ba9960d081251153c4eae0321dd56090a7a6c2f0e64d22860f61770"
+    },
+    "Metadata/Items/Gems/SkillGemDeadlyCurrentSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DeadlyCurrent.webp",
+      "sha256": "f9e01b1fbe1282bbe7ea75159e25fead49d39b3ad01a24aebdce752a71721659"
+    },
+    "Metadata/Items/Gems/SkillGemDeadlyHeraldsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DeadlyHeraldsSupport.webp",
+      "sha256": "0f1a1aea07127ba1c6cbaec234ca78f5477c99ea30ee192993aec18c327591f2"
+    },
+    "Metadata/Items/Gems/SkillGemDeadlyIgnitesSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SearingFlameSupport.webp",
+      "sha256": "22a8806b60d1829e60287e02e06b1dcd264ada846df187674dc4a238384f0470"
+    },
+    "Metadata/Items/Gems/SkillGemDeadlyIgnitesSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SearingFlameSupport.webp",
+      "sha256": "22a8806b60d1829e60287e02e06b1dcd264ada846df187674dc4a238384f0470"
+    },
+    "Metadata/Items/Gems/SkillGemDeadlyPoisonSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DeadlyPoisonSupport.webp",
+      "sha256": "faadb997418355110cbbade024e2d8b9cbd2a08c3cc796a653a4277a878f23b0"
+    },
+    "Metadata/Items/Gems/SkillGemDeadlyPoisonSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DeadlyPoisonSupport.webp",
+      "sha256": "faadb997418355110cbbade024e2d8b9cbd2a08c3cc796a653a4277a878f23b0"
+    },
+    "Metadata/Items/Gems/SkillGemDeathmarchSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CleansingSupport.webp",
+      "sha256": "bfc309ce43769524ddc947cbc8a91e450432385b461d9702ab8db77b404e8398"
+    },
+    "Metadata/Items/Gems/SkillGemDecayingHexSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DecayingHexSupport.webp",
+      "sha256": "210cfc265414a695037b1a02610f9a0556800d8f12244bac6c62b5b03e4fb71b"
+    },
+    "Metadata/Items/Gems/SkillGemDeepCutsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DeepCutsSupport.webp",
+      "sha256": "a9b56dc9ee0f10f11f7854e488c21138bbc04f243c2e06714e7f216240b540e9"
+    },
+    "Metadata/Items/Gems/SkillGemDeepCutsSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DeepCutsSupport.webp",
+      "sha256": "a9b56dc9ee0f10f11f7854e488c21138bbc04f243c2e06714e7f216240b540e9"
+    },
+    "Metadata/Items/Gems/SkillGemDefySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DefySupport.webp",
+      "sha256": "6eb79e60c7eebe7cc7cfe5d02c7b999143b4af3100d427759778fe370b5316f5"
+    },
+    "Metadata/Items/Gems/SkillGemDefySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DefySupport.webp",
+      "sha256": "6eb79e60c7eebe7cc7cfe5d02c7b999143b4af3100d427759778fe370b5316f5"
+    },
+    "Metadata/Items/Gems/SkillGemDelayedGratificationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AdversitySupport.webp",
+      "sha256": "93afa21711a86833dab6b803af9d84083acbb99ff10f532ee93d36cef0ebee39"
+    },
+    "Metadata/Items/Gems/SkillGemDelayedReactionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DelayedReactionSupport.webp",
+      "sha256": "48e6e7e29f14efb8d3ed2af9b1fb0ecc2ea5b32d3632fd9333315fbaec625552"
+    },
+    "Metadata/Items/Gems/SkillGemDeliberationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CessationSupport.webp",
+      "sha256": "5f880af208d80e61861c69675d4192e242d23e6fbdb0b0d93893d1949b8a76a3"
+    },
+    "Metadata/Items/Gems/SkillGemDerangeSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DerangeSupport.webp",
+      "sha256": "d2ef73800fd13113094f342e273e976a0ca01b324496f73858a585f081736183"
+    },
+    "Metadata/Items/Gems/SkillGemDiallasDesireSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/Dialla.webp",
+      "sha256": "2e976a00e44d2f179e877a9b30fdcb2bb3f205cfd7a7b01546f7be32e5cd823f"
+    },
+    "Metadata/Items/Gems/SkillGemDirestrikeSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DireStrikeSupport.webp",
+      "sha256": "dd780139ec86fe34bec6aa4745290904ebc3b75a5a4fbe35dee602e0673390cc"
+    },
+    "Metadata/Items/Gems/SkillGemDirestrikeSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DireStrikeSupport.webp",
+      "sha256": "dd780139ec86fe34bec6aa4745290904ebc3b75a5a4fbe35dee602e0673390cc"
+    },
+    "Metadata/Items/Gems/SkillGemDoedresUndoingSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageDoedre.webp",
+      "sha256": "778d001aac7969e2865b90f928b93b729934e7367dbea3311d4161fee4e32860"
+    },
+    "Metadata/Items/Gems/SkillGemDoubleBarrelSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DoubleBarrelSupport.webp",
+      "sha256": "5d9bb345f04fb70bc6a20b9ef3ee4b382ff0c88eaf01ff70f8dbb1e8efb86696"
+    },
+    "Metadata/Items/Gems/SkillGemDoubleBarrelSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DoubleBarrelSupport.webp",
+      "sha256": "5d9bb345f04fb70bc6a20b9ef3ee4b382ff0c88eaf01ff70f8dbb1e8efb86696"
+    },
+    "Metadata/Items/Gems/SkillGemDoubleBarrelSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DoubleBarrelSupport.webp",
+      "sha256": "5d9bb345f04fb70bc6a20b9ef3ee4b382ff0c88eaf01ff70f8dbb1e8efb86696"
+    },
+    "Metadata/Items/Gems/SkillGemDrainedAilmentSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DrainedAilmentSupport.webp",
+      "sha256": "48d83caa0de1853554ee61763c2f23943b9fa52a5c827f97ce4b0e948dd97306"
+    },
+    "Metadata/Items/Gems/SkillGemDurabilitySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DurabilitySupport.webp",
+      "sha256": "fda406e2c7fb14fe3f3bb640a08d720f4be5f41f5be6a6203542dbe8d68bb4dc"
+    },
+    "Metadata/Items/Gems/SkillGemEchoingCrySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EchoingCrySupport.webp",
+      "sha256": "10c166043a4bcc7e63a1fe1d7c6649bb45587ee055d1d5ea668bb38d6ad87431"
+    },
+    "Metadata/Items/Gems/SkillGemEfficiencySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/Inspiration.webp",
+      "sha256": "d9154db0f848bf8cab03c767167fdbcfa2f962b30729d16f288cb67863e36223"
+    },
+    "Metadata/Items/Gems/SkillGemEfficiencySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/Inspiration.webp",
+      "sha256": "d9154db0f848bf8cab03c767167fdbcfa2f962b30729d16f288cb67863e36223"
+    },
+    "Metadata/Items/Gems/SkillGemEinharsBeastriteSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageEinhar.webp",
+      "sha256": "397e1608529756b6d19f065d40ed10ba0d743302ba7526b68326d8461890cb82"
+    },
+    "Metadata/Items/Gems/SkillGemElectrocuteSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ElectrocuteSupport.webp",
+      "sha256": "9830d6a04f3218fced0ae01d1f3571b63a8b929ef05f17adc08b6d98aff91a4b"
+    },
+    "Metadata/Items/Gems/SkillGemElementalArmamentSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/WeaponElementalDamageSupport.webp",
+      "sha256": "23ffeceef08475780603f99da9281dd2f148ad76f98ab9d3801a22835598e250"
+    },
+    "Metadata/Items/Gems/SkillGemElementalArmamentSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/WeaponElementalDamageSupport.webp",
+      "sha256": "23ffeceef08475780603f99da9281dd2f148ad76f98ab9d3801a22835598e250"
+    },
+    "Metadata/Items/Gems/SkillGemElementalArmamentSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/WeaponElementalDamageSupport.webp",
+      "sha256": "23ffeceef08475780603f99da9281dd2f148ad76f98ab9d3801a22835598e250"
+    },
+    "Metadata/Items/Gems/SkillGemElementalArmySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ElementalArmySupport.webp",
+      "sha256": "2be3949a9a695900c685d0a35fcc4071397ff67a0323ca88a9e4499722cc1516"
+    },
+    "Metadata/Items/Gems/SkillGemElementalDischarge": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ElementalDischargeSupport.webp",
+      "sha256": "27e62e444bf7d37d8b269d607bd6e5881bbe810cb1bfa10310b06151c74c7c1f"
+    },
+    "Metadata/Items/Gems/SkillGemElementalFocusSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ElementalFocusSupport.webp",
+      "sha256": "8b038fdcb9abfa2112c3c8da5a0f338df133923fdbf0c575083479ed4f249a1d"
+    },
+    "Metadata/Items/Gems/SkillGemEmbitterSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EmbitterSupport.webp",
+      "sha256": "282b6b8e16d4c0ef1eae9f5850fe1cb1b13e0e2360ba568eed2246ffea3b59af"
+    },
+    "Metadata/Items/Gems/SkillGemEmpoweredCullSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EmpoweredCullSupport.webp",
+      "sha256": "c88baac7c837eed97072bb04a7cef95fa422bd9e101facad1847d8774ce9c3fc"
+    },
+    "Metadata/Items/Gems/SkillGemEmpoweredSparksSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EmpoweredSparks.webp",
+      "sha256": "b5eed1054b6fb57372133b47b5f06abaf59f3017a31b128d0885a46c1d73b336"
+    },
+    "Metadata/Items/Gems/SkillGemEncroachingGroundSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExpandingGroundSupport.webp",
+      "sha256": "f854cc0c67345d0a690df945dcca8f28e2734b49dda1d0b18bb393c03c33977c"
+    },
+    "Metadata/Items/Gems/SkillGemEnergyCapacitorSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CapacitorSupport.webp",
+      "sha256": "0f82251457ac3dc3500be1ba39d7d1e881fd7136136292041727482785c0f6a8"
+    },
+    "Metadata/Items/Gems/SkillGemEnergyRetentionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EnergyRetentionSupport.webp",
+      "sha256": "8286c6a007f931acbaf9d469b49ff7fb9c799e32f865971764e40d0eef704941"
+    },
+    "Metadata/Items/Gems/SkillGemEnergyShieldOnShockKillSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ShockSiphonSupport.webp",
+      "sha256": "392f75a8006fe13b33aea7c94e668c543ad7baa14b39a67e7f602af52e2c6975"
+    },
+    "Metadata/Items/Gems/SkillGemEnragedWarcrySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EnragedWarcrySupport.webp",
+      "sha256": "b1708c7ce61e4b2b612c84d4b3160f3e43d24a2b3eb8f59bf23c98f19a6c10f0"
+    },
+    "Metadata/Items/Gems/SkillGemEnragedWarcrySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EnragedWarcrySupport.webp",
+      "sha256": "b1708c7ce61e4b2b612c84d4b3160f3e43d24a2b3eb8f59bf23c98f19a6c10f0"
+    },
+    "Metadata/Items/Gems/SkillGemEonyrsThunderSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/ScaleofEonyr.webp",
+      "sha256": "f1e79ed1fa694f96d298385b91584fbf3e52d7dc4d0c01d50e4ed223470302f7"
+    },
+    "Metadata/Items/Gems/SkillGemEscalatingPoisonSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MultiplePoisonSupport.webp",
+      "sha256": "6c272fb3afe0f90007fab8e81cfc7ea2e2a5b570afb7a9e3eb8035733cdb8527"
+    },
+    "Metadata/Items/Gems/SkillGemEshsProwessSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/EshsProwess.webp",
+      "sha256": "9cf27a08a73e297e2d6bbf58d296276e5056fd41ae3c27f0fc0fb4c6a9c5eea0"
+    },
+    "Metadata/Items/Gems/SkillGemEshsRadianceSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageEsh.webp",
+      "sha256": "eaf926b716a3df2c6085dbec8b18e94f38743d294aa18e29cabbcf683aeef20e"
+    },
+    "Metadata/Items/Gems/SkillGemEssenceHarvestSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EssenceHarvestSupport.webp",
+      "sha256": "03d3de8c4b38577cfa8b4b911b5c223480aa61f1291d1c45c89a008ea71a5b82"
+    },
+    "Metadata/Items/Gems/SkillGemEternalMarkSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/Undeterred.webp",
+      "sha256": "de03b9f8ebaaff04312fd0009c86e9a09a809821a8a409ad7bea664fd925bf4e"
+    },
+    "Metadata/Items/Gems/SkillGemExciseSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExciseSupport.webp",
+      "sha256": "6609d5fbf29d54d7af7b00db4bff3fa63528fff9286df3a8bfd5efd424e52e4b"
+    },
+    "Metadata/Items/Gems/SkillGemExecrateSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExecrateSupport.webp",
+      "sha256": "e5397fbf02a182b40e74d89690673dda90ce6a089a21d973b00fcbd25408e657"
+    },
+    "Metadata/Items/Gems/SkillGemExecuteSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExecuteSupport.webp",
+      "sha256": "6ff04b8b9c4f56b514557e626a3e0b57fb50153a214b45dfe927463eff23bdaf"
+    },
+    "Metadata/Items/Gems/SkillGemExecuteSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExecuteSupport.webp",
+      "sha256": "6ff04b8b9c4f56b514557e626a3e0b57fb50153a214b45dfe927463eff23bdaf"
+    },
+    "Metadata/Items/Gems/SkillGemExecuteSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExecuteSupport.webp",
+      "sha256": "6ff04b8b9c4f56b514557e626a3e0b57fb50153a214b45dfe927463eff23bdaf"
+    },
+    "Metadata/Items/Gems/SkillGemExpandSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExpandSupport.webp",
+      "sha256": "beaa855135b9e7e653b9dc8ea6f7f479f67437d4de9c2bb413ed8f0ba138dc1f"
+    },
+    "Metadata/Items/Gems/SkillGemExpanseSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExpanseSupport.webp",
+      "sha256": "1076c3d4765e1413dc60a366ea281d690b10e5e8e1f9af13113444f73a970156"
+    },
+    "Metadata/Items/Gems/SkillGemExploitWeaknessSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExploitWeaknessSupport.webp",
+      "sha256": "67dc10a7e2403a44dbf8483d816607eec8a4216d41634918c87fc69425c56069"
+    },
+    "Metadata/Items/Gems/SkillGemExplosiveGrowthSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExplosiveGrowth.webp",
+      "sha256": "49ab6d4546073afa604a587d2757a16dd0510c850b0c1e73bed178dcc8239b65"
+    },
+    "Metadata/Items/Gems/SkillGemExplosiveGrowthSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExplosiveGrowth.webp",
+      "sha256": "49ab6d4546073afa604a587d2757a16dd0510c850b0c1e73bed178dcc8239b65"
+    },
+    "Metadata/Items/Gems/SkillGemExposingCrySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExpositionSupport.webp",
+      "sha256": "da60b8ab1b20b4f4767ce1b65b7d0be5c4fe3d473ab3b1ad8ee89d99ebbfc3af"
+    },
+    "Metadata/Items/Gems/SkillGemExtractionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExtractionSupport.webp",
+      "sha256": "24130989be1c5a56704925bf72c3e3202834ab2aa608f2cbbbeb89cf58b5db2a"
+    },
+    "Metadata/Items/Gems/SkillGemFanTheFlamesSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FanTheFlames.webp",
+      "sha256": "11da4451acf2f07ad94c88e30d3ddda67df5c3b112ea8e07aaa7430d11b20b6f"
+    },
+    "Metadata/Items/Gems/SkillGemFanTheFlamesSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FanTheFlames.webp",
+      "sha256": "11da4451acf2f07ad94c88e30d3ddda67df5c3b112ea8e07aaa7430d11b20b6f"
+    },
+    "Metadata/Items/Gems/SkillGemFarCombatSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FarCombatSupport.webp",
+      "sha256": "01c01e432bb8c7c8fb45a927d753eca0956fc7bbe089c1632035cf74ba86c48b"
+    },
+    "Metadata/Items/Gems/SkillGemFarCombatSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FarCombatSupport.webp",
+      "sha256": "01c01e432bb8c7c8fb45a927d753eca0956fc7bbe089c1632035cf74ba86c48b"
+    },
+    "Metadata/Items/Gems/SkillGemFeedingFrenzySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FeedingFrenzySupport.webp",
+      "sha256": "e4067c96af4c07424a8e0878aa3a4d8858e1a0d88e81abd606f43641bab7fe52"
+    },
+    "Metadata/Items/Gems/SkillGemFeedingFrenzySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FeedingFrenzySupport.webp",
+      "sha256": "e4067c96af4c07424a8e0878aa3a4d8858e1a0d88e81abd606f43641bab7fe52"
+    },
+    "Metadata/Items/Gems/SkillGemFerocitySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FerocitySupport.webp",
+      "sha256": "3745c0a488f8676fe38477f045b681843806bd4c70ec2037050650ad396b1f5f"
+    },
+    "Metadata/Items/Gems/SkillGemFieryDeathSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FieryDeathSupport.webp",
+      "sha256": "3a0939b578ed6c5fcacf4d21517b4fdd76a07a1ff6b0a16d07130be5b5f19812"
+    },
+    "Metadata/Items/Gems/SkillGemFireExposureSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FireExposureSupport.webp",
+      "sha256": "44939009db9ab1e6ee3231ca3a5fed5a0618802d1ebfb9dbdb04a31463cfb8a1"
+    },
+    "Metadata/Items/Gems/SkillGemFireMasterySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FireMasterySupport.webp",
+      "sha256": "ae66373181674b9a8975c75d0e87cda54d48a21222376331bed8deb34dc1c37a"
+    },
+    "Metadata/Items/Gems/SkillGemFirePenetrationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FirePenetrationSupport.webp",
+      "sha256": "0d216c0f74f03b9fa4659c83d834fac85f9c860acdbd9ea91ca753b6e59a6d98"
+    },
+    "Metadata/Items/Gems/SkillGemFirePenetrationSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FirePenetrationSupport.webp",
+      "sha256": "0d216c0f74f03b9fa4659c83d834fac85f9c860acdbd9ea91ca753b6e59a6d98"
+    },
+    "Metadata/Items/Gems/SkillGemFistOfKalguurSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExpeditionFistofKalguur.webp",
+      "sha256": "a3a930bdc02404854509c53039c8b6ca5896464c40a9dd955bd7b3cd127ce8cb"
+    },
+    "Metadata/Items/Gems/SkillGemFistOfWarSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FistOfWarSupport.webp",
+      "sha256": "79f8ea750a675f2ece0e46d111e5b31eb66db4a058cc21fccab7d04b644d14de"
+    },
+    "Metadata/Items/Gems/SkillGemFistOfWarSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FistOfWarSupport.webp",
+      "sha256": "79f8ea750a675f2ece0e46d111e5b31eb66db4a058cc21fccab7d04b644d14de"
+    },
+    "Metadata/Items/Gems/SkillGemFistOfWarSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FistOfWarSupport.webp",
+      "sha256": "79f8ea750a675f2ece0e46d111e5b31eb66db4a058cc21fccab7d04b644d14de"
+    },
+    "Metadata/Items/Gems/SkillGemFlamePillarSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PillarofFireSupport.webp",
+      "sha256": "7a44d8f1972cbbbd4ce6dcd5b48cb50c93b2cc6b58bd88c98008a4013e5be059"
+    },
+    "Metadata/Items/Gems/SkillGemFlamepierceSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FlamepierceSupport.webp",
+      "sha256": "0a716a7083efc02b4e3f2ed2def12f63fd967a20a7c694b227ed5807913fdead"
+    },
+    "Metadata/Items/Gems/SkillGemFleetingRemnantsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RushedRemnantsSupport.webp",
+      "sha256": "a2f768de16ba904a75bb713ddf43698d31fd777c22c262b05534352e49b64979"
+    },
+    "Metadata/Items/Gems/SkillGemFleetingRemnantsSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RushedRemnantsSupport.webp",
+      "sha256": "a2f768de16ba904a75bb713ddf43698d31fd777c22c262b05534352e49b64979"
+    },
+    "Metadata/Items/Gems/SkillGemFlukeSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RandomisedTriggerSupport.webp",
+      "sha256": "a435666c6f457f30143f91113274d92f0543896fd1cf425df6346997c09ad242"
+    },
+    "Metadata/Items/Gems/SkillGemFlukeSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/Trialmaster.webp",
+      "sha256": "a0364137b4f75c764084dad0e2c5a094a85637f9786ac5e4cbcf9f733f34bfb9"
+    },
+    "Metadata/Items/Gems/SkillGemFocusedCurseSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FocusedHexSupport.webp",
+      "sha256": "55f69188ac9cc72b5cc92395730fd646a63a787e12a1ec5d0f77378b831408ff"
+    },
+    "Metadata/Items/Gems/SkillGemForkSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ForkSupport.webp",
+      "sha256": "c04af203c13bbe50bc26d6dab73847720e0e4b5e94b3dc03e3cf0974e4abb005"
+    },
+    "Metadata/Items/Gems/SkillGemFreezeForkSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FreezeforkSupport.webp",
+      "sha256": "b9951d60e7e77620c619d05a7ed5372b31d509d4df760798bb7dab7d348f9a1c"
+    },
+    "Metadata/Items/Gems/SkillGemFreezeSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/HypothermiaSupport.webp",
+      "sha256": "a2b8cc85407ccaecfc26757db531964eb0a568345b358e9aecf55ca76e9366ab"
+    },
+    "Metadata/Items/Gems/SkillGemFrenziedRiposteSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RetortSupport.webp",
+      "sha256": "236799a1649445832ec5062eb9e11d54c0503b9fd764393180db88db13c069ad"
+    },
+    "Metadata/Items/Gems/SkillGemFreshClipSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DamagePerBoltReloadedRecentlySupport.webp",
+      "sha256": "6aff788b9a59c74c6f77a9c553ae0ca8b3c3385fd93a1501b973cc327dbd5b9e"
+    },
+    "Metadata/Items/Gems/SkillGemFreshClipSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DamagePerBoltReloadedRecentlySupport.webp",
+      "sha256": "6aff788b9a59c74c6f77a9c553ae0ca8b3c3385fd93a1501b973cc327dbd5b9e"
+    },
+    "Metadata/Items/Gems/SkillGemFrostfireSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FrostfireSupport.webp",
+      "sha256": "4c2a08642a400d6e59115769f144a4abf7eb42947ab146630b06068f63de17e4"
+    },
+    "Metadata/Items/Gems/SkillGemFrozenSpiteSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FrozenSpiteSupport.webp",
+      "sha256": "7dd0fb0a786c9d25f8c96cef16b81102ccf83027f57b63469a8e65cb9885c7c0"
+    },
+    "Metadata/Items/Gems/SkillGemGambleshotSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/GambleshotSupport.webp",
+      "sha256": "c92126f2c7a18a04e0068f7abcbe3cb30b66ae1a3eb1fa6eae3f4a68b16639fd"
+    },
+    "Metadata/Items/Gems/SkillGemGarukhansResolveSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/Garukhan.webp",
+      "sha256": "475bd29d752efd6d44ef3339660c1d8c8391ad660c44829790b299a5551167ef"
+    },
+    "Metadata/Items/Gems/SkillGemGlacierSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IceCrystalMoreLifeSupport.webp",
+      "sha256": "f9c06888adb4770305ce220dea889700afe740953db335e09124a1b388a5adcb"
+    },
+    "Metadata/Items/Gems/SkillGemGorgeSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/Mortuary.webp",
+      "sha256": "0a59f1a07c1da2d6193c933bcbe03ee36f415c8c3bec9bf8b81829ea3ae925cd"
+    },
+    "Metadata/Items/Gems/SkillGemGuatelitzisAblationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/Guatelitzi.webp",
+      "sha256": "906a066fdd43314b81faa4ebc29d08bfebc78cff48a77b1a2400749d708dcc4c"
+    },
+    "Metadata/Items/Gems/SkillGemHaemocrystalsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/HaemocrystalsSupport.webp",
+      "sha256": "89bfb5f9753f453eb9d9757e104feade768b9ea1285cae17ba62c88af0650bef"
+    },
+    "Metadata/Items/Gems/SkillGemHardyTotemsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MoreTotemLifeSupport.webp",
+      "sha256": "86c6a8baaa018da73e071e4f2ede1389e5af8ecbdb35a4b3c44802c209fce2d8"
+    },
+    "Metadata/Items/Gems/SkillGemHardyTotemsSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/Tukohama.webp",
+      "sha256": "0a030e9f81cc00b9edd7f391bdceb4b51d1f061648cf6944e32c744943613e64"
+    },
+    "Metadata/Items/Gems/SkillGemHardyTotemsSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MoreTotemLifeSupport.webp",
+      "sha256": "86c6a8baaa018da73e071e4f2ede1389e5af8ecbdb35a4b3c44802c209fce2d8"
+    },
+    "Metadata/Items/Gems/SkillGemHayoxisFulminationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/Hayoxi.webp",
+      "sha256": "2e148b08533b0bf707977118670e6e0ff5af50cabab42703872fef81c73372de"
+    },
+    "Metadata/Items/Gems/SkillGemHealingRunesSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExpeditionHealingRunes.webp",
+      "sha256": "f92f5d3060aea47ea6ce8fca37059d0f1b365950207923ff2e39b118d54893f2"
+    },
+    "Metadata/Items/Gems/SkillGemHeavyStunEnduranceSupportOne": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EnduranceOnHeavyStunSupport.webp",
+      "sha256": "93060e4fca6eb6cb6b11e907050677c1b986bbf3365646efe8deae0218f794cb"
+    },
+    "Metadata/Items/Gems/SkillGemHeavyStunEnduranceSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EnduranceOnHeavyStunSupport.webp",
+      "sha256": "93060e4fca6eb6cb6b11e907050677c1b986bbf3365646efe8deae0218f794cb"
+    },
+    "Metadata/Items/Gems/SkillGemHeftSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/HeftSupport.webp",
+      "sha256": "4051efd83fb35144a0eea6f557eb05b027735e56c60cb470e115933fb0852bd1"
+    },
+    "Metadata/Items/Gems/SkillGemHeightenedAccuracySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AdditionalAccuracy.webp",
+      "sha256": "e1f3175defeeadd548b540bf37894e75752d8270bb3d4b7bd5aee05051ad5c29"
+    },
+    "Metadata/Items/Gems/SkillGemHeightenedAccuracySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AdditionalAccuracy.webp",
+      "sha256": "e1f3175defeeadd548b540bf37894e75752d8270bb3d4b7bd5aee05051ad5c29"
+    },
+    "Metadata/Items/Gems/SkillGemHeightenedChargesSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PotencySupport.webp",
+      "sha256": "70f2211a0bdb2b0596d2e59adc905093af485acb47d32160d1abf425b83c2e89"
+    },
+    "Metadata/Items/Gems/SkillGemHelbrymsHideSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/HideofHelbrym.webp",
+      "sha256": "97424683266bc443b48a0a0050f691fa0b5c52a526375dda1985e36e1634db74"
+    },
+    "Metadata/Items/Gems/SkillGemHerDeclarationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/MothersDeclaration.webp",
+      "sha256": "9995eb8dfaf880b99a9abb2861987d7a27611c15fddb4513c6a29f9025a47f9a"
+    },
+    "Metadata/Items/Gems/SkillGemHerbalismSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/HerbalismSupport.webp",
+      "sha256": "59ed7e58d59507630bc5952966b02ba89a3dbc131eee9573ad68c2b93f04db2d"
+    },
+    "Metadata/Items/Gems/SkillGemHerbalismSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/HerbalismSupport.webp",
+      "sha256": "59ed7e58d59507630bc5952966b02ba89a3dbc131eee9573ad68c2b93f04db2d"
+    },
+    "Metadata/Items/Gems/SkillGemHexBloomSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/HexBloomSupport.webp",
+      "sha256": "32a40266b6f8a38679b19442ba963ed8f6aa8cb559659218578c437c1737f56a"
+    },
+    "Metadata/Items/Gems/SkillGemHitAndRunSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MobileAssaultSupport.webp",
+      "sha256": "2422f0837133b23bf70366c1e859682be51a2f657b06947a637a28c8e21bfbbd"
+    },
+    "Metadata/Items/Gems/SkillGemHolyDescentSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/HolyDescentSupport.webp",
+      "sha256": "0e658af282e49c511f8cd057f744771d2e6391bd84a9a81297bbde1f98e9f721"
+    },
+    "Metadata/Items/Gems/SkillGemHourglassSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/HourglassSupport.webp",
+      "sha256": "0085ed03f1386a8516fef2e307fd378033d29a75013498bc1a7b2044fc12b910"
+    },
+    "Metadata/Items/Gems/SkillGemHulkingMinionsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EnormitySupport.webp",
+      "sha256": "0f41d6cc125727fabafd1b687a5725ee601c68a9545353a68ecb851235e194f9"
+    },
+    "Metadata/Items/Gems/SkillGemIceBiteSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IceBiteSupport.webp",
+      "sha256": "d1327e47c11d929a951f24d5d1f371bbeb31fa5c77136f71e74035b9922a66a4"
+    },
+    "Metadata/Items/Gems/SkillGemIceBiteSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IceBiteSupport.webp",
+      "sha256": "d1327e47c11d929a951f24d5d1f371bbeb31fa5c77136f71e74035b9922a66a4"
+    },
+    "Metadata/Items/Gems/SkillGemIcicleSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IceCrystalLessLifeSupport.webp",
+      "sha256": "47fda9e3ec032457d31dda0d6f7fdfebe352b625718a355bdd48713ed035182b"
+    },
+    "Metadata/Items/Gems/SkillGemIgniteDurationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EternalFlameSupport.webp",
+      "sha256": "1f0cc4a8491c7199be8d28a091309424723ab0230ec7c46a8314f71b98fc3ccf"
+    },
+    "Metadata/Items/Gems/SkillGemIgniteDurationSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EternalFlameSupport.webp",
+      "sha256": "1f0cc4a8491c7199be8d28a091309424723ab0230ec7c46a8314f71b98fc3ccf"
+    },
+    "Metadata/Items/Gems/SkillGemIgniteDurationSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EternalFlameSupport.webp",
+      "sha256": "1f0cc4a8491c7199be8d28a091309424723ab0230ec7c46a8314f71b98fc3ccf"
+    },
+    "Metadata/Items/Gems/SkillGemIgniteSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IgnitionSupport.webp",
+      "sha256": "a67540ce88550c48fff985938266c2dd80d2469d37cd1f0abe738a523e8c7127"
+    },
+    "Metadata/Items/Gems/SkillGemIgniteSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IgnitionSupport.webp",
+      "sha256": "a67540ce88550c48fff985938266c2dd80d2469d37cd1f0abe738a523e8c7127"
+    },
+    "Metadata/Items/Gems/SkillGemIgniteSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IgnitionSupport.webp",
+      "sha256": "a67540ce88550c48fff985938266c2dd80d2469d37cd1f0abe738a523e8c7127"
+    },
+    "Metadata/Items/Gems/SkillGemImmolateSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ImmolationSupport.webp",
+      "sha256": "f8f26c16d1f74167a6199e39b807adf23502e130e2fb06cdc710b611b1908851"
+    },
+    "Metadata/Items/Gems/SkillGemImpactShockwaveSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ImpactShockwaveSupport.webp",
+      "sha256": "768b8011f0ccc2565775d91a4860062dd3dfec29a90fd842437a22f1872f1bcb"
+    },
+    "Metadata/Items/Gems/SkillGemImpaleSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ImpaleSupport.webp",
+      "sha256": "91da859eaa95d474752e03ed32db55715dee0e9928639280e7b412e1210c2bf6"
+    },
+    "Metadata/Items/Gems/SkillGemImpendingDoomSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ImpendingDoomSupport.webp",
+      "sha256": "a848c72c0db0913df92cf1100e306d2827cac59097d871307589eec246226653"
+    },
+    "Metadata/Items/Gems/SkillGemIncisionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IncisionSupport.webp",
+      "sha256": "15e4461ab027967ae439bae1ab8108534dd5f9582ae4533116b346b7bbed0a49"
+    },
+    "Metadata/Items/Gems/SkillGemIncreaseLimitSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IncreaseLimitSupport.webp",
+      "sha256": "2fd47881aeecd19ced9bacd13043f8c41b66a63f8bed0ab105aeb18af0acbe86"
+    },
+    "Metadata/Items/Gems/SkillGemIncreaseLimitSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IncreaseLimitSupport.webp",
+      "sha256": "2fd47881aeecd19ced9bacd13043f8c41b66a63f8bed0ab105aeb18af0acbe86"
+    },
+    "Metadata/Items/Gems/SkillGemIncreasedCriticalDamageSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IncreasedCritDamageSupport.webp",
+      "sha256": "1ca192cfd22b7be417dc808b236d0cae19961e3597b807c46e260d88df2cb287"
+    },
+    "Metadata/Items/Gems/SkillGemInevitableCriticalsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/InevitableCriticalsSupport.webp",
+      "sha256": "f3dfc54702c868555d405aebb69463f8dd986b1cdebce4c11f23de6f66214fa3"
+    },
+    "Metadata/Items/Gems/SkillGemInevitableCriticalsSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/InevitableCriticalsSupport.webp",
+      "sha256": "f3dfc54702c868555d405aebb69463f8dd986b1cdebce4c11f23de6f66214fa3"
+    },
+    "Metadata/Items/Gems/SkillGemInfernalLegionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/InfernalLegionSupport.webp",
+      "sha256": "cf4f123699383aa00e4a0b0a26483e8b7d6babd7c42efe49382f6771c4b04cc7"
+    },
+    "Metadata/Items/Gems/SkillGemInfernalLegionSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/InfernalLegionSupport.webp",
+      "sha256": "cf4f123699383aa00e4a0b0a26483e8b7d6babd7c42efe49382f6771c4b04cc7"
+    },
+    "Metadata/Items/Gems/SkillGemInfernalLegionSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/InfernalLegionSupport.webp",
+      "sha256": "cf4f123699383aa00e4a0b0a26483e8b7d6babd7c42efe49382f6771c4b04cc7"
+    },
+    "Metadata/Items/Gems/SkillGemInnervateSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/Innervate.webp",
+      "sha256": "f81d253ca14c9c6bf52d6ee6bc27640b0efa78b8f300795078500b513bb05401"
+    },
+    "Metadata/Items/Gems/SkillGemIntenseAgonySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IntenseAgonySupport.webp",
+      "sha256": "078dd1a5921ec01b9e5652bfa551e6facb64a226818857123f25e5ea6521f171"
+    },
+    "Metadata/Items/Gems/SkillGemJaggedGroundSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/JaggedGroundSupport.webp",
+      "sha256": "d6160086232cba3ac2a54d47c72ecbef2178a2b502bd62f0bf459bdc33c46360"
+    },
+    "Metadata/Items/Gems/SkillGemJaggedGroundSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/JaggedGroundSupport.webp",
+      "sha256": "d6160086232cba3ac2a54d47c72ecbef2178a2b502bd62f0bf459bdc33c46360"
+    },
+    "Metadata/Items/Gems/SkillGemKalisasCrescendoSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageKalisaChorus.webp",
+      "sha256": "b45fab4133832e09761890aa37a5ce6a8f87e60543498481e12348fa4da4a537"
+    },
+    "Metadata/Items/Gems/SkillGemKaomsMadnessSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageKaom.webp",
+      "sha256": "35b5d42a7f9814182759d236cccbb4750d2264e3f4dd9c5c81f0bdb3b6844407"
+    },
+    "Metadata/Items/Gems/SkillGemKhatalsRejuvenationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageKhatal.webp",
+      "sha256": "e8e02746a63d2cf91e3613acd9d977cedacaaf41abf7a514df9c831dcccf95e3"
+    },
+    "Metadata/Items/Gems/SkillGemKnockbackSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/KnockbackSupport.webp",
+      "sha256": "1c08757eee72caa15feb3a05bf62f69f51d5fe9523b4759054140b482c3343db"
+    },
+    "Metadata/Items/Gems/SkillGemKnockbackWaveSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/KnockbackWaveSupport.webp",
+      "sha256": "1a2798a67cf808b6ca118d75e143f4ed3cc31830952f68a22315a9da726d82e0"
+    },
+    "Metadata/Items/Gems/SkillGemKulemaksDominionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageKulemakSpire.webp",
+      "sha256": "445dc59734a8390913d50f307d1182659ddfcd14afa735a7e0a94665eb1c8d7f"
+    },
+    "Metadata/Items/Gems/SkillGemKurgalsLeashSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/AbyssKurgal.webp",
+      "sha256": "5cfc03a9b3a9b8b8cf5a610eb9f26e9814956ae3811bd3de845099edcdf8f116"
+    },
+    "Metadata/Items/Gems/SkillGemLastGaspSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LastGaspSupport.webp",
+      "sha256": "e8064a8c99fd02419ac8bca9ee264a1d9d2a3d620b01d28239b5504c8bbedd09"
+    },
+    "Metadata/Items/Gems/SkillGemLastingFrostSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DeepFreezeSupport.webp",
+      "sha256": "2755b88b139ef7777242e562f13cbe062ed74ceefadbe803c111fc0a76faacf3"
+    },
+    "Metadata/Items/Gems/SkillGemLastingGroundSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/GroundEffectDurationSupport.webp",
+      "sha256": "c6f44e4609ef621e87edf4deffeddfb9a0d35350e0882b952677c44c6fa13986"
+    },
+    "Metadata/Items/Gems/SkillGemLastingShockSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LastingShockSupport.webp",
+      "sha256": "1bdd5c019476225d79fd790b6adfb9def5c3f7bec4f4f49ff014ac33d2b57628"
+    },
+    "Metadata/Items/Gems/SkillGemLifeFlaskSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LifeFlaskSupport.webp",
+      "sha256": "75abd0a91e30aff191c166628003d2eff192ef912ea2dc6312be0156ed6be62e"
+    },
+    "Metadata/Items/Gems/SkillGemLifeLeechSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LifeLeechSupport.webp",
+      "sha256": "bba51c9589f6ac42ea4e41d3d1515cdda614975bb18e7fa03c18c92b9cb22961"
+    },
+    "Metadata/Items/Gems/SkillGemLifeLeechSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LifeLeechSupport.webp",
+      "sha256": "bba51c9589f6ac42ea4e41d3d1515cdda614975bb18e7fa03c18c92b9cb22961"
+    },
+    "Metadata/Items/Gems/SkillGemLifeLeechSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LifeLeechSupport.webp",
+      "sha256": "bba51c9589f6ac42ea4e41d3d1515cdda614975bb18e7fa03c18c92b9cb22961"
+    },
+    "Metadata/Items/Gems/SkillGemLifeOnCullSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LifeOnCull.webp",
+      "sha256": "42c719281508aae5af36e0b929a582661e595c67ae0414e9348e5dbf61ef6eef"
+    },
+    "Metadata/Items/Gems/SkillGemLightningExposureSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LightningExposureSupport.webp",
+      "sha256": "edd7e6b8a63baa93a7f6dc9f7c784330e6288311d7a86603ef5a359326164786"
+    },
+    "Metadata/Items/Gems/SkillGemLightningMasterySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LightningMasterySupport.webp",
+      "sha256": "0960598892e27027545276453e9d2174312723629cf8fc599f43f87f124fc6ea"
+    },
+    "Metadata/Items/Gems/SkillGemLightningPenetrationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LightningPenetrationSupport.webp",
+      "sha256": "a410fb026ad7a387a2deaba4ef767505f3ac30e74dbaca33cb81b2ab2360638e"
+    },
+    "Metadata/Items/Gems/SkillGemLivingLightningSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LivingLightningSupport.webp",
+      "sha256": "0ea0b72895d8e0747e4c5a33cd1349eec6cd8bbb1baf392751cfbfee14716b1f"
+    },
+    "Metadata/Items/Gems/SkillGemLivingLightningSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LivingLightningSupport.webp",
+      "sha256": "0ea0b72895d8e0747e4c5a33cd1349eec6cd8bbb1baf392751cfbfee14716b1f"
+    },
+    "Metadata/Items/Gems/SkillGemLockdownSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LockdownSupport.webp",
+      "sha256": "083c79a9030efd7148b4e0338434bd1f43c392d2b024e6220c65b452e8e41d69"
+    },
+    "Metadata/Items/Gems/SkillGemLongFuseSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LongFuseSupport.webp",
+      "sha256": "e18f8bb453fa38f55a7722f34399f514c30b72659336e0b168acd5a36dfeed81"
+    },
+    "Metadata/Items/Gems/SkillGemLongFuseSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/LongFuseSupport.webp",
+      "sha256": "e18f8bb453fa38f55a7722f34399f514c30b72659336e0b168acd5a36dfeed81"
+    },
+    "Metadata/Items/Gems/SkillGemLoyaltySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/TrustyCompanionSupport.webp",
+      "sha256": "4bf9520e4eb708257e408e9b66872a0400741212690fb9889e3401ec0ac81970"
+    },
+    "Metadata/Items/Gems/SkillGemMagneticRemnantsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RemnantReachSupport.webp",
+      "sha256": "54683d7f781ca31348a7bd4ce6b24a71c8c68ddb68f5dce50374540eac2dc23d"
+    },
+    "Metadata/Items/Gems/SkillGemMagnifiedAreaSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IncreasedAreaOfEffectSupport.webp",
+      "sha256": "2b9121d2bae6290a2d4d5926d14b68a652c75fd9a40734cef315823262eee515"
+    },
+    "Metadata/Items/Gems/SkillGemMagnifiedAreaSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IncreasedAreaOfEffectSupport.webp",
+      "sha256": "2b9121d2bae6290a2d4d5926d14b68a652c75fd9a40734cef315823262eee515"
+    },
+    "Metadata/Items/Gems/SkillGemMaimSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MaimSupport.webp",
+      "sha256": "b2cffc399d62e66bdbd9d7c3bf0e892fd51425405bee2d61f88ea92ad27fd5c1"
+    },
+    "Metadata/Items/Gems/SkillGemMaladySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MaladySupport.webp",
+      "sha256": "72864ca3d5d67e52d9a0bc020318160151eb4474db1e61f3622e341c3764e64c"
+    },
+    "Metadata/Items/Gems/SkillGemManaFlareSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ManaFlareSupport.webp",
+      "sha256": "93ad537d20de76df81b29239cb1c1cbf5746568a069bd631d012fb641f328a67"
+    },
+    "Metadata/Items/Gems/SkillGemManaFlaskSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ManaFlaskSupport.webp",
+      "sha256": "aa5f220d8c8fa98fb4ea7ac17e525c3183bb0b719b27be92175086e173d126a2"
+    },
+    "Metadata/Items/Gems/SkillGemManaFountainSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ManaFountainSupport.webp",
+      "sha256": "b3fbe53e02cfddb926dc749898e22cb0e12c6072967b5bfa92c81fed479cdce2"
+    },
+    "Metadata/Items/Gems/SkillGemManaLeechSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ManaLeechSupport.webp",
+      "sha256": "922f491065535536c22901331b5bdafd1f7a6f4ee1018f8f3a29df813da983c2"
+    },
+    "Metadata/Items/Gems/SkillGemManaOnCullSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ManaOnCull.webp",
+      "sha256": "b67597c463a1e7bdf3cb5186461a9fd28bafa17440b8754887d26170a0844eb5"
+    },
+    "Metadata/Items/Gems/SkillGemMarkForDeathSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SingleOutSupport.webp",
+      "sha256": "33d074589f17c2ddcd115d393021acb387e2875d1fbc6aaeb76da4402e1b7fea"
+    },
+    "Metadata/Items/Gems/SkillGemMarkForDeathSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SingleOutSupport.webp",
+      "sha256": "33d074589f17c2ddcd115d393021acb387e2875d1fbc6aaeb76da4402e1b7fea"
+    },
+    "Metadata/Items/Gems/SkillGemMarkOfSiphoningSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MarkedForDrain.webp",
+      "sha256": "26b2615785c844169c7476c8bdd8ef6970aae74f735a6350a2d35d805f7b9363"
+    },
+    "Metadata/Items/Gems/SkillGemMarkOfSiphoningSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MarkedForDrain.webp",
+      "sha256": "26b2615785c844169c7476c8bdd8ef6970aae74f735a6350a2d35d805f7b9363"
+    },
+    "Metadata/Items/Gems/SkillGemMeatShieldSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MeatShield.webp",
+      "sha256": "7a1e0eb3b557dfebb9735a4d964a6cc828c6c28d67359d9024a1b53193a05d55"
+    },
+    "Metadata/Items/Gems/SkillGemMeatShieldSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MeatShield.webp",
+      "sha256": "7a1e0eb3b557dfebb9735a4d964a6cc828c6c28d67359d9024a1b53193a05d55"
+    },
+    "Metadata/Items/Gems/SkillGemMedvedsFellingSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/MedvedsFelling.webp",
+      "sha256": "a4c5e3bad1f6e96940876b419cfb29b11ba86d8bd8405f4d4322f41a99a2aab8"
+    },
+    "Metadata/Items/Gems/SkillGemMeleePhysicalDamageSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MeleePhysicalDamageSupport.webp",
+      "sha256": "eb8a113a6a935fcc3a0e0d144bf98b019582143b46a7e51aaefdac37a91989e1"
+    },
+    "Metadata/Items/Gems/SkillGemMinionInstabilitySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MinionInstabilitySupport.webp",
+      "sha256": "105201e4ee84d8ba2379132805a339d8c0d850bd5f0b0af95dba139661640bbe"
+    },
+    "Metadata/Items/Gems/SkillGemMinionMasterySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PhysicalMasterySupport.webp",
+      "sha256": "f6eeda3cad668b1222f18a9ae057c56a4f0dc1c01bfc090dd965f71b48817156"
+    },
+    "Metadata/Items/Gems/SkillGemMinionMeleeSplashSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MinionMeleeSplashSupport.webp",
+      "sha256": "c433855387e19084903597dc781e1055a32a2315ebe6cf9d83184cfd2cc60543"
+    },
+    "Metadata/Items/Gems/SkillGemMinionMeleeSplashSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MinionMeleeSplashSupport.webp",
+      "sha256": "c433855387e19084903597dc781e1055a32a2315ebe6cf9d83184cfd2cc60543"
+    },
+    "Metadata/Items/Gems/SkillGemMinionPactSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MinionPactSupport.webp",
+      "sha256": "e8053a12f06f0da3ebea6a5f47103e0c6332a29fb6e9fc60787f22c0c9dd59af"
+    },
+    "Metadata/Items/Gems/SkillGemMinionPactSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MinionPactSupport.webp",
+      "sha256": "e8053a12f06f0da3ebea6a5f47103e0c6332a29fb6e9fc60787f22c0c9dd59af"
+    },
+    "Metadata/Items/Gems/SkillGemMobilitySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MobilitySupport.webp",
+      "sha256": "7de395a9404f2e1fe20137b5692987c584ca0188523cb5fe360dd9921ac8657f"
+    },
+    "Metadata/Items/Gems/SkillGemMomentumSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MomentumSupport.webp",
+      "sha256": "752300d2e7100cf686927938acfa36006928a134c85f2431d868e70175a1180d"
+    },
+    "Metadata/Items/Gems/SkillGemMorganasTempestSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/MorganasTempest.webp",
+      "sha256": "15c02010373867bd8fae1ee503e30115f4d00002a130c50ae5e4f3b6670a4721"
+    },
+    "Metadata/Items/Gems/SkillGemMorrigansInsightSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/MorrigansRefuge.webp",
+      "sha256": "9a1d67c0f4376562daf53db896d4ddb8bd73b644beb38addc8c17da850203a06"
+    },
+    "Metadata/Items/Gems/SkillGemMultishotSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MultipleProjectilesSupport.webp",
+      "sha256": "2955eed80bcc54956262317fa5bb91b823bfaf05171d7cf54ed157506601e564"
+    },
+    "Metadata/Items/Gems/SkillGemMultishotSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MultipleProjectilesSupport.webp",
+      "sha256": "2955eed80bcc54956262317fa5bb91b823bfaf05171d7cf54ed157506601e564"
+    },
+    "Metadata/Items/Gems/SkillGemMusterSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/VariedTroopsSupport.webp",
+      "sha256": "3eda93a9c5da0382e0239273e4d5c62771d64c2cb6326e0b692e980a67b30551"
+    },
+    "Metadata/Items/Gems/SkillGemMysticismSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MysticismSupport.webp",
+      "sha256": "9fef96b6c3acca26685dd9766fe506f88eab0ac9ea915504409d05da91ea523b"
+    },
+    "Metadata/Items/Gems/SkillGemMysticismSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MysticismSupport.webp",
+      "sha256": "9fef96b6c3acca26685dd9766fe506f88eab0ac9ea915504409d05da91ea523b"
+    },
+    "Metadata/Items/Gems/SkillGemNeuralOverload": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/NeuralOverloadSupport.webp",
+      "sha256": "ee6c0b0103aed16fe2e89e3e0e0914c7e779022d5d481b755bf1e87d6bb1fe8e"
+    },
+    "Metadata/Items/Gems/SkillGemNimbleReloadSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ReloadSpeedSupport.webp",
+      "sha256": "396400bba977b714bb9a3a1dd4f258d7e345eb4f6257a78ef3bd038bbd3d6741"
+    },
+    "Metadata/Items/Gems/SkillGemNovaProjectilesSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/NovaProjectilesSupport.webp",
+      "sha256": "24f4600cac9b7134cd0c24dcb3a431ee017581c450034bf10cbbe330848793c9"
+    },
+    "Metadata/Items/Gems/SkillGemNovaProjectilesTwoSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/NovaProjectilesSupport.webp",
+      "sha256": "24f4600cac9b7134cd0c24dcb3a431ee017581c450034bf10cbbe330848793c9"
+    },
+    "Metadata/Items/Gems/SkillGemOisinsOathSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/WalkeroftheWilds.webp",
+      "sha256": "1fe00cecfcc526667aab079686ea05d60fca7b4c3e2f5ba21767bbe09b95a1f3"
+    },
+    "Metadata/Items/Gems/SkillGemOlrothsConvictionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/OlrothsConviction.webp",
+      "sha256": "c0c86d12939bea1df5e49b2442ff9bebbd04076ff4ca05370cf2df2af1722c71"
+    },
+    "Metadata/Items/Gems/SkillGemOlrothsHubrisSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/OlrothsHubris.webp",
+      "sha256": "4145bafa860de4d60e9a8f84cf064e90fc9f41a01d667d2d45f813d778519315"
+    },
+    "Metadata/Items/Gems/SkillGemOpeningMoveSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/OpeningMoveSupport.webp",
+      "sha256": "51c6908df8e2790607cc9f0325c5b0212726cc9fdf4a5e643182fb0792f76d72"
+    },
+    "Metadata/Items/Gems/SkillGemOverchargeSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/OverchargeSupport.webp",
+      "sha256": "84a99a6b1151640a36fee07d24e8970a58663fdd537e7685f0a50cb010fe704e"
+    },
+    "Metadata/Items/Gems/SkillGemOverextendSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/OverextendSupport.webp",
+      "sha256": "02f9b867d5bf213a4e3d7032323b706d1371bce6d890aeec54d9b9f0662fd5a4"
+    },
+    "Metadata/Items/Gems/SkillGemOverreachSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ReachSupport.webp",
+      "sha256": "74a720f9ffe6ac92fb61b8c6f0830c704738ca5f8cb9c257c42eff363af792f6"
+    },
+    "Metadata/Items/Gems/SkillGemPayloadSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PayloadSupport.webp",
+      "sha256": "5cf39f3a76bae5913951711367095b34a229e3f07f86834f9cbaf9b93b63a0b7"
+    },
+    "Metadata/Items/Gems/SkillGemPerfectEnduranceSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EnduranceChargeonPerfectTimingSupport.webp",
+      "sha256": "e68fa9fab7567d535cefdadaa1b9b7825829faabb2c8fa9abb74c2cdd0a2128f"
+    },
+    "Metadata/Items/Gems/SkillGemPerfectionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PerfectionSupport.webp",
+      "sha256": "a2ccacaa12f90d7bee55df8d32e80e6d652029e62e4e045a6e7b4966d7eca0c2"
+    },
+    "Metadata/Items/Gems/SkillGemPerpetualCharge": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PerpetualChargeSupport.webp",
+      "sha256": "46d6fe63e042f714fd66e7e381832b6b453e1b3c249e9813dbe2e6577478cc88"
+    },
+    "Metadata/Items/Gems/SkillGemPersistentGroundSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DomainSupport.webp",
+      "sha256": "37da72588289330c11974626bda48c1e777c26340ef7db73f11a534965c1e173"
+    },
+    "Metadata/Items/Gems/SkillGemPersistentGroundSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DomainSupport.webp",
+      "sha256": "37da72588289330c11974626bda48c1e777c26340ef7db73f11a534965c1e173"
+    },
+    "Metadata/Items/Gems/SkillGemPersistentGroundSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DomainSupport.webp",
+      "sha256": "37da72588289330c11974626bda48c1e777c26340ef7db73f11a534965c1e173"
+    },
+    "Metadata/Items/Gems/SkillGemPhysicalMasterySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PhysicalMasterySupport.webp",
+      "sha256": "f6eeda3cad668b1222f18a9ae057c56a4f0dc1c01bfc090dd965f71b48817156"
+    },
+    "Metadata/Items/Gems/SkillGemPierceSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PierceSupport.webp",
+      "sha256": "b12d0305054c27f421b75d04ac430f74a1485411f7352dedb7917d0501d5e5e6"
+    },
+    "Metadata/Items/Gems/SkillGemPierceSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PierceSupport.webp",
+      "sha256": "b12d0305054c27f421b75d04ac430f74a1485411f7352dedb7917d0501d5e5e6"
+    },
+    "Metadata/Items/Gems/SkillGemPierceSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PierceSupport.webp",
+      "sha256": "b12d0305054c27f421b75d04ac430f74a1485411f7352dedb7917d0501d5e5e6"
+    },
+    "Metadata/Items/Gems/SkillGemPietysMercySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageMercy.webp",
+      "sha256": "976de1a23ee14053ef05724f3d88f2c01479cd30bc93bb0b6ea85b6ea0096a18"
+    },
+    "Metadata/Items/Gems/SkillGemPinSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PinSupport.webp",
+      "sha256": "2df57793f449033aa8bac3d78c4f7dda60acabf8aec50192c1389d7a83844365"
+    },
+    "Metadata/Items/Gems/SkillGemPinSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PinSupport.webp",
+      "sha256": "2df57793f449033aa8bac3d78c4f7dda60acabf8aec50192c1389d7a83844365"
+    },
+    "Metadata/Items/Gems/SkillGemPinSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PinSupport.webp",
+      "sha256": "2df57793f449033aa8bac3d78c4f7dda60acabf8aec50192c1389d7a83844365"
+    },
+    "Metadata/Items/Gems/SkillGemPinpointCritical": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PinpointCriticalSupport.webp",
+      "sha256": "2812b5cedf72121e3ada28164707c2cc8896fe3a1d7189fdaa964b1d468a2297"
+    },
+    "Metadata/Items/Gems/SkillGemPoisonSporesSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PoisonSporesSupport.webp",
+      "sha256": "25dc5ce99a81f047496b5bdd7a067d01b2e3dedb7baabcecfcff850f362396e8"
+    },
+    "Metadata/Items/Gems/SkillGemPoisonSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChanceToPoisonSupport.webp",
+      "sha256": "35cb14608c4fc1d0d6eef059aaf9225bddb863e73c32c6b9ede8a679fe251866"
+    },
+    "Metadata/Items/Gems/SkillGemPoisonSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChanceToPoisonSupport.webp",
+      "sha256": "35cb14608c4fc1d0d6eef059aaf9225bddb863e73c32c6b9ede8a679fe251866"
+    },
+    "Metadata/Items/Gems/SkillGemPoisonSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChanceToPoisonSupport.webp",
+      "sha256": "35cb14608c4fc1d0d6eef059aaf9225bddb863e73c32c6b9ede8a679fe251866"
+    },
+    "Metadata/Items/Gems/SkillGemPotentExposureSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/StripAwaySupport.webp",
+      "sha256": "c9f6fc373a4c6b5a8e3ef44dbd4c9520c10027245c9d24a38031be70e51dae86"
+    },
+    "Metadata/Items/Gems/SkillGemPracticalMagicSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/StunningMagic.webp",
+      "sha256": "527aab15c2e17ecdb5b372b81003f9f899a76eb052e68135bf0efdc1d2bd8c74"
+    },
+    "Metadata/Items/Gems/SkillGemPracticalMagicSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/StunningMagic.webp",
+      "sha256": "527aab15c2e17ecdb5b372b81003f9f899a76eb052e68135bf0efdc1d2bd8c74"
+    },
+    "Metadata/Items/Gems/SkillGemPracticedComboSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PracticedComboSupport.webp",
+      "sha256": "6f197a9958d491ef2cc88002f3b77f7b1cb79ed8c566f91dd1aec5a97a90c824"
+    },
+    "Metadata/Items/Gems/SkillGemPrecisionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PrecisionSupport.webp",
+      "sha256": "46efe165f5c61a97824243fcef22a1811008b6837b98da3726c1e24627ca0136"
+    },
+    "Metadata/Items/Gems/SkillGemPrecisionSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PrecisionSupport.webp",
+      "sha256": "46efe165f5c61a97824243fcef22a1811008b6837b98da3726c1e24627ca0136"
+    },
+    "Metadata/Items/Gems/SkillGemProfanitySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ProfanitySupport.webp",
+      "sha256": "3ae4d2a035e05ee218bda0c6fada4e08bd9204af334045d19d0a02f25e8280d4"
+    },
+    "Metadata/Items/Gems/SkillGemProfanitySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ProfanitySupport.webp",
+      "sha256": "3ae4d2a035e05ee218bda0c6fada4e08bd9204af334045d19d0a02f25e8280d4"
+    },
+    "Metadata/Items/Gems/SkillGemProjectileAccelerationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FasterProjectilesSupport.webp",
+      "sha256": "465613dbb0ece5b42645e89c23046dd13ab7f8b08afaed18d253d6da562f4835"
+    },
+    "Metadata/Items/Gems/SkillGemProjectileAccelerationSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FasterProjectilesSupport.webp",
+      "sha256": "465613dbb0ece5b42645e89c23046dd13ab7f8b08afaed18d253d6da562f4835"
+    },
+    "Metadata/Items/Gems/SkillGemProjectileAccelerationSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FasterProjectilesSupport.webp",
+      "sha256": "465613dbb0ece5b42645e89c23046dd13ab7f8b08afaed18d253d6da562f4835"
+    },
+    "Metadata/Items/Gems/SkillGemProjectileDecelerationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SlowerProjectilesSupport.webp",
+      "sha256": "4bcc3e8f4560ee422c6ad60167e51ccd31261082186979849793eee008944d59"
+    },
+    "Metadata/Items/Gems/SkillGemProjectileDecelerationSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SlowerProjectilesSupport.webp",
+      "sha256": "4bcc3e8f4560ee422c6ad60167e51ccd31261082186979849793eee008944d59"
+    },
+    "Metadata/Items/Gems/SkillGemProlongedDurationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MoreDurationSupport.webp",
+      "sha256": "1db3f1317846b55a88c1a29dec9d5d141b41e980a5f5367f212707a3e6312543"
+    },
+    "Metadata/Items/Gems/SkillGemProlongedDurationSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/MoreDurationSupport.webp",
+      "sha256": "1db3f1317846b55a88c1a29dec9d5d141b41e980a5f5367f212707a3e6312543"
+    },
+    "Metadata/Items/Gems/SkillGemPrototypeSeventeenSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/PrototypeSeventeen.webp",
+      "sha256": "799717e21442cfc5bdd5b8971858af769de869c5a6847a470c8cfad3651761d1"
+    },
+    "Metadata/Items/Gems/SkillGemPunchThroughSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PunchThroughSupport.webp",
+      "sha256": "2d51fbe39a02e299e4e042eead30d65b4db1d7433c57ee25e32d87e5ffc5ea05"
+    },
+    "Metadata/Items/Gems/SkillGemPursuitSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PursuitSupport.webp",
+      "sha256": "6eddea35f18d76dbd96a3dd69370642d3ae1d844f3bf6b83747616a9dddbd858"
+    },
+    "Metadata/Items/Gems/SkillGemPursuitSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PursuitSupport.webp",
+      "sha256": "6eddea35f18d76dbd96a3dd69370642d3ae1d844f3bf6b83747616a9dddbd858"
+    },
+    "Metadata/Items/Gems/SkillGemPursuitSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/PursuitSupport.webp",
+      "sha256": "6eddea35f18d76dbd96a3dd69370642d3ae1d844f3bf6b83747616a9dddbd858"
+    },
+    "Metadata/Items/Gems/SkillGemQuillburstSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SpikedGauntletsSupport.webp",
+      "sha256": "b424005ce7b36b39ca618cd7813602829c83cc1f28a4ebf88afc853816837fca"
+    },
+    "Metadata/Items/Gems/SkillGemRageSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RageSupport.webp",
+      "sha256": "206c1cbb139285de90ee2b34ef9e26fa222c094ea6ccb45a21648ac6f8a2fb51"
+    },
+    "Metadata/Items/Gems/SkillGemRageSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RageSupport.webp",
+      "sha256": "206c1cbb139285de90ee2b34ef9e26fa222c094ea6ccb45a21648ac6f8a2fb51"
+    },
+    "Metadata/Items/Gems/SkillGemRageSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RageSupport.webp",
+      "sha256": "206c1cbb139285de90ee2b34ef9e26fa222c094ea6ccb45a21648ac6f8a2fb51"
+    },
+    "Metadata/Items/Gems/SkillGemRageforgedSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RageforgedSupport.webp",
+      "sha256": "e0dd9bb616506e2fb3d3fc484d0feafeacf453438a7ac598f360f6d8d22b419f"
+    },
+    "Metadata/Items/Gems/SkillGemRageforgedSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RageforgedSupport.webp",
+      "sha256": "e0dd9bb616506e2fb3d3fc484d0feafeacf453438a7ac598f360f6d8d22b419f"
+    },
+    "Metadata/Items/Gems/SkillGemRagingCrySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RagingCrySupport.webp",
+      "sha256": "b251e64024a65d840ec32d0d7f073efe0e5e3e8e589c09357e3375d0522eebb2"
+    },
+    "Metadata/Items/Gems/SkillGemRakiatasFlowSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/Rakiata.webp",
+      "sha256": "2e72bf4a3b86574a29a0d5b5bc5abe727288b3b24d908698cae376e5923d40f6"
+    },
+    "Metadata/Items/Gems/SkillGemRapidAttacksSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FasterAttack.webp",
+      "sha256": "166ab7534bc5b37c166998454b51845d13203e01366c969a2c609a8534f4c33e"
+    },
+    "Metadata/Items/Gems/SkillGemRapidAttacksSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FasterAttack.webp",
+      "sha256": "166ab7534bc5b37c166998454b51845d13203e01366c969a2c609a8534f4c33e"
+    },
+    "Metadata/Items/Gems/SkillGemRapidAttacksSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FasterAttack.webp",
+      "sha256": "166ab7534bc5b37c166998454b51845d13203e01366c969a2c609a8534f4c33e"
+    },
+    "Metadata/Items/Gems/SkillGemRapidCastingSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FasterCastSupport.webp",
+      "sha256": "2b98ae51e6ddd0596f8790caded2f6bda2fcc92ab9af2104bd93f729f6c1af2e"
+    },
+    "Metadata/Items/Gems/SkillGemRapidCastingSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FasterCastSupport.webp",
+      "sha256": "2b98ae51e6ddd0596f8790caded2f6bda2fcc92ab9af2104bd93f729f6c1af2e"
+    },
+    "Metadata/Items/Gems/SkillGemRapidCastingSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FasterCastSupport.webp",
+      "sha256": "2b98ae51e6ddd0596f8790caded2f6bda2fcc92ab9af2104bd93f729f6c1af2e"
+    },
+    "Metadata/Items/Gems/SkillGemRearmSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RearmSupport.webp",
+      "sha256": "9424ef059149e88bf98da3ed02805b58d08f9ef5f5b1936c1233cd74cb7f67ff"
+    },
+    "Metadata/Items/Gems/SkillGemRearmSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RearmSupport.webp",
+      "sha256": "9424ef059149e88bf98da3ed02805b58d08f9ef5f5b1936c1233cd74cb7f67ff"
+    },
+    "Metadata/Items/Gems/SkillGemRefractionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/TemperedValourSupport.webp",
+      "sha256": "707e6ab6d1a83087cf3f62f320430c6638ebe07f995155c8f8f9515b8c0f0550"
+    },
+    "Metadata/Items/Gems/SkillGemRefractionSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/TemperedValourSupport.webp",
+      "sha256": "707e6ab6d1a83087cf3f62f320430c6638ebe07f995155c8f8f9515b8c0f0550"
+    },
+    "Metadata/Items/Gems/SkillGemRefractionSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/TemperedValourSupport.webp",
+      "sha256": "707e6ab6d1a83087cf3f62f320430c6638ebe07f995155c8f8f9515b8c0f0550"
+    },
+    "Metadata/Items/Gems/SkillGemReinforcedTotemsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IronwoodSupport.webp",
+      "sha256": "b213660d6f961c0a7f2cba49ea46852049ed502bcdd7cc20103207cba2d92281"
+    },
+    "Metadata/Items/Gems/SkillGemReinforcedTotemsSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IronwoodSupport.webp",
+      "sha256": "b213660d6f961c0a7f2cba49ea46852049ed502bcdd7cc20103207cba2d92281"
+    },
+    "Metadata/Items/Gems/SkillGemRelentlessRageSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/GrudgeSupport.webp",
+      "sha256": "6a4deec6176ebe4f3812619d8e92215f7c60a62d5fc2080763e0646512315877"
+    },
+    "Metadata/Items/Gems/SkillGemRemnantPotencySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/InterludeSupport.webp",
+      "sha256": "f95c27f05ac83aa0ddd3528ff69773de3bc9dd1ab46963fd07bc36d693bc9277"
+    },
+    "Metadata/Items/Gems/SkillGemRemnantPotencySupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/InterludeSupport.webp",
+      "sha256": "f95c27f05ac83aa0ddd3528ff69773de3bc9dd1ab46963fd07bc36d693bc9277"
+    },
+    "Metadata/Items/Gems/SkillGemRemnantPotencySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/InterludeSupport.webp",
+      "sha256": "f95c27f05ac83aa0ddd3528ff69773de3bc9dd1ab46963fd07bc36d693bc9277"
+    },
+    "Metadata/Items/Gems/SkillGemRendingApexSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ApexBoostSupport.webp",
+      "sha256": "1e607536331c5cfb5202509d7599b682c6a6a1d2d60ab322452aee7287095fc8"
+    },
+    "Metadata/Items/Gems/SkillGemRetaliateSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SteelyNerveSupport.webp",
+      "sha256": "3e7703d20866aa1edce204f5865cddbec130278f430108b15702c9dfe7677f01"
+    },
+    "Metadata/Items/Gems/SkillGemRetaliateSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SteelyNerveSupport.webp",
+      "sha256": "3e7703d20866aa1edce204f5865cddbec130278f430108b15702c9dfe7677f01"
+    },
+    "Metadata/Items/Gems/SkillGemRetreatSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RetreatingAssaultSupport.webp",
+      "sha256": "b01010d340c8dc7d8c8d63385d8d0ab0d23ed8c8b1a139524d0d8ad5089cc27d"
+    },
+    "Metadata/Items/Gems/SkillGemRetreatSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RetreatingAssaultSupport.webp",
+      "sha256": "b01010d340c8dc7d8c8d63385d8d0ab0d23ed8c8b1a139524d0d8ad5089cc27d"
+    },
+    "Metadata/Items/Gems/SkillGemRetreatSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RetreatingAssaultSupport.webp",
+      "sha256": "b01010d340c8dc7d8c8d63385d8d0ab0d23ed8c8b1a139524d0d8ad5089cc27d"
+    },
+    "Metadata/Items/Gems/SkillGemReverberateSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ReverberateSupport.webp",
+      "sha256": "decb615160d98a561d7bd6e0c8af587a350f5d70f45b590471a3ad55a54c1921"
+    },
+    "Metadata/Items/Gems/SkillGemRigwaldsFerocitySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/Rigwald.webp",
+      "sha256": "173e59d669fb9a75daed26dc024272f85c6c3ef10f19b541a1ef94e73742f7f1"
+    },
+    "Metadata/Items/Gems/SkillGemRipSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RipSupport.webp",
+      "sha256": "1e648864509565d6817b914e5fff9cfc1962ba74c0e70747c011003a25715e7f"
+    },
+    "Metadata/Items/Gems/SkillGemRitualisticCurseSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RitualisticCurseSupport.webp",
+      "sha256": "1abaa6a7e636385b89b26565c404825707c07c949328f267ff6450c3d53196fc"
+    },
+    "Metadata/Items/Gems/SkillGemRomirasRequitalSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageRomira.webp",
+      "sha256": "fd1192517cc0a76a0dc327e8b4a44e9ebf2f9a6dcb20b5f8d3fe95ee42b88dac"
+    },
+    "Metadata/Items/Gems/SkillGemRuneforgedBladesSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BlankWhiteSupport.webp",
+      "sha256": "070f99de8a896c74869cc20e3dcc0f5ca69f660c4789ac0fd2d763dfdbb26c98"
+    },
+    "Metadata/Items/Gems/SkillGemRunicExtractionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExpeditionRunicExtraction.webp",
+      "sha256": "617365cc7747dddf0ab7aa18d0f79e27949abbd78151d79dedbae0084cfaaae3"
+    },
+    "Metadata/Items/Gems/SkillGemRunicInfusionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExpeditionRunicInfusion.webp",
+      "sha256": "f8cd2b267223edc1bf2295798562b93288bfe0ea92be285739c1d96e02239251"
+    },
+    "Metadata/Items/Gems/SkillGemRuptureSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RuptureSupport.webp",
+      "sha256": "60d7a58525b912360f4e1031d6d30e36cb1294d1480bd2ef2ae82168ce2f16b2"
+    },
+    "Metadata/Items/Gems/SkillGemRustedSpikesSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RustedSpikesSupport.webp",
+      "sha256": "c8cd4d79cc7ec65c95ffe9d58d66453f9b0dc0d68f9a13c65d135609eb271767"
+    },
+    "Metadata/Items/Gems/SkillGemRuthlessSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/RuthlessSupport.webp",
+      "sha256": "8c2a9cce373c9a9212b35bc0e292d0766346204b8ed7a6a93a8671f62c9fd639"
+    },
+    "Metadata/Items/Gems/SkillGemSacrificialLambSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SacrificalLambSupport.webp",
+      "sha256": "a11f9784a8a82f45a79ec44bea21cdc2e5108b0f94d3420c27d128c66091c3aa"
+    },
+    "Metadata/Items/Gems/SkillGemSacrificialLambSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SacrificalLambSupport.webp",
+      "sha256": "a11f9784a8a82f45a79ec44bea21cdc2e5108b0f94d3420c27d128c66091c3aa"
+    },
+    "Metadata/Items/Gems/SkillGemSacrificialOfferingSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AblationSupport.webp",
+      "sha256": "04e18cdaf2f748f76594ebef6e9fa9a702d5a0849465b6ad429aac4ab1c513ac"
+    },
+    "Metadata/Items/Gems/SkillGemSalvoSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SalvoSupport.webp",
+      "sha256": "d72e952789e1df27809c65d91d9b6fd85dba47dcee7b1aa750246e89b54c24fa"
+    },
+    "Metadata/Items/Gems/SkillGemScouringFlame": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExpeditionScouringFlame.webp",
+      "sha256": "685dc490544bd88650eaf6bbfb2b9b1c8af6f4e985ad220d5227d8c5fedebe8e"
+    },
+    "Metadata/Items/Gems/SkillGemSecondWindSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SecondWindSupport.webp",
+      "sha256": "ed7103022b8317411b7e3eefbc85887cfca53b33e64d2e232c873fada5ff01e5"
+    },
+    "Metadata/Items/Gems/SkillGemSecondWindSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SecondWindSupport.webp",
+      "sha256": "ed7103022b8317411b7e3eefbc85887cfca53b33e64d2e232c873fada5ff01e5"
+    },
+    "Metadata/Items/Gems/SkillGemSecondWindSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SecondWindSupport.webp",
+      "sha256": "ed7103022b8317411b7e3eefbc85887cfca53b33e64d2e232c873fada5ff01e5"
+    },
+    "Metadata/Items/Gems/SkillGemSelflessRemnantsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/FigureheadSupport.webp",
+      "sha256": "14339810df7b63f4580bb56acc70859fdab6c06c8e07554bd18a5e66de52ef64"
+    },
+    "Metadata/Items/Gems/SkillGemSeraphsHeartSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/SeraphsHeart.webp",
+      "sha256": "1589260c196c3fc0bfb6d97db8a7303b3d9b1557f3f9d0fe6ff16e82016daeee"
+    },
+    "Metadata/Items/Gems/SkillGemShockConductionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ShockingProliferationSupport.webp",
+      "sha256": "8349dbbac905f7d6c1e1537f7709ec96307709b6fe052d5ae161efffa1d2288e"
+    },
+    "Metadata/Items/Gems/SkillGemShockConductionSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ShockingProliferationSupport.webp",
+      "sha256": "8349dbbac905f7d6c1e1537f7709ec96307709b6fe052d5ae161efffa1d2288e"
+    },
+    "Metadata/Items/Gems/SkillGemShockSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ConductionSupport.webp",
+      "sha256": "939a37c9ce0963bd2c63b7dccba8ed0d232088bf23c9961bb0fa26a7c25182bd"
+    },
+    "Metadata/Items/Gems/SkillGemShockingLeapSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ShockingLeapSupport.webp",
+      "sha256": "9c071129b3acb0f0f35cd7fdf87f2ce37be77d307f71db6d19d6d0028e8dd657"
+    },
+    "Metadata/Items/Gems/SkillGemShockingRiftSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ShockingRiftSupport.webp",
+      "sha256": "2a855b5729b5ef26847ef45264ec67572d7bbaf28855b428d2f591cacbaad04f"
+    },
+    "Metadata/Items/Gems/SkillGemShortFuseSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExpediteSupport.webp",
+      "sha256": "222c6eaa79f3527485dd2eabe318200807bdd1e94cee87729facdcc198118f41"
+    },
+    "Metadata/Items/Gems/SkillGemShortFuseSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ExpediteSupport.webp",
+      "sha256": "222c6eaa79f3527485dd2eabe318200807bdd1e94cee87729facdcc198118f41"
+    },
+    "Metadata/Items/Gems/SkillGemSkitteringStoneSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SkitteringStone.webp",
+      "sha256": "50b3394ec81b873d7c7090d63cdabedb9270b5aa2c5b3e87fad62bf939104212"
+    },
+    "Metadata/Items/Gems/SkillGemSkitteringStoneSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SkitteringStone.webp",
+      "sha256": "50b3394ec81b873d7c7090d63cdabedb9270b5aa2c5b3e87fad62bf939104212"
+    },
+    "Metadata/Items/Gems/SkillGemSlamAftershocksSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/CascadingSlams.webp",
+      "sha256": "e9a9d98b1c93a18d5985ec03d401e9d825181761d7ad40cdaae286c90f1bbd6e"
+    },
+    "Metadata/Items/Gems/SkillGemSlowPotencySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/EncumberanceSupport.webp",
+      "sha256": "6e40fb6de16ad521fd9d36269e612ab312a6db3add9ec4b1c9ac0eadb14eae3a"
+    },
+    "Metadata/Items/Gems/SkillGemSparSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SparSupport.webp",
+      "sha256": "53596b139be437769add003cb0252d6bce6bc57437e2fa251070fd86f6979404"
+    },
+    "Metadata/Items/Gems/SkillGemSpectralVolleySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SpectralArrowsSupport.webp",
+      "sha256": "e4149231bba742789263d718dae697868e1246578ea70a049f3abf2e154ce74e"
+    },
+    "Metadata/Items/Gems/SkillGemSpellCascadeSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SpellCascadeSupport.webp",
+      "sha256": "a616429c3f634cd3f28f5346c3a883acfa68940192e32602f71541cde60c9533"
+    },
+    "Metadata/Items/Gems/SkillGemSpellEchoSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SpellEchoSupport.webp",
+      "sha256": "745808a8b6e5c02cbbceca312e7365b680d7b94c54c3764828088e4e5eac815c"
+    },
+    "Metadata/Items/Gems/SkillGemSplinteringTotemSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SplinterTotemSupport.webp",
+      "sha256": "0095a948b19e7aec0e78373a0bbb44f94b4fb18b327ac6f6be8a4214eb21b5cd"
+    },
+    "Metadata/Items/Gems/SkillGemSplinteringTotemSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SplinterTotemSupport.webp",
+      "sha256": "0095a948b19e7aec0e78373a0bbb44f94b4fb18b327ac6f6be8a4214eb21b5cd"
+    },
+    "Metadata/Items/Gems/SkillGemStaticShocksSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/GroundingShocksSupport.webp",
+      "sha256": "4945fccd46ff77a2a6df618ce8fc6d5b55feb6ae0c614219f2a98b89e2d1d8a2"
+    },
+    "Metadata/Items/Gems/SkillGemSteadfastSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChannellingAilmentThresholdSupport.webp",
+      "sha256": "65bcb5ca012a2e88230aa45924cf1508a924fb13cad81d47d3fe8815e3178e9c"
+    },
+    "Metadata/Items/Gems/SkillGemSteadfastSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ChannellingAilmentThresholdSupport.webp",
+      "sha256": "65bcb5ca012a2e88230aa45924cf1508a924fb13cad81d47d3fe8815e3178e9c"
+    },
+    "Metadata/Items/Gems/SkillGemStoicismSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/NoFearSupport.webp",
+      "sha256": "a6c390f2bb1da62c042c2839d864457f324d44305bacc2539fac9d7ba45f186b"
+    },
+    "Metadata/Items/Gems/SkillGemStoicismSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/NoFearSupport.webp",
+      "sha256": "a6c390f2bb1da62c042c2839d864457f324d44305bacc2539fac9d7ba45f186b"
+    },
+    "Metadata/Items/Gems/SkillGemStompingGroundSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/StompingGroundSupport.webp",
+      "sha256": "fd67c96344fe7ad75c6800b26d3e81cd9a027a74cb3e6c8dfb8ffc5a6c54f835"
+    },
+    "Metadata/Items/Gems/SkillGemStormchainSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/StormchainSupport.webp",
+      "sha256": "98eb17ac2954d51b62ad9ecb98a7224bae2d5ae70b749f6d84c3aefd273b112b"
+    },
+    "Metadata/Items/Gems/SkillGemStormfireSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/StormfireSupport.webp",
+      "sha256": "c8e1179f422c666aab42a8481a58b1f522d6dd2750a6ead0ea415681bd20e34e"
+    },
+    "Metadata/Items/Gems/SkillGemStreamlinedRoundsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/AutoShotgunSupport.webp",
+      "sha256": "d1f2d379b0d2a7f1ad199ee388ed1d8289117c5639454615f7054ff0659bbd5f"
+    },
+    "Metadata/Items/Gems/SkillGemStrongHeartedSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/StrongHeartedSupport.webp",
+      "sha256": "d099fb06469d9fc6f6676f53cdd95deb82b0f455046f66299ebfb6bfa7644425"
+    },
+    "Metadata/Items/Gems/SkillGemStunSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/OverpowerSupport.webp",
+      "sha256": "090631418fabb9697e264649323a40efd064715de9f51cf223af238155cc4191"
+    },
+    "Metadata/Items/Gems/SkillGemStunSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/OverpowerSupport.webp",
+      "sha256": "090631418fabb9697e264649323a40efd064715de9f51cf223af238155cc4191"
+    },
+    "Metadata/Items/Gems/SkillGemStunSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/OverpowerSupport.webp",
+      "sha256": "090631418fabb9697e264649323a40efd064715de9f51cf223af238155cc4191"
+    },
+    "Metadata/Items/Gems/SkillGemStyrnsFerocitySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/KnightsFerocity.webp",
+      "sha256": "56632908c9599b1a691f91ed4d323a9e11a19945a53137380b34121dd2a280d8"
+    },
+    "Metadata/Items/Gems/SkillGemStyrnsMountainSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/KnightsLegacy.webp",
+      "sha256": "83e98160f44f45088f1e6a302f9ca4824072a72744d8afa21e4d13abebcf5f44"
+    },
+    "Metadata/Items/Gems/SkillGemSupportBurstingPlague": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/BurstingPlagueSupport.webp",
+      "sha256": "f17f012129bd1d166269696fdafe6375629677f47ee0efbec96b556c58ebedd7"
+    },
+    "Metadata/Items/Gems/SkillGemSwiftAfflictionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SwiftAfflictionSupport.webp",
+      "sha256": "955994ca8d3d26e238b791c825e0035836cb890eb4a6ce10634f37d799f1d83b"
+    },
+    "Metadata/Items/Gems/SkillGemSwiftAfflictionSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SwiftAfflictionSupport.webp",
+      "sha256": "955994ca8d3d26e238b791c825e0035836cb890eb4a6ce10634f37d799f1d83b"
+    },
+    "Metadata/Items/Gems/SkillGemSwiftAfflictionSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SwiftAfflictionSupport.webp",
+      "sha256": "955994ca8d3d26e238b791c825e0035836cb890eb4a6ce10634f37d799f1d83b"
+    },
+    "Metadata/Items/Gems/SkillGemSyzygySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/SyzygySupport.webp",
+      "sha256": "bafabc845b0ac44ccec39870ad6b4058a21896235bc6f0c4afebe62428698b2a"
+    },
+    "Metadata/Items/Gems/SkillGemTacatisIreSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageTacati.webp",
+      "sha256": "3ae03ee6b633e69d54b8b22dcfa4fdb80f323e3d5e58af1ca31d5b0fac2bdc20"
+    },
+    "Metadata/Items/Gems/SkillGemTangmazusThuribleSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/TangmazusThurible.webp",
+      "sha256": "06d79d1fc9f5750a3b255eee71d6b6fdf93feb17894b3b2cb3cbdd1db0a60a74"
+    },
+    "Metadata/Items/Gems/SkillGemTasaliosRhythmSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageTasalio.webp",
+      "sha256": "ad27ba65a4a522c283cbe1f6b80c3e4b4e874b4c0876b7b82b96196b61f1801c"
+    },
+    "Metadata/Items/Gems/SkillGemTearSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/TearSupport.webp",
+      "sha256": "7390725c0f463cb4022efac9d9fa2197ea7b7450b5d2c7fe4590dc6acb3ab72f"
+    },
+    "Metadata/Items/Gems/SkillGemTecrodsRevengeSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageTecrod.webp",
+      "sha256": "3be5ec3928d81561736ce94cc06483bde6b57f5c6da3eb83299d6ad7b598ac19"
+    },
+    "Metadata/Items/Gems/SkillGemTempestuousTempoSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/TempestTempoSupport.webp",
+      "sha256": "d8af6ae1efbbbe24c72184de76be0d9332853c38b1692ed21de555b48f29400d"
+    },
+    "Metadata/Items/Gems/SkillGemTerrainChainSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/TerrainChainSupport.webp",
+      "sha256": "9c48395c6e88f77503c20601fa4337cf005b0cbeaea67228cee501fcbc90a2c0"
+    },
+    "Metadata/Items/Gems/SkillGemTerrainChainSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/TerrainChainSupport.webp",
+      "sha256": "9c48395c6e88f77503c20601fa4337cf005b0cbeaea67228cee501fcbc90a2c0"
+    },
+    "Metadata/Items/Gems/SkillGemThornskinSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ThornskinSupport.webp",
+      "sha256": "c0f86690f4da9542187e83b6e2f212a1e6c2678780574d7baca2b628f9c23af1"
+    },
+    "Metadata/Items/Gems/SkillGemThornskinSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ThornskinSupport.webp",
+      "sha256": "c0f86690f4da9542187e83b6e2f212a1e6c2678780574d7baca2b628f9c23af1"
+    },
+    "Metadata/Items/Gems/SkillGemThrillOfTheKillSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ThrilloftheKillSupport.webp",
+      "sha256": "6fe2cbf7c1ef57d7ce78a7bf207549b54711fb0ac1b9356e5300b5d4fb62f8d9"
+    },
+    "Metadata/Items/Gems/SkillGemThrillOfTheKillSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ThrilloftheKillSupport.webp",
+      "sha256": "6fe2cbf7c1ef57d7ce78a7bf207549b54711fb0ac1b9356e5300b5d4fb62f8d9"
+    },
+    "Metadata/Items/Gems/SkillGemTirelessSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/TirelessSupport.webp",
+      "sha256": "3c10e5ae158791eac772c43f0a7067ca6a93ef1ad446953d28311df1426ba6c8"
+    },
+    "Metadata/Items/Gems/SkillGemTrickstersShardSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/TrickstersShard.webp",
+      "sha256": "f1775c3e2d73488f55f0f6ddb41c0a490343c367d233395234a972de244277d5"
+    },
+    "Metadata/Items/Gems/SkillGemTulsAvalancheSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/TulsProgeny.webp",
+      "sha256": "6af34024f58b66aa8b999940866521e95397e47cbdc6cffd7a4ef103d1a7058a"
+    },
+    "Metadata/Items/Gems/SkillGemTulsStillnessSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageTul.webp",
+      "sha256": "8e164310d4aebc56d437f869fc835adfd3505417cd96aa3b17e5720f6374bf6b"
+    },
+    "Metadata/Items/Gems/SkillGemUhtredAugurySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageUhtredGreater.webp",
+      "sha256": "adee05e01f960505f21eb0b1133fd8fa6b63ab313facea57783c2f0ad300812e"
+    },
+    "Metadata/Items/Gems/SkillGemUhtredExodusSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageUhtredLesser.webp",
+      "sha256": "e2d8cced1cc33a6339b73509d9783092c0c5045125564bf5daf87a5652ef9769"
+    },
+    "Metadata/Items/Gems/SkillGemUhtredOmenSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageUhtredStandard.webp",
+      "sha256": "5534b3a293208cf70d1ec12afcb0ccf4a76978d96df6936ff82e82ab89d6ac9b"
+    },
+    "Metadata/Items/Gems/SkillGemUhtredsConstellationSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/UhtredsConstellation.webp",
+      "sha256": "fafe9fe8d95c2dce97a8daf207b09c1117ce671bb4981374b256feb0712fd839"
+    },
+    "Metadata/Items/Gems/SkillGemUhtredsRiteSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/UthredsChalice.webp",
+      "sha256": "5ef60b7dff2e4be2efd2d539fde9acec8cbcc17e9b4607c33e3d4a2522d424fb"
+    },
+    "Metadata/Items/Gems/SkillGemUndermineSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/UndermineSupport.webp",
+      "sha256": "033d4fc76194ea47b32bca801e6dea2b72ebc9141ba4a0fa7b70ffd8e54e79fd"
+    },
+    "Metadata/Items/Gems/SkillGemUnerringPowerSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/DiscountSupport.webp",
+      "sha256": "9af4a6af9f4c2229f7c31503ca83b08d6994d499699adec72b0f7b73c10365f0"
+    },
+    "Metadata/Items/Gems/SkillGemUnleashSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/Support/UnleashSupport.webp",
+      "sha256": "f56e3d8b001849b7e263074221a15bdb4c538b31a835727a4e7a59efc196e5f7"
+    },
+    "Metadata/Items/Gems/SkillGemUntouchableSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/UntouchableSupport.webp",
+      "sha256": "eb3d76b17eba40bfd2ec81eae47c74040a312ea2c699a3981c1726bde42ff3b8"
+    },
+    "Metadata/Items/Gems/SkillGemUpheavalSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/UpheavalSupport.webp",
+      "sha256": "4ba78961bbca6639fd4424449db23ad80287cd1afd93d16bf53ccbe711a2c606"
+    },
+    "Metadata/Items/Gems/SkillGemUpheavalSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/UpheavalSupport.webp",
+      "sha256": "4ba78961bbca6639fd4424449db23ad80287cd1afd93d16bf53ccbe711a2c606"
+    },
+    "Metadata/Items/Gems/SkillGemUpwellingSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/UpwellingSupport.webp",
+      "sha256": "2a0ca53dd8c1e4b1482dddd7694f5ccb75e4883853959897920b00cf3fa86caa"
+    },
+    "Metadata/Items/Gems/SkillGemUpwellingSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/UpwellingSupport.webp",
+      "sha256": "2a0ca53dd8c1e4b1482dddd7694f5ccb75e4883853959897920b00cf3fa86caa"
+    },
+    "Metadata/Items/Gems/SkillGemUrgentTotemsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/TotemPlacementSpeedSupport.webp",
+      "sha256": "6da79e4a0d92984d6e6be14e73ee39763a08b7194d1928879816c64be9822476"
+    },
+    "Metadata/Items/Gems/SkillGemUrgentTotemsSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/TotemPlacementSpeedSupport.webp",
+      "sha256": "6da79e4a0d92984d6e6be14e73ee39763a08b7194d1928879816c64be9822476"
+    },
+    "Metadata/Items/Gems/SkillGemUrgentTotemsSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/TotemPlacementSpeedSupport.webp",
+      "sha256": "6da79e4a0d92984d6e6be14e73ee39763a08b7194d1928879816c64be9822476"
+    },
+    "Metadata/Items/Gems/SkillGemUruksSmeltingSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageArmourBreak.webp",
+      "sha256": "d2ad1d6e9fedc229985dfde0c86a5ebff3fa6dec09c5d638beb28e7c5cbf7f13"
+    },
+    "Metadata/Items/Gems/SkillGemUulNetolsEmbraceSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageUulNetol.webp",
+      "sha256": "892564c7101ca58ec816ef960215850b778b768a8afe2064975d93f9f0354fd8"
+    },
+    "Metadata/Items/Gems/SkillGemVanguardSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/GuardonStunSupport.webp",
+      "sha256": "34dd238722dfa505e41296c807b1908518b5ca9284aab75fe0f44aba92afae74"
+    },
+    "Metadata/Items/Gems/SkillGemVanguardSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/GuardonStunSupport.webp",
+      "sha256": "34dd238722dfa505e41296c807b1908518b5ca9284aab75fe0f44aba92afae74"
+    },
+    "Metadata/Items/Gems/SkillGemVarashtasBlessingSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageDjinn.webp",
+      "sha256": "50421f2de2a123900ba498eb93bbcf37008792c10504100f3b7dd678fd2500b1"
+    },
+    "Metadata/Items/Gems/SkillGemVerglasSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/VerglasSupport.webp",
+      "sha256": "50c24451b22d2bfd83f577aae2bcbe41a7f9dbf7e25dedcc10daaf1a6ce167ef"
+    },
+    "Metadata/Items/Gems/SkillGemVilentasPropulsionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageVilenta.webp",
+      "sha256": "d7c7bb777b5a7f76506e4b66a1c7420a4d4c55079ab88de84f6e59d6893ddd95"
+    },
+    "Metadata/Items/Gems/SkillGemVitalitySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/VitalitySupport.webp",
+      "sha256": "32fc28e392084b142c03e0d8e0c8bbc4ce09290193e21847f61ac01f1de72def"
+    },
+    "Metadata/Items/Gems/SkillGemVitalitySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/VitalitySupport.webp",
+      "sha256": "32fc28e392084b142c03e0d8e0c8bbc4ce09290193e21847f61ac01f1de72def"
+    },
+    "Metadata/Items/Gems/SkillGemVolatilitySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/InstabilitySupport.webp",
+      "sha256": "85e0b145efc1c088923408bd4a813ab47fd12ac9de53b052c321da18cafd63f8"
+    },
+    "Metadata/Items/Gems/SkillGemVolcanicEruptionSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/VolcanicEruptionSupport.webp",
+      "sha256": "1037f25c337d17b1d365e69712ce3a1d3d034b263b4c23e1031e3d55780a3b81"
+    },
+    "Metadata/Items/Gems/SkillGemVoltSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/VoltSupport.webp",
+      "sha256": "466c5b4b2b7e910c25155cc68389c83633b3198681325f93d9a1580a506157f0"
+    },
+    "Metadata/Items/Gems/SkillGemVoranasSiegeSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/VoranasSiege.webp",
+      "sha256": "87eb7e0669581d16b9bc4dc6c14c8edca271f84992bad7e93e8295a317122f81"
+    },
+    "Metadata/Items/Gems/SkillGemVruunsAftermathSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/VruunsAftermath.webp",
+      "sha256": "c59d7531f2d0e869259c6d94e5a7a29178f3e8247c9432dd4818bdd464778a19"
+    },
+    "Metadata/Items/Gems/SkillGemVruunsInevitabilitySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/VruunsSpike.webp",
+      "sha256": "713a7810b533123337e27a7d0ee8d9ecf733b169f68352e2bb27d522fd76be7a"
+    },
+    "Metadata/Items/Gems/SkillGemWallFortress": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/WallFortressSupport.webp",
+      "sha256": "850ac38f2f490aeb0587cab7472c0e4417083e2e117e27f80e72632824a7e0c2"
+    },
+    "Metadata/Items/Gems/SkillGemWallFortressTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/WallFortressSupport.webp",
+      "sha256": "850ac38f2f490aeb0587cab7472c0e4417083e2e117e27f80e72632824a7e0c2"
+    },
+    "Metadata/Items/Gems/SkillGemWarmBloodedSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/WarmBloodedSupport.webp",
+      "sha256": "a1d9e207a320144e9121f6ea81d36a6c3b40cc7d044e4177619cca21db65b5ba"
+    },
+    "Metadata/Items/Gems/SkillGemWildfireSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/IgniteProliferationSupport.webp",
+      "sha256": "622418d2bb5b2e3f83d572c64f1caab4ca9f83e74999c0900b6eb438c818145d"
+    },
+    "Metadata/Items/Gems/SkillGemWildshardsSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/WildshardsSupport.webp",
+      "sha256": "30d8cfb157e4f881b0dc7232920a3b65a046430834407621f65e47f3ee28cb18"
+    },
+    "Metadata/Items/Gems/SkillGemWildshardsSupportThree": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/Wildshards.webp",
+      "sha256": "61f8ff1caa56d9a643321a7a4390cb3ab3875199ea090a50a9b3dafeb9f810f9"
+    },
+    "Metadata/Items/Gems/SkillGemWildshardsSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/WildshardsSupport.webp",
+      "sha256": "30d8cfb157e4f881b0dc7232920a3b65a046430834407621f65e47f3ee28cb18"
+    },
+    "Metadata/Items/Gems/SkillGemWindowOfOpportunitySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/WindowOfOpportunitySupport.webp",
+      "sha256": "5511b94ca76bf90103aa0da8386b0aa83867ece06bd3b6d7b53c23a3fac3af7a"
+    },
+    "Metadata/Items/Gems/SkillGemWindowOfOpportunitySupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/WindowOfOpportunitySupport.webp",
+      "sha256": "5511b94ca76bf90103aa0da8386b0aa83867ece06bd3b6d7b53c23a3fac3af7a"
+    },
+    "Metadata/Items/Gems/SkillGemWitheringTouchSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/WitheringTouchSupport.webp",
+      "sha256": "98c6fb560786f6a313f22c13c07624558da8dadb72d0b1595b9b9fb91285ce16"
+    },
+    "Metadata/Items/Gems/SkillGemXibaquasRendingSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageXibaqua.webp",
+      "sha256": "9b67189a7f8d50e9045317635a6d5a9a09b1641e24fff2da83840f21a83be3ce"
+    },
+    "Metadata/Items/Gems/SkillGemXophsPyreSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/LineageXoph.webp",
+      "sha256": "7db394674afe4963a5fe37061aff71bd0939201a2c013746db99d01aa5b7cfe1"
+    },
+    "Metadata/Items/Gems/SkillGemZarokhsRefrainSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/Zarokh.webp",
+      "sha256": "c017b3bc27a32f6897ed9b08c1a8a572d01b338656309ee2261f200be48a5575"
+    },
+    "Metadata/Items/Gems/SkillGemZarokhsRevoltSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/ZarokhsRevolt.webp",
+      "sha256": "5587cdfbaaf6b30475c3f01a9e5ae28460af0083605afea92632a828d59b7bef"
+    },
+    "Metadata/Items/Gems/SkillGemZenithSupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ManatenanceSupport.webp",
+      "sha256": "ad043ce252a0e2593472bb715be6900ce10f2f091b9cd477bcd07d66a0dfa6b7"
+    },
+    "Metadata/Items/Gems/SkillGemZenithSupportTwo": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DArt/SkillIcons/Support/ManatenanceSupport.webp",
+      "sha256": "ad043ce252a0e2593472bb715be6900ce10f2f091b9cd477bcd07d66a0dfa6b7"
+    },
+    "Metadata/Items/Gems/SkillGemZerphisLegacySupport": {
+      "url": "https://cdn.poe2db.tw/image/Art/2DItems/Gems/New/NewSupport/Lineage/ZerphisLegacy.webp",
+      "sha256": "e30eb16fec8373cd8be38dae156914f04dd12e1a1cddb43a217b53956eeddd66"
+    }
+  }
+}

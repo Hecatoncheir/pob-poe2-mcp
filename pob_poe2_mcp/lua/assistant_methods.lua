@@ -47,7 +47,7 @@ return function(methods, fail, snapshot, finish)
 			if search:lower():find(query, 1, true) then entries[#entries + 1] = entry end
 		end
 		if kind == "gems" then
-			for id, gem in pairs(build.data.gems) do add({ id = id, name = gem.name, skillId = gem.grantedEffectId, support = gem.support == true, naturalMaxLevel = gem.naturalMaxLevel }) end
+			for id, gem in pairs(build.data.gems) do add({ id = id, name = gem.name, skillId = gem.grantedEffectId, variantId = gem.variantId, support = gem.grantedEffect and gem.grantedEffect.support == true or false, naturalMaxLevel = gem.naturalMaxLevel }) end
 		elseif kind == "classes" then
 			for id, class in pairs(build.spec.tree.classes) do
 				local asc = {}
@@ -127,7 +127,7 @@ return function(methods, fail, snapshot, finish)
 		local groups, items, slots, warnings = {}, {}, {}, {}
 		for id, group in ipairs(build.skillsTab.socketGroupList) do
 			local gems = {}
-			for _, gem in ipairs(group.gemList) do gems[#gems + 1] = { id = gem.gemId, skillId = gem.skillId, name = gem.nameSpec, level = gem.level, quality = gem.quality, enabled = gem.enabled, error = gem.errMsg } end
+			for _, gem in ipairs(group.gemList) do gems[#gems + 1] = { id = gem.gemId, skillId = gem.skillId, name = gem.nameSpec, level = gem.level, quality = gem.quality, enabled = gem.enabled, support = gem.gemData and gem.gemData.grantedEffect.support == true or false, error = gem.errMsg } end
 			groups[#groups + 1] = { id = id, label = clean(group.displayLabel), enabled = group.enabled, gems = gems }
 		end
 		for id, item in pairs(build.itemsTab.items) do

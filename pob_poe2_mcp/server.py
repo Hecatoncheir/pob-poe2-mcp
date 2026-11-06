@@ -11,6 +11,8 @@ from .api import BuildAPI, EngineError, MAX_MESSAGE
 from .images import render_build_image, validate_image_args
 from .tree_icons import TreeIcons
 from .tree_scene_assets import SceneAssets
+from .gem_assets import GemAssets
+from .gem_supports import compatible_supports
 
 MANIFEST = Path(__file__).parent / "data/tools.json"
 TOOLS = json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -27,8 +29,11 @@ METHODS = {
     "pob_tree_textures": None,
     "pob_tree_hover": "getTreeHover",
     "pob_node_power": "getNodePower",
+    "pob_gem_icons": "getGemIconAssets",
+    "pob_gem_supports": None,
 }
 READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image", "pob_get_tree", "pob_tree_icons", "pob_tree_textures", "pob_tree_hover", "pob_node_power"}
+READ_ONLY_TOOLS.update({'pob_gem_icons', 'pob_gem_supports'})
 
 
 def validate(value, schema):
@@ -73,11 +78,14 @@ class Server:
         self.mode = mode
         self.icons = None
         self.scene_assets = None
+        self.gem_assets = None
 
     def execute_tool(self, name, args):
         if self.api is None:
             self.api = BuildAPI(pob_dir=self.pob_dir, timeout=self.timeout, mode=self.mode)
         try:
+            if name == 'pob_gem_supports':
+                return compatible_supports(self.api, args['gems'], self.timeout)
             if name == 'pob_node_power' and self.mode != 'engine':
                 raise ValueError('Отчёт узлов требует отдельной сессии engine')
             if name == 'pob_tree_textures':
@@ -114,6 +122,10 @@ class Server:
 
     def tool_response(self, name, args, result):
         image = None
+        if name == 'pob_gem_icons':
+            if self.gem_assets is None:
+                self.gem_assets = GemAssets(self.api.pob_dir)
+            result = self.gem_assets.render(result)
         if name in ('pob_get_tree', 'pob_tree_hover', 'pob_node_power') and 'scene' in result:
             if self.scene_assets is None:
                 self.scene_assets = SceneAssets(self.api.pob_dir)

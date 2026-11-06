@@ -354,6 +354,9 @@ installGemGroups(methods, fail, finishTreeChange)
 local installEquipment = dofile(POB_MCP_PACKAGE_DIR .. "/lua/equipment.lua")
 setfenv(installEquipment, getfenv(1))
 installEquipment(methods, fail, finishTreeChange)
+local installTradeSearch = dofile(POB_MCP_PACKAGE_DIR .. "/lua/trade_search.lua")
+setfenv(installTradeSearch, getfenv(1))
+installTradeSearch(methods, fail)
 local installImageData = dofile(POB_MCP_PACKAGE_DIR .. "/lua/image_data.lua")
 setfenv(installImageData, getfenv(1))
 installImageData(methods)
@@ -362,7 +365,7 @@ setfenv(installNodePower, getfenv(1))
 installNodePower(methods, fail)
 function methods.initialize()
 	local system = jit.os == "OSX" and "macos" or jit.os:lower()
-	return { methods = { "initialize", "createBuild", "getCatalog", "getGemIconAssets", "getGemTooltip", "getCompatibleSupports", "updateSkillGroup", "deleteSkillGroup", "inspectItem", "equipItem", "selectWeaponSet", "getBuildReport", "getBuildImageData", "getTreeGeometry", "getTreeIconAssets", "getTreeHover", "getNodePower", "addSkillGroup", "addItem", "setConfig", "loadBuild", "getSnapshot", "getWorkbench", "setCustomMods", "exportBuild", "selectMainSkill", "getTree", "getNodeTooltip", "getJewels", "treeOptions", "treeAction", "toggleNode", "shutdown" }, platform = host.live and "windows-app" or system .. "-engine" }
+	return { methods = { "initialize", "createBuild", "getCatalog", "getGemIconAssets", "getGemTooltip", "getCompatibleSupports", "updateSkillGroup", "deleteSkillGroup", "inspectItem", "compareItem", "getTradeCatalog", "buildTradeSearch", "equipItem", "selectWeaponSet", "getBuildReport", "getBuildImageData", "getTreeGeometry", "getTreeIconAssets", "getTreeHover", "getNodePower", "addSkillGroup", "addItem", "setConfig", "loadBuild", "getSnapshot", "getWorkbench", "setCustomMods", "exportBuild", "selectMainSkill", "getTree", "getNodeTooltip", "getJewels", "treeOptions", "treeAction", "toggleNode", "shutdown" }, platform = host.live and "windows-app" or system .. "-engine" }
 end
 function methods.loadBuild(params)
 	validateXML(params.xml)
@@ -441,6 +444,7 @@ local function dispatch(request)
 	local requiresBuild = request.method ~= "initialize" and request.method ~= "createBuild" and request.method ~= "getCatalog" and request.method ~= "loadBuild" and request.method ~= "shutdown"
 	if requiresBuild and not loaded then fail("INVALID_BUILD", "Сначала откройте сборку") end
 	if (requiresBuild or host.live and mutations[request.method]) and params.revision ~= revision then fail("STALE_REVISION", "Ревизия сборки устарела") end
+	if mutations[request.method] and params.expectedRevision ~= nil and params.expectedRevision ~= revision then fail("STALE_REVISION", "Сборка изменилась после примерки; проверьте предмет заново") end
 	if host.live and mutations[request.method] and host.blocked and host.blocked() then
 		fail("APP_BUSY", "Сначала закройте диалог в окне PoB")
 	end

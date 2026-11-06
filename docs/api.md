@@ -149,6 +149,16 @@ python -X utf8 -m unittest discover -s tests -v
 
 `pob_gem_tooltip` (MCP 0.14.0) читает описание из оригинального `Classes/GemTooltip`. Для установленного камня передаются `groupId` и `sourceIndex`; для каталога или черновика — `id`, необязательные `level` (по умолчанию 1) и `quality` (0). Смешивать способы выбора нельзя. Ответ: `{source: "original-lua", lines: [{size, text}, {separator: true}, ...]}`. Цветовые коды остаются в строках. Сборка, её XML и ревизия не изменяются; установленный камень использует текущий расчётный контекст, а отдельный ID описывает пробный камень.
 
+### Примерка и браузерный поиск (MCP 0.15.0)
+
+`pob_compare_item` принимает обязательный `slot` и ровно один из `raw`/`itemId`. Возвращает описание `pob_inspect_item` и `comparison: {revision, rows}`. Каждая строка содержит `id`, `label`, `actor`, исходные `before`/`after` при наличии, форматированные `beforeText`/`afterText` и необязательный `changeText` с цветом PoB. Расчёт выполняет `GetMiscCalculator({repSlotName, repItem})`, формат — `FormatStat`, сравнение и оценку — `CompareStatList`. Показатели приспешника отмечаются `actor: minion`; неактивный набор оружия возвращает `comparison.reason`. Тот же надетый предмет не снимается при примерке. XML и ревизия не меняются.
+
+Для применения передайте `comparison.revision` в `pob_equip_item.expectedRevision`. Проверка выполняется до снимка отката и любых изменений. Устаревшее применение возвращает `STALE_REVISION`; новую примерку нужно получить заново. Это номер текущей сессии, его нельзя переносить между подключениями.
+
+`pob_trade_catalog({slot})` возвращает `source: original-lua`, совместимые `bases`, `currencies` и `stats`. Базы проверяет `IsItemValidForSlot`, характеристики берутся из `Data/TradeSiteStats`. Валюты читаются из замыкания `TradeQueryGenerator.StartQuery`, без конструктора, `InitMods`, скачивания и записи `QueryMods`. При изменении этого внутреннего контракта PoB операция явно завершается ошибкой. Каталог сохраняет ID вариантов; `queryId` и `fixedOption` восстанавливают поля запроса из записи PoB вида `id|option`.
+
+`pob_trade_search` принимает `slot`, `league`, необязательные `base`, `maxPrice`/`currency`, `online` и до 12 фильтров `{id, min?, max?, option?}` из каталога. Категорию определяет `TradeHelpers.getTradeCategory`, путь кодирует `TradeQueryRequests.buildUrl`. Ответ содержит готовую `url` для `https://www.pathofexile.com/trade2/search/poe2/...` и `query`. Сетевые обращения, получение объявлений и авторизация не выполняются. Адаптер составляет простой запрос по выбранным свойствам; взвешенный поиск улучшений не запускается. Рабочая сборка не меняется. Доступность живой выдачи и актуальность внешних ID определяет торговый сайт.
+
 `pob_equip_item` требует `slot` и один источник `raw`/`itemId`. `itemId: 0` снимает предмет, сохраняя его в списке сборки. `IsItemValidForSlot` проверяет совместимость; исходные `SetSelItemId`, `PopulateSlots` и `UpdateSockets` применяют выбор. Ошибка возвращает прежний XML по общему протоколу.
 
 `pob_select_weapon_set` принимает `index: 1 | 2` и вызывает штатную кнопку `ItemsTab`. Отчёт содержит `weaponSet`, а слоты — `visible`, `weaponSet`, `label` и при наличии `nodeId`. Флаг `active` относится к исходному включению слота, например флакона; его нельзя использовать вместо видимости. Текст предметов в отчёте формирует исходный `BuildRaw`.

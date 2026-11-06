@@ -845,6 +845,10 @@
         "slot": {
           "type": "string",
           "maxLength": 200
+        },
+        "expectedRevision": {
+          "type": "integer",
+          "minimum": 0
         }
       },
       "required": [
@@ -912,6 +916,128 @@
           "minimum": 1
         }
       },
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_compare_item",
+    "description": "Примерка в конкретном слоте без изменения сборки. Исходный GetMiscCalculator и CompareStatList возвращают Было/Стало, формат и смысл изменений. Для применения передайте comparison.revision как expectedRevision.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "raw": {
+          "type": "string",
+          "maxLength": 65536
+        },
+        "itemId": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "slot": {
+          "type": "string",
+          "maxLength": 200
+        }
+      },
+      "required": [
+        "slot"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_trade_catalog",
+    "description": "Локальный каталог характеристик, совместимых баз и валют из исходного PoB. Не обращается к торговому API и не изменяет сборку.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "slot": {
+          "type": "string",
+          "maxLength": 100
+        }
+      },
+      "required": [
+        "slot"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_trade_search",
+    "description": "Подготовить браузерную ссылку trade2 по каталогу PoB: лига, ячейка, база, бюджет и характеристики. Сетевые запросы не выполняются; рабочая сборка не изменяется.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "slot": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "league": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "base": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "maxPrice": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000000000000.0
+        },
+        "currency": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "online": {
+          "type": "boolean"
+        },
+        "filters": {
+          "type": "array",
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "maxLength": 200
+              },
+              "min": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              },
+              "option": {
+                "type": "string",
+                "maxLength": 200
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "slot",
+        "league"
+      ],
       "additionalProperties": false
     },
     "annotations": {

@@ -51,6 +51,57 @@ function methods.inspectItem(params)
 		compatible = slot and build.itemsTab:IsItemValidForSlot(item, slot.slotName) == true or false,
 		lines = tooltip(item, slot) }
 end
+local function finite(value)
+	return type(value) == "number" and value == value and math.abs(value) ~= math.huge
+end
+local function comparisonRow(stat, actor, before, after)
+	local old, current = before[stat.stat], after[stat.stat]
+	if not finite(old) and not finite(current) then return end
+	local collector = { text = nil }
+	function collector:AddLine(_, text) if text ~= "" then self.text = text end end
+	if finite(old) and finite(current) then build:CompareStatList(collector, { stat }, actor, before, after, "") end
+	local change = collector.text
+	local benefit
+	if change then
+		benefit = change:find(colorCodes.POSITIVE, 1, true) ~= nil
+		local first, last = change:find(" " .. stat.label, 1, true)
+		if first then change = change:sub(1, first - 1) .. change:sub(last + 1) end
+	end
+	return { id = stat.stat, label = stat.label, before = finite(old) and old or nil, after = finite(current) and current or nil,
+		beforeText = finite(old) and build:FormatStat(stat, old, before[stat.overCapStat]) or nil,
+		afterText = finite(current) and build:FormatStat(stat, current, after[stat.overCapStat]) or nil,
+		changeText = change, benefit = benefit }
+end
+local function comparisonRows(stats, actor, before, after, prefix)
+	local rows, seen = {}, {}
+	for _, stat in ipairs(stats) do
+		if stat.stat and not stat.childStat and not seen[stat.stat] and stat.stat ~= "SkillDPS" and
+			(not stat.flag or actor.mainSkill.activeEffect.statSet.skillFlags[stat.flag]) then
+			local row = comparisonRow(stat, actor, before, after)
+			if row then row.actor = prefix; rows[#rows + 1] = row; seen[stat.stat] = true end
+		end
+	end
+	return rows
+end
+function methods.compareItem(params)
+	local result = methods.inspectItem(params)
+	if not result.compatible then return result end
+	local slot = equipmentSlot(params.slot)
+	local activeSet = build.itemsTab.activeItemSet.useSecondWeaponSet and 2 or 1
+	if slot.weaponSet and slot.weaponSet ~= activeSet then
+		result.comparison = { revision = params.revision, rows = {}, reason = "Выберите этот набор оружия для примерки" }
+		return result
+	end
+	local item = readItem(params)
+	local calculate, before = build.calcsTab:GetMiscCalculator()
+	local after = calculate({ repSlotName = slot.slotName, repItem = item })
+	local rows = comparisonRows(build.displayStats, build.calcsTab.mainEnv.player, before, after, "player")
+	if before.Minion and after.Minion and build.calcsTab.mainEnv.minion then
+		for _, row in ipairs(comparisonRows(build.minionDisplayStats, build.calcsTab.mainEnv.minion, before.Minion, after.Minion, "minion")) do rows[#rows + 1] = row end
+	end
+	result.comparison = { revision = params.revision, rows = rows }
+	return result
+end
 function methods.equipItem(params)
 	local slot = equipmentSlot(params.slot)
 	if params.itemId == 0 and params.raw == nil then

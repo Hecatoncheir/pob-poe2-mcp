@@ -1,12 +1,12 @@
 -- Каталог и совместимость используют данные и проверку исходного PoB.
-return function(methods, fail)
+return function(methods, fail, granted)
 local assets
 local gemTooltip
 local function tooltipInstance(params)
 	if params.groupId ~= nil or params.sourceIndex ~= nil then
 		if params.id ~= nil or params.level ~= nil or params.quality ~= nil then fail("INVALID_REQUEST", "Укажите камень группы либо отдельный ID с уровнем и качеством") end
 		local group = build.skillsTab.socketGroupList[params.groupId]
-		local instance = group and group.gemList[params.sourceIndex]
+		local instance = group and granted.gems(build, group)[params.sourceIndex]
 		if not instance or not instance.gemData then fail("INVALID_REQUEST", "Камень группы не найден") end
 		local result = {}
 		for key, value in pairs(instance) do result[key] = value end
@@ -61,7 +61,7 @@ end
 function methods.getCompatibleSupports(params)
 	local group = build.skillsTab.socketGroupList[params.groupId]
 	if not group then fail("INVALID_REQUEST", "Группа не найдена") end
-	for index, gem in ipairs(group.gemList) do
+	for index, gem in ipairs(granted.gems(build, group)) do
 		local support = gem.gemData and gem.gemData.grantedEffect.support
 		if (index == 1 and support) or (index > 1 and not support) then
 			fail("INVALID_REQUEST", "Сначала нужен камень умения, затем камни поддержки")
@@ -69,13 +69,8 @@ function methods.getCompatibleSupports(params)
 	end
 	local result = {}
 	for id, gem in pairs(build.data.gems) do
-		if gem.grantedEffect and gem.grantedEffect.support then
-			for _, activeSkill in ipairs(group.displaySkillList or {}) do
-				if calcLib.canGrantedEffectSupportActiveSkill(gem.grantedEffect, activeSkill) then
-					result[#result + 1] = id
-					break
-				end
-			end
+		if gem.grantedEffect and gem.grantedEffect.support and granted.canSupport(group, gem.grantedEffect) then
+			result[#result + 1] = id
 		end
 	end
 	table.sort(result)

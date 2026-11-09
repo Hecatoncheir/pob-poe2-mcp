@@ -5,10 +5,12 @@ import xml.etree.ElementTree as ET
 
 from pob_poe2_mcp.api import BuildAPI, EngineError
 from pob_poe2_mcp.engine import engine_layout, resolve_engine_dir
+from pob_poe2_mcp.gem_supports import compatible_supports
 
 ENGINE = resolve_engine_dir()
 FIREBALL = 'Metadata/Items/Gems/SkillGemFireball'
 SUPPORT = 'Metadata/Items/Gems/SkillGemControlledDestructionSupport'
+COILING_BOLTS = 'CoilingBoltsPlayer'
 
 
 def groups(xml):
@@ -24,6 +26,51 @@ class EditGroups(unittest.TestCase):
         self.api.call('createBuild', {'level': 90, 'classId': classes[0]['id']})
         for label in ['Первая', 'Вторая']:
             self.api.call('addSkillGroup', {'label': label, 'gems': [{'id': FIREBALL, 'level': 5}]})
+
+    def item_skill(self):
+        report = self.api.call('getBuildReport')
+        return next(group for group in report['groups']
+                    if group['gems'] and group['gems'][0]['skillId'] == COILING_BOLTS)
+
+    def test_item_skill_supports_change_dps_and_round_trip_through_xml(self):
+        raw = ('Rarity: UNIQUE\nLiminal Coil\nTwisted Wand\n--------\n'
+               'Grants Skill: Level 20 Coiling Bolts (implicit)\n100% increased Spell Damage')
+        self.api.call('equipItem', {'slot': 'Weapon 1', 'raw': raw})
+        group = self.item_skill()
+        group_id = group['id']
+        primary = {'id': COILING_BOLTS, 'sourceIndex': 1}
+        self.api.call('selectMainSkill', {'control': 'groups', 'id': group_id})
+        before = self.api.call('getSnapshot')['output']['TotalDPS']
+        revision = self.api.revision
+        xml = self.api.call('exportBuild')['xml']
+        supports = compatible_supports(self.api, [primary], 60, group_id)['supportIds']
+        self.assertEqual(self.api.call('exportBuild')['xml'], xml)
+        self.assertIn(SUPPORT, supports)
+        incompatible = self.api.call('getCatalog', {'kind': 'gems', 'query': 'Rapid Attacks I'})['entries'][0]['id']
+        self.assertNotIn(incompatible, supports)
+        for draft in ([primary, {'id': incompatible}], [{'id': FIREBALL, 'sourceIndex': 1}]):
+            with self.assertRaises(EngineError):
+                self.api.call('updateSkillGroup', {'groupId': group_id, 'gems': draft})
+        self.assertEqual(self.api.revision, revision)
+        self.assertEqual(self.item_skill(), group)
+        self.assertEqual(self.api.call('getSnapshot')['output']['TotalDPS'], before)
+
+        self.api.call('updateSkillGroup', {'groupId': group_id, 'gems': [primary, {'id': SUPPORT, 'quality': 12}]})
+        edited = self.item_skill()
+        self.assertEqual(edited['source'], group['source'])
+        self.assertEqual(edited['gems'][0], group['gems'][0])
+        self.assertEqual(edited['gems'][1]['quality'], 12)
+        self.assertGreater(self.api.call('getSnapshot')['output']['TotalDPS'], before)
+        self.assertTrue(self.api.call('getGemTooltip', {'groupId': group_id, 'sourceIndex': 2})['lines'])
+        saved = self.api.call('exportBuild')['xml']
+        self.api.call('loadBuild', {'xml': saved})
+        self.assertEqual(self.item_skill()['gems'], edited['gems'])
+        group_id = self.item_skill()['id']
+        self.api.call('updateSkillGroup', {'groupId': group_id, 'gems': [primary, {'id': SUPPORT, 'sourceIndex': 2, 'quality': 16}]})
+        self.assertEqual(self.item_skill()['gems'][1]['quality'], 16)
+        self.api.call('updateSkillGroup', {'groupId': group_id, 'gems': [primary]})
+        self.assertEqual(self.item_skill()['gems'], group['gems'])
+        self.assertAlmostEqual(self.api.call('getSnapshot')['output']['TotalDPS'], before)
 
     def test_updates_only_selected_group_and_preserves_original_fields(self):
         root = ET.fromstring(self.api.call('exportBuild')['xml'])

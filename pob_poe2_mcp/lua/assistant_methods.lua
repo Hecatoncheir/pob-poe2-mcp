@@ -1,5 +1,5 @@
 -- API ассистентов: игровые операции выполняют исходные классы Lua.
-return function(methods, fail, snapshot, finish)
+return function(methods, fail, snapshot, finish, granted)
 	local function integer(value, low, high)
 		return type(value) == "number" and value % 1 == 0 and value >= low and value <= high
 	end
@@ -127,8 +127,13 @@ return function(methods, fail, snapshot, finish)
 		local groups, items, slots, warnings = {}, {}, {}, {}
 		for id, group in ipairs(build.skillsTab.socketGroupList) do
 			local gems = {}
-			for index, gem in ipairs(group.gemList) do gems[#gems + 1] = { sourceIndex = index, id = gem.gemId, skillId = gem.skillId, name = gem.nameSpec, level = gem.level, quality = gem.quality, enabled = gem.enabled, support = gem.gemData and gem.gemData.grantedEffect.support == true or false, error = gem.errMsg } end
-			groups[#groups + 1] = { id = id, label = clean(group.displayLabel), customLabel = group.label or "", source = group.source, enabled = group.enabled, gems = gems }
+			for index, gem in ipairs(granted.gems(build, group)) do
+				gems[#gems + 1] = { sourceIndex = index, id = gem.gemId or gem.gemData and gem.gemData.id, skillId = gem.skillId,
+					name = gem.nameSpec, level = gem.level, quality = gem.quality, enabled = gem.enabled,
+					support = gem.gemData and gem.gemData.grantedEffect.support == true or false, error = gem.errMsg }
+			end
+			groups[#groups + 1] = { id = id, label = clean(group.displayLabel), customLabel = group.label or "", source = group.source,
+				enabled = group.enabled, gems = gems, supportScope = granted.scope(build, group), slotSupports = granted.isSlotGroup(group) or nil }
 		end
 		for id, item in pairs(build.itemsTab.items) do
 			local unsupported = {}

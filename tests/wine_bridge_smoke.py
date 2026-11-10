@@ -38,9 +38,11 @@ def wait_for_window(directory, process):
         try:
             return BuildAPI(mode="app", pob_dir=directory, timeout=5)
         except EngineError as error:
-            if error.code != "BRIDGE_NOT_RUNNING":
+            if error.code not in {"BRIDGE_NOT_RUNNING", "ENGINE_STOPPED", "TIMEOUT"}:
                 raise
-            time.sleep(1)
+        except OSError:
+            pass
+        time.sleep(1)
     raise RuntimeError("Окно PoB под Wine не подключилось к мосту.")
 
 

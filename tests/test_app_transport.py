@@ -202,7 +202,7 @@ class AppReconnection(unittest.TestCase):
         with bridge(self.directory, results=results) as requests:
             with patch('pob_poe2_mcp.wine_paths._drives', return_value={'c:': self.directory}):
                 folder = self.call('pob_get_build_directory')
-            self.assertEqual(folder['structuredContent']['result'], {'directory': str(builds)})
+            self.assertEqual(folder['structuredContent']['result'], {'directory': str(builds.resolve())})
             self.assertEqual(self.call('pob_list_characters')['structuredContent']['result'], {'characters': [character]})
             self.assertEqual(self.call('pob_get_character', name=character['name'])['structuredContent']['result'], {'character': full})
             self.assertEqual(requests[-1]['params']['name'], character['name'])

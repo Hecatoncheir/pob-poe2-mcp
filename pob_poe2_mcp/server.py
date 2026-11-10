@@ -13,6 +13,7 @@ from .tree_icons import TreeIcons
 from .tree_scene_assets import SceneAssets
 from .gem_assets import GemAssets
 from .gem_supports import compatible_supports
+from .editor import EDITOR_TOOLS, EditorClient
 
 MANIFEST = Path(__file__).parent / "data/tools.json"
 TOOLS = json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -81,17 +82,25 @@ def validate(value, schema):
 
 
 class Server:
-    def __init__(self, pob_dir=None, timeout=60, mode="engine"):
+    def __init__(self, pob_dir=None, timeout=60, mode="engine", editor_endpoint=None):
         self.api = None
         self.initialized = False
         self.pob_dir = pob_dir
         self.timeout = timeout
         self.mode = mode
+        self.editor = EditorClient(editor_endpoint, timeout) if mode == "editor" else None
         self.icons = None
         self.scene_assets = None
         self.gem_assets = None
 
+    def tool_available(self, name):
+        return self.editor is None or name in EDITOR_TOOLS
+
     def execute_tool(self, name, args):
+        if not self.tool_available(name):
+            raise ValueError("Инструмент недоступен в этом режиме MCP")
+        if self.editor:
+            return self.editor.call(name, args)
         if self.api is None:
             self.api = BuildAPI(pob_dir=self.pob_dir, timeout=self.timeout, mode=self.mode)
         try:
@@ -147,7 +156,8 @@ class Server:
             result = self.icons.render(result)
         if name == 'pob_render_image':
             image, result = render_build_image(result, args, getattr(self.api, 'pob_dir', None))
-        payload = {"revision": self.api.revision, "result": result}
+        revision = self.editor.revision if self.editor else self.api.revision
+        payload = {"revision": revision, "result": result}
         content = [{"type": "text", "text": json.dumps(payload, ensure_ascii=False)}]
         if image is not None:
             content.append({"type": "image", "mimeType": "image/png", "data": base64.b64encode(image).decode('ascii')})
@@ -158,7 +168,11 @@ class Server:
             self.initialized = True
             requested = params.get("protocolVersion")
             version = requested if requested in ["2024-11-05", "2025-03-26", "2025-06-18", "2025-11-25"] else "2025-11-25"
-            mode_info = " Режим app: операции изменяют текущую сборку открытого окна PoB; сохранение выполняет пользователь." if self.mode == "app" else " Режим engine: отдельная сессия расчёта на файлах установленного PoB."
+            mode_info = {
+                "app": " Режим app: операции изменяют текущую сборку открытого окна PoB; сохранение выполняет пользователь.",
+                "engine": " Режим engine: отдельная сессия расчёта на файлах установленного PoB.",
+                "editor": " Режим editor: команды работают с открытой сборкой PoB II при разрешении пользователя. Перед правками и после STALE_REVISION вызовите pob_check_build.",
+            }[self.mode]
             return {"protocolVersion": version, "capabilities": {"tools": {}},
                     "serverInfo": {"name": "pob-poe2-mcp", "version": __version__},
                     "instructions": "Все игровые расчёты выполняет Lua. Сначала прочитайте каталоги. Проверяйте warnings, ошибки камней, unsupported модификаторы и config. Не называйте сборку проверенной в игре: проверен только расчёт PoB." + mode_info}
@@ -167,7 +181,7 @@ class Server:
         if not self.initialized:
             raise ValueError("Сначала initialize")
         if method == "tools/list":
-            return {"tools": TOOLS}
+            return {"tools": [tool for tool in TOOLS if self.tool_available(tool["name"])]}
         if method != "tools/call":
             raise LookupError("Неизвестный метод MCP")
         name, args = params.get("name"), params.get("arguments", {})
@@ -188,10 +202,10 @@ class Server:
             self.api.close()
 
 
-def main(pob_dir=None, timeout=60, mode="engine"):
+def main(pob_dir=None, timeout=60, mode="engine", editor_endpoint=None):
     sys.stdin.reconfigure(encoding="utf-8")
     sys.stdout.reconfigure(encoding="utf-8")
-    server = Server(pob_dir=pob_dir, timeout=timeout, mode=mode)
+    server = Server(pob_dir=pob_dir, timeout=timeout, mode=mode, editor_endpoint=editor_endpoint)
     try:
         while True:
             line = sys.stdin.buffer.readline(MAX_MESSAGE + 1)

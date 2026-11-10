@@ -1,9 +1,11 @@
 -- Проверка общего API в режиме текущей сборки без графического окна.
 dofile(POB_MCP_PACKAGE_DIR .. "/lua/headless_bootstrap.lua")
 local json = require("dkjson")
+local opened = false
 local session = dofile(POB_MCP_PACKAGE_DIR .. "/lua/session.lua")({
 	live = true,
-	get_build = function() return build end,
+	get_build = function() if opened then return build end end,
+	get_build_directory = function() return "C:/PoB/Custom Builds/" end,
 	new_build = newBuild,
 	load_build = loadBuildFromXML,
 	frame = function() return runCallback("OnFrame") end,
@@ -16,7 +18,10 @@ local function call(method, params)
 	revision = response.revision
 	return response
 end
-assert(call("initialize").result.platform == "windows-app")
+local system = jit.os == "OSX" and "macos" or jit.os:lower()
+assert(call("initialize").result.platform == system .. "-app")
+assert(call("getBuildDirectory").result.directory == "C:/PoB/Custom Builds/")
+opened = true
 build.modFlag = false
 assert(call("createBuild", { name = "Live API test", level = 42 }).result.buildInfo.level == 42)
 local original = call("getBuildReport").result.stats.Life

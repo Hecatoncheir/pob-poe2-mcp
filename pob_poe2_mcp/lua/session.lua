@@ -366,7 +366,24 @@ setfenv(installNodePower, getfenv(1))
 installNodePower(methods, fail)
 function methods.initialize()
 	local system = jit.os == "OSX" and "macos" or jit.os:lower()
-	return { methods = { "initialize", "createBuild", "getCatalog", "getGemIconAssets", "getGemTooltip", "getCompatibleSupports", "updateSkillGroup", "deleteSkillGroup", "inspectItem", "compareItem", "getTradeCatalog", "buildTradeSearch", "equipItem", "selectWeaponSet", "getBuildReport", "getBuildImageData", "getTreeGeometry", "getTreeIconAssets", "getTreeHover", "getNodePower", "addSkillGroup", "addItem", "setConfig", "loadBuild", "getSnapshot", "getWorkbench", "setCustomMods", "exportBuild", "selectMainSkill", "getTree", "getNodeTooltip", "getJewels", "treeOptions", "treeAction", "toggleNode", "shutdown" }, platform = host.live and "windows-app" or system .. "-engine" }
+	local available = { "initialize", "createBuild", "getCatalog", "getGemIconAssets", "getGemTooltip", "getCompatibleSupports", "updateSkillGroup", "deleteSkillGroup", "inspectItem", "compareItem", "getTradeCatalog", "buildTradeSearch", "equipItem", "selectWeaponSet", "getBuildReport", "getBuildImageData", "getTreeGeometry", "getTreeIconAssets", "getTreeHover", "getNodePower", "addSkillGroup", "addItem", "setConfig", "loadBuild", "getSnapshot", "getWorkbench", "setCustomMods", "exportBuild", "selectMainSkill", "getTree", "getNodeTooltip", "getJewels", "treeOptions", "treeAction", "toggleNode", "shutdown" }
+	if host.character_download then
+		available[#available + 1] = "listCharacters"
+		available[#available + 1] = "getCharacter"
+	elseif not host.live then
+		available[#available + 1] = "importCharacter"
+	end
+	if host.get_build_directory then available[#available + 1] = "getBuildDirectory" end
+	local platform = host.live and (host.app_platform or system) .. "-app" or system .. "-engine"
+	return { methods = available, platform = platform }
+end
+function methods.getBuildDirectory()
+	if not host.get_build_directory then fail("BUILD_DIRECTORY_UNAVAILABLE", "Папка сборок PoB недоступна.") end
+	local directory, wine = host.get_build_directory()
+	if type(directory) ~= "string" or directory == "" then
+		fail("BUILD_DIRECTORY_UNAVAILABLE", "Папка сборок PoB недоступна.")
+	end
+	return { directory = directory, wine = wine }
 end
 function methods.loadBuild(params)
 	validateXML(params.xml)
@@ -375,6 +392,28 @@ function methods.loadBuild(params)
 	local result = snapshot()
 	loaded = true
 	return result
+end
+function methods.importCharacter(params)
+	local character = params.character
+	if type(character) ~= "table" or type(character.name) ~= "string" or character.name == ""
+		or type(character.class) ~= "string" or type(character.level) ~= "number"
+		or character.level % 1 ~= 0 or character.level < 1 or character.level > 100
+		or type(character.passives) ~= "table" or type(character.passives.hashes) ~= "table" then
+		fail("INVALID_REQUEST", "Данные персонажа неполные или повреждены.")
+	end
+	character.league = character.league or ""
+	character.equipment = character.equipment or {}
+	character.skills = character.skills or {}
+	character.jewels = character.jewels or {}
+	character.passives.specialisations = character.passives.specialisations or {}
+	character.passives.jewel_data = character.passives.jewel_data or {}
+	character.passives.skill_overrides = character.passives.skill_overrides or {}
+	character.passives.quest_stats = character.passives.quest_stats or {}
+	newBuild()
+	build.buildName = character.name
+	build.importTab:ImportItemsAndSkills(character)
+	build.importTab:ImportPassiveTreeAndJewels(character)
+	return finishTreeChange()
 end
 function methods.getSnapshot()
 	return snapshot()
@@ -419,7 +458,8 @@ function methods.shutdown()
 	return { stopped = true }
 end
 local lastXML
-local mutations = { equipItem = true, selectWeaponSet = true, deleteSkillGroup = true, updateSkillGroup = true, createBuild = true, addSkillGroup = true, addItem = true, setConfig = true, selectMainSkill = true, loadBuild = true, setCustomMods = true, toggleNode = true, treeAction = true, treeOptions = true }
+local mutations = { equipItem = true, selectWeaponSet = true, deleteSkillGroup = true, updateSkillGroup = true, createBuild = true, addSkillGroup = true, addItem = true, setConfig = true, selectMainSkill = true, loadBuild = true, importCharacter = true, setCustomMods = true, toggleNode = true, treeAction = true, treeOptions = true }
+local independent = { initialize = true, createBuild = true, getCatalog = true, getBuildDirectory = true, loadBuild = true, importCharacter = true, shutdown = true }
 local function dispatch(request)
 	if type(request) ~= "table" or type(request.id) ~= "string" or type(request.method) ~= "string" then
 		fail("INVALID_REQUEST", "Неверная структура запроса")
@@ -427,7 +467,9 @@ local function dispatch(request)
 	if request.protocol ~= 1 then fail("UNSUPPORTED_PROTOCOL", "Поддерживается protocol=1") end
 	local method = methods[request.method]
 	if not method then fail("UNKNOWN_METHOD", "Неизвестная команда") end
+	if request.method == "getBuildDirectory" then return method() end
 	if host.live then
+		if request.method == "importCharacter" then fail("INVALID_REQUEST", "Импорт персонажа требует отдельной сессии Lua.") end
 		environment.build = host.get_build()
 		loaded = environment.build ~= nil
 		if loaded then
@@ -442,7 +484,7 @@ local function dispatch(request)
 	end
 	local params = request.params or {}
 	if type(params) ~= "table" then fail("INVALID_REQUEST", "params должен быть объектом") end
-	local requiresBuild = request.method ~= "initialize" and request.method ~= "createBuild" and request.method ~= "getCatalog" and request.method ~= "loadBuild" and request.method ~= "shutdown"
+	local requiresBuild = not independent[request.method]
 	if requiresBuild and not loaded then fail("INVALID_BUILD", "Сначала откройте сборку") end
 	if (requiresBuild or host.live and mutations[request.method]) and params.revision ~= revision then fail("STALE_REVISION", "Ревизия сборки устарела") end
 	if mutations[request.method] and params.expectedRevision ~= nil and params.expectedRevision ~= revision then fail("STALE_REVISION", "Сборка изменилась после примерки; проверьте предмет заново") end
@@ -472,7 +514,7 @@ local function dispatch(request)
 		if type(result) == "table" then error(result, 0) end
 		fail("CALCULATION_FAILED", tostring(result))
 	end
-	if request.method == "createBuild" then loaded = true end
+	if request.method == "createBuild" or request.method == "importCharacter" then loaded = true end
 	if mutations[request.method] then revision = revision + 1 end
 	if host.live and loaded then
 		build.modFlag = build.modFlag or mutations[request.method] == true

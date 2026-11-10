@@ -1,5 +1,61 @@
 [
   {
+    "name": "pob_get_build_directory",
+    "description": "Путь к папке сборок, выбранной в запущенном Path of Building. Работает в режиме app даже в списке сборок.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_list_characters",
+    "description": "Получить список персонажей PoE 2 из авторизованного окна PoB. Требует режима app и обращения пользователя.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "pob_get_character",
+    "description": "Получить экипировку, умения, дерево и самоцветы персонажа по имени из авторизованного окна PoB. Требует режима app и выбора пользователя.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string", "maxLength": 256}
+      },
+      "required": ["name"],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "pob_import_character",
+    "description": "Открыть новую сборку в отдельной сессии Lua по данным персонажа, полученным через pob_get_character.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "character": {"type": "object"}
+      },
+      "required": ["character"],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
     "name": "pob_catalog",
     "description": "Каталог исходного Lua: точные ID камней, классов, узлов, настроек и слотов. Пагинация; доступен до создания сборки.",
     "inputSchema": {

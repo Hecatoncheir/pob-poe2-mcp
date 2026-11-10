@@ -60,6 +60,45 @@ class AssistantAPI(unittest.TestCase):
         expected = {'win32': 'windows-engine', 'linux': 'linux-engine', 'darwin': 'macos-engine'}
         self.assertEqual(self.api.capabilities['platform'], expected[sys.platform])
 
+    def test_import_character_uses_original_equipment_skills_tree_and_jewels(self):
+        tree = json.loads((engine_layout(ENGINE).scripts / 'TreeData/0_5/tree.json').read_text(encoding='utf-8'))
+        jewel_node = tree['jewelSlots'][0]
+        self.api.call('createBuild', {'classId': 1, 'level': 90})
+        nodes = self.api.call('getCatalog', {'kind': 'nodes', 'query': str(jewel_node)})['entries']
+        route = next(node['path'] for node in nodes if node['id'] == jewel_node)
+        character = {
+            'name': 'Character import test', 'class': 'Witch', 'level': 90,
+            'equipment': [{'id': 'test-wand', 'inventoryId': 'Weapon', 'name': '',
+                           'typeLine': 'Withered Wand', 'ilvl': 60, 'frameType': 0}],
+            'skills': [{
+                'typeLine': 'Fireball',
+                'properties': [{'name': 'Level', 'values': [['15', 0]]}],
+                'socketedItems': [{'typeLine': 'Controlled Destruction', 'support': True, 'properties': []}],
+            }],
+            'passives': {'hashes': route},
+            'jewels': [{'id': 'test-jewel', 'inventoryId': 'PassiveJewels', 'x': 0, 'name': '',
+                        'typeLine': 'Sapphire', 'ilvl': 60, 'frameType': 0}],
+        }
+        with BuildAPI(pob_dir=ENGINE) as api:
+            self.assertEqual(api.call('importCharacter', {'character': character})['buildInfo']['name'], character['name'])
+            report = api.call('getBuildReport')
+            self.assertEqual(report['source'], 'original-lua')
+            self.assertEqual(report['snapshot']['buildInfo']['class'], 'Witch')
+            self.assertEqual(report['snapshot']['buildInfo']['level'], 90)
+            self.assertEqual(report['groups'][0]['gems'][0]['name'], 'Fireball')
+            self.assertEqual(report['groups'][0]['gems'][0]['level'], 15)
+            self.assertEqual(report['groups'][0]['gems'][1]['name'], 'Controlled Destruction')
+            self.assertIn(jewel_node, report['allocatedNodes'])
+            equipped = {slot['name']: slot['itemId'] for slot in report['slots']}
+            bases = {item['id']: item['base'] for item in report['items']}
+            self.assertEqual(bases[equipped['Weapon 1']], 'Withered Wand')
+            self.assertEqual(bases[equipped[f'Jewel {jewel_node}']], 'Sapphire')
+            api.call('loadBuild', {'xml': api.call('exportBuild')['xml']})
+            restored = api.call('getBuildReport')
+            for key in ('allocatedNodes', 'groups', 'items'):
+                self.assertEqual(restored[key], report[key])
+            self.assertEqual({slot['name']: slot['itemId'] for slot in restored['slots']}, equipped)
+
     def test_public_tree_geometry_uses_real_nodes_and_edges(self):
         self.api.call('createBuild', {'level': 90})
         tree = self.api.call('getTreeGeometry')
@@ -144,6 +183,15 @@ class AssistantAPI(unittest.TestCase):
         self.assertEqual(process.returncode, 0, process.stderr)
         self.assertIn("LIVE_SESSION_OK", process.stdout)
 
+    def test_bridge_character_download_is_async_and_returns_only_character_data(self):
+        process = subprocess.run(
+            [sys.executable, "-X", "utf8", str(ROOT / "pob_poe2_mcp/runner.py"),
+             "--pob-dir", str(ENGINE), "--script", str(ROOT / "tests/bridge_characters.lua")],
+            capture_output=True, encoding="utf-8", timeout=90,
+        )
+        self.assertEqual(process.returncode, 0, process.stderr)
+        self.assertIn("BRIDGE_CHARACTERS_OK", process.stdout)
+
     def test_node_catalog_after_ascendancy_selection(self):
         api = self.api
         api.call("createBuild", {"classId": 2, "level": 90})
@@ -202,7 +250,8 @@ class MCP(unittest.TestCase):
         self.assertEqual(process.returncode, 0, process.stderr)
         responses = [json.loads(line) for line in process.stdout.splitlines()]
         self.assertEqual(len(responses), 7)
-        self.assertEqual(len(responses[1]["result"]["tools"]), len(TOOLS))
+        engine_tools = {tool["name"] for tool in responses[1]["result"]["tools"]}
+        self.assertEqual(engine_tools, {tool["name"] for tool in TOOLS} - {"pob_get_build_directory", "pob_list_characters", "pob_get_character"})
         self.assertTrue(responses[3]["result"]["structuredContent"]["result"]["targetsPassed"])
         self.assertTrue(responses[4]["result"]["isError"])
         self.assertIn("<PathOfBuilding2>", responses[5]["result"]["structuredContent"]["result"]["xml"])

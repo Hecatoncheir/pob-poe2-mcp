@@ -17,6 +17,33 @@ permissions:
   contents: read
 
 jobs:
+  wine-bridge:
+    name: Мост открытого PoB под Wine
+    runs-on: ubuntu-22.04
+    env:
+      WINEPREFIX: ${{ runner.temp }}/pob-wine
+      WINEARCH: win64
+      WINEDLLOVERRIDES: 'winemenubuilder.exe=d;mscoree,mshtml='
+      WINEDEBUG: '-all'
+      XDG_DATA_HOME: ${{ runner.temp }}/pob-wine-data
+      PYTHONPATH: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ inputs.ref || github.ref }}
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.13'
+      - name: Установить Wine и загрузить официальный PoB
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends wine wine64 xvfb xauth libgl1-mesa-dri
+          curl --retry 3 -fsSL -o pob.zip https://github.com/PathOfBuildingCommunity/PathOfBuilding-PoE2/releases/download/v0.23.1/PathOfBuildingCommunity-PoE2-Portable.zip
+          echo '7e190d3b66191b09416a9cd4d12394d37df374d6d6e59ab4f2366f3d9e81baf7  pob.zip' | sha256sum -c -
+          unzip -q pob.zip -d "$RUNNER_TEMP/pob-portable"
+      - name: Проверить папку сборок и получение персонажа через открытое окно
+        run: xvfb-run -a python -X utf8 tests/wine_bridge_smoke.py "$RUNNER_TEMP/pob-portable"
+
   unix-engine:
     name: Настоящий Lua — ${{ matrix.os }}
     runs-on: ${{ matrix.os }}

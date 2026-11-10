@@ -62,12 +62,17 @@ def client_config(mode="both", editor_endpoint=None):
 
 def doctor(pob_dir, timeout, mode="engine"):
     with BuildAPI(pob_dir=pob_dir, timeout=timeout, mode=mode) as api:
-        classes = api.call("getCatalog", {"kind": "classes"})
+        try:
+            classes = api.call("getCatalog", {"kind": "classes"})["total"]
+        except EngineError as error:
+            if mode != "app" or error.code != "APP_NOT_IN_BUILD":
+                raise
+            classes = None
         layout = engine_layout(api.pob_dir)
         print(json.dumps({"ok": True, "engineDir": str(api.pob_dir),
                           "mode": mode, "layout": layout.kind, "installedVersion": layout.version,
                           "pinnedRepository": LOCK["repository"],
-                          "pinnedRevision": LOCK["revision"], "classes": classes["total"],
+                          "pinnedRevision": LOCK["revision"], "classes": classes,
                           "capabilities": api.capabilities}, ensure_ascii=False, indent=2))
 
 

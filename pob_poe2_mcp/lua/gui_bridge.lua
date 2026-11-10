@@ -7,6 +7,7 @@ return function(launch, directory)
 local configFile = assert(io.open(directory .. "/config.json", "rb"))
 local config = assert(json.decode(configFile:read("*a")))
 configFile:close()
+local wine = config.hostPlatform == "linux" and jit.os == "Windows"
 local server = assert(socket.bind("127.0.0.1", 0))
 server:settimeout(0)
 local _, port = server:getsockname()
@@ -21,6 +22,16 @@ local function getBuild()
 end
 local host = {
 	live = true,
+	app_platform = config.hostPlatform,
+	character_download = true,
+	get_build_directory = function()
+		local directory = launch.main.buildPath
+		if not wine then return directory end
+		local prefix = os.getenv("WINEPREFIX")
+		local steamData = os.getenv("STEAM_COMPAT_DATA_PATH")
+		if not prefix and steamData then prefix = steamData .. "/pfx" end
+		return directory, { prefix = prefix, workingDirectory = GetWorkDir() }
+	end,
 	get_build = getBuild,
 	blocked = function() return launch.promptMsg or #launch.main.popups > 0 end,
 	frame = function() return originalFrame(launch) end,
@@ -35,10 +46,11 @@ local host = {
 	end,
 }
 local session = dofile(directory .. "/lua/session.lua")(host, directory)
-local client, partial, output, outputIndex
+local characters = dofile(directory .. "/lua/bridge_characters.lua")()
+local client, partial, output, outputIndex, waiting
 local function disconnect()
 	if client then client:close() end
-	client, partial, output, outputIndex = nil, "", nil, 1
+	client, partial, output, outputIndex, waiting = nil, "", nil, 1, false
 end
 local function accept()
 	local nextClient = server:accept()
@@ -57,7 +69,18 @@ local function receive()
 	end
 	partial = ""
 	local request = json.decode(line)
-	if type(request) ~= "table" or request.token ~= config.token then disconnect(); return end
+	if waiting or type(request) ~= "table" or request.token ~= config.token then disconnect(); return end
+	local requester = client
+	waiting = true
+	if characters.handle(request, function(result, error)
+		if client ~= requester then return end
+		waiting = false
+		local params = request.params
+		local revision = type(params) == "table" and tonumber(params.revision) or 0
+		local response = { protocol = 1, id = request.id, revision = revision or 0, result = result, error = error }
+		output, outputIndex = json.encode(response) .. "\n", 1
+	end) then return end
+	waiting = false
 	output, outputIndex = session.handle(line) .. "\n", 1
 end
 local function send()
@@ -67,6 +90,7 @@ local function send()
 	if outputIndex > #output then output = nil end
 end
 local function poll()
+	characters.poll()
 	if client and not output then receive() end
 	if client and output then send() end
 	accept()

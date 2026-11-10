@@ -7,6 +7,7 @@ import threading
 from .engine import resolve_engine_dir, validate_engine
 from .errors import EngineError
 from .transport import AppTransport, ProcessTransport
+from .wine_paths import linux_build_directory, wine_prefix
 
 MAX_MESSAGE = 8 * 1024 * 1024
 
@@ -82,7 +83,12 @@ class BuildAPI:
             if "error" in response:
                 error = response["error"]
                 raise EngineError(error["code"], error["message"])
-            return response["result"]
+            result = response["result"]
+            if self.mode == "app" and method == "getBuildDirectory" and result.get("wine") is not None:
+                wine = result["wine"]
+                prefix = wine_prefix(self.pob_dir, wine.get("prefix"))
+                return {"directory": str(linux_build_directory(result["directory"], prefix, wine.get("workingDirectory")))}
+            return result
 
     def check(self, targets=None):
         report = self.call("getBuildReport")

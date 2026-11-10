@@ -15,7 +15,7 @@ from pob_poe2_mcp.server import Server
 
 
 @contextmanager
-def bridge(directory, revision=7, drop=(), close_after=(), error=None, pause=None):
+def bridge(directory, revision=7, drop=(), close_after=(), error=None, pause=None, results=None):
     requests = []
     token = str(revision).zfill(64)
 
@@ -36,7 +36,7 @@ def bridge(directory, revision=7, drop=(), close_after=(), error=None, pause=Non
                 if error and method != 'initialize':
                     response['error'] = {'code': error, 'message': 'Проверочная ошибка'}
                 else:
-                    response['result'] = {'platform': 'windows-app', 'entries': []}
+                    response['result'] = (results or {}).get(method, {'platform': 'windows-app', 'entries': []})
                 self.wfile.write((json.dumps(response) + '\n').encode('utf-8'))
                 self.wfile.flush()
                 if method in close_after:
@@ -49,6 +49,7 @@ def bridge(directory, revision=7, drop=(), close_after=(), error=None, pause=Non
         endpoint = Path(directory) / 'endpoint.json'
         endpoint.write_text(json.dumps({'port': tcp.server_address[1], 'token': token,
                                        'installDir': str(directory)}), encoding='utf-8')
+        endpoint.with_name('config.json').write_text(json.dumps({'token': token}), encoding='utf-8')
         thread = threading.Thread(target=lambda: tcp.serve_forever(poll_interval=0.01), daemon=True)
         thread.start()
         try:
@@ -123,8 +124,8 @@ class AppReconnection(unittest.TestCase):
         self.server.handle('initialize', {})
         self.addCleanup(self.server.close)
 
-    def call(self, name='pob_catalog', **arguments):
-        return self.server.handle('tools/call', {'name': name, 'arguments': arguments})
+    def call(self, tool='pob_catalog', **arguments):
+        return self.server.handle('tools/call', {'name': tool, 'arguments': arguments})
 
     def test_read_reconnects_using_new_endpoint_token_and_revision(self):
         with bridge(self.directory, close_after=('getCatalog',)) as old_requests:
@@ -176,6 +177,35 @@ class AppReconnection(unittest.TestCase):
             self.assertIsNotNone(self.server.api)
             self.assertFalse(self.server.api.closed)
             self.assertEqual([r['method'] for r in requests], ['initialize', 'getCatalog'])
+
+    def test_restart_required_before_attaching_to_updated_bridge(self):
+        with bridge(self.directory) as requests:
+            (self.directory / 'config.json').write_text(json.dumps({'token': 'b' * 64}), encoding='utf-8')
+            result = self.call('pob_get_build_directory')
+            self.assertEqual(json.loads(result['content'][0]['text'])['code'], 'BRIDGE_RESTART_REQUIRED')
+            self.assertEqual(requests, [])
+
+    def test_linux_bridge_returns_host_directory_and_character_data(self):
+        builds = self.directory / 'PoB Builds'
+        builds.mkdir()
+        character = {'name': 'ЛедянаяИскра', 'class': 'Witch', 'level': 90, 'league': 'Standard'}
+        full = {**character, 'passives': {'hashes': []}, 'equipment': [], 'skills': [], 'jewels': []}
+        results = {
+            'initialize': {'platform': 'linux-app'},
+            'getBuildDirectory': {
+                'directory': r'C:\POB BUILDS',
+                'wine': {'prefix': str(self.directory), 'workingDirectory': 'C:/'},
+            },
+            'listCharacters': {'characters': [character]},
+            'getCharacter': {'character': full},
+        }
+        with bridge(self.directory, results=results) as requests:
+            with patch('pob_poe2_mcp.wine_paths._drives', return_value={'c:': self.directory}):
+                folder = self.call('pob_get_build_directory')
+            self.assertEqual(folder['structuredContent']['result'], {'directory': str(builds)})
+            self.assertEqual(self.call('pob_list_characters')['structuredContent']['result'], {'characters': [character]})
+            self.assertEqual(self.call('pob_get_character', name=character['name'])['structuredContent']['result'], {'character': full})
+            self.assertEqual(requests[-1]['params']['name'], character['name'])
 
 
 if __name__ == "__main__":

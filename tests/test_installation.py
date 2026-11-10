@@ -3,15 +3,17 @@
 import json
 import os
 from pathlib import Path
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
 
-from pob_poe2_mcp.bridge import BEGIN, install_bridge, remove_hook, uninstall_bridge
+from pob_poe2_mcp.bridge import BEGIN, install_bridge, installed_bridge_dirs, remove_hook, uninstall_bridge
 from pob_poe2_mcp.cli import client_config
 from pob_poe2_mcp.engine import LOCK, engine_layout, resolve_engine_dir
 from pob_poe2_mcp.errors import EngineError
-from pob_poe2_mcp.transport import AppTransport
+from pob_poe2_mcp.transport import AppTransport, bridge_state_dir
+from pob_poe2_mcp.wine_paths import linux_build_directory, wine_path, wine_prefix
 
 
 def fake_install(root, repository=False):
@@ -53,6 +55,43 @@ class Installation(unittest.TestCase):
 
 
 class BridgeInstallation(unittest.TestCase):
+    def test_wine_setup_finds_gui_without_native_engine(self):
+        with tempfile.TemporaryDirectory() as directory, patch("sys.platform", "linux"):
+            base = Path(directory)
+            prefix = base / "prefix"
+            root = prefix / "drive_c/Program Files/Path of Building (PoE2)"
+            launch = fake_install(root)
+            original = launch.read_bytes()
+            (root / "Path of Building-PoE2.exe").touch()
+            with patch.dict(os.environ, {"WINEPREFIX": str(prefix), "XDG_DATA_HOME": str(base / "data")}, clear=True):
+                state = bridge_state_dir()
+                self.assertEqual(installed_bridge_dirs(), [root.resolve()])
+                self.assertEqual(wine_prefix(root), prefix)
+                with patch("pob_poe2_mcp.bridge.wine_path", return_value="Z:/home/test/bridge"):
+                    install_bridge()
+                config = json.loads((state / "config.json").read_text(encoding="utf-8"))
+                self.assertEqual(config["hostPlatform"], "linux")
+                self.assertIn("Z:/home/test/bridge/lua/gui_bridge.lua", launch.read_text(encoding="utf-8"))
+                uninstall_bridge(root)
+                self.assertEqual(launch.read_bytes(), original)
+
+    @unittest.skipUnless(sys.platform == "linux", "Нужны символьные ссылки дисков Wine")
+    def test_linux_prefix_uses_configured_dos_drives(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            prefix = root / "prefix"
+            devices = prefix / "dosdevices"
+            devices.mkdir(parents=True)
+            drive = root / "external"
+            builds = drive / "My Builds"
+            builds.mkdir(parents=True)
+            (devices / "d:").symlink_to(drive, target_is_directory=True)
+            self.assertEqual(wine_path(builds, prefix), "D:/My Builds")
+            self.assertEqual(linux_build_directory(r"D:\MY BUILDS", prefix), builds)
+            self.assertEqual(linux_build_directory("My Builds", prefix, "D:/"), builds)
+            with self.assertRaises(EngineError):
+                linux_build_directory("C:/Builds", prefix)
+
     def test_reinstallation_and_removal_restore_exact_original_bytes(self):
         with tempfile.TemporaryDirectory() as directory, patch("pob_poe2_mcp.engine.sys.platform", "win32"):
             root, state = Path(directory) / "PoB", Path(directory) / "state"

@@ -11,7 +11,9 @@ from .errors import EngineError
 
 
 def bridge_state_dir():
-    return Path(os.environ.get("LOCALAPPDATA", Path.home() / ".local/share")) / "pob-poe2-mcp/bridge"
+    variable = "LOCALAPPDATA" if sys.platform == "win32" else "XDG_DATA_HOME"
+    root = os.environ.get(variable) or Path.home() / ".local/share"
+    return Path(root).expanduser() / "pob-poe2-mcp/bridge"
 
 
 class ProcessTransport:
@@ -51,6 +53,10 @@ class AppTransport:
             self.pob_dir = Path(details["installDir"])
             if not isinstance(port, int) or not 1024 <= port <= 65535 or not isinstance(self.token, str) or len(self.token) < 32:
                 raise ValueError("Некорректный адрес моста")
+            if endpoint is None:
+                config = json.loads(endpoint_path.with_name("config.json").read_text(encoding="utf-8"))
+                if not isinstance(config, dict) or config.get("token") != self.token:
+                    raise EngineError("BRIDGE_RESTART_REQUIRED", "Перезапустите PoB, чтобы запустить обновлённый мост.")
             if pob_dir and self.pob_dir.resolve() != Path(pob_dir).resolve():
                 raise EngineError("APP_PATH_MISMATCH", "Мост запущен из другого каталога PoB")
             self.connection = socket.create_connection(("127.0.0.1", port), timeout=5)

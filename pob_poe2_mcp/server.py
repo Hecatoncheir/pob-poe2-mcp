@@ -18,6 +18,10 @@ from .editor import EDITOR_TOOLS, EditorClient
 MANIFEST = Path(__file__).parent / "data/tools.json"
 TOOLS = json.loads(MANIFEST.read_text(encoding="utf-8"))
 METHODS = {
+    "pob_get_build_directory": "getBuildDirectory",
+    "pob_list_characters": "listCharacters",
+    "pob_get_character": "getCharacter",
+    "pob_import_character": "importCharacter",
     "pob_catalog": "getCatalog", "pob_create_build": "createBuild",
     "pob_import_xml": "loadBuild", "pob_add_skill_group": "addSkillGroup",
     "pob_add_item": "addItem", "pob_set_config": "setConfig",
@@ -41,6 +45,12 @@ METHODS = {
     "pob_trade_search": "buildTradeSearch",
     "pob_equip_item": "equipItem",
     "pob_select_weapon_set": "selectWeaponSet",
+}
+TOOL_MODES = {
+    "pob_get_build_directory": "app",
+    "pob_list_characters": "app",
+    "pob_get_character": "app",
+    "pob_import_character": "engine",
 }
 READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image", "pob_get_tree", "pob_tree_icons", "pob_tree_textures", "pob_tree_hover", "pob_node_power"}
 READ_ONLY_TOOLS.update({'pob_gem_icons', 'pob_gem_supports', 'pob_gem_tooltip'})
@@ -94,7 +104,9 @@ class Server:
         self.gem_assets = None
 
     def tool_available(self, name):
-        return self.editor is None or name in EDITOR_TOOLS
+        if self.editor:
+            return name in EDITOR_TOOLS
+        return TOOL_MODES.get(name, self.mode) == self.mode
 
     def execute_tool(self, name, args):
         if not self.tool_available(name):

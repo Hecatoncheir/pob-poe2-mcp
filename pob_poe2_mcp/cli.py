@@ -28,7 +28,7 @@ def parser():
     for name, help_text in [("serve", "Запустить MCP stdio"), ("doctor", "Проверить запуск настоящего Lua")]:
         command = commands.add_parser(name, help=help_text)
         command.add_argument("--pob-dir", help="Каталог с src/ и runtime/; иначе POB_DIR или каталог setup")
-        command.add_argument("--timeout", type=positive_timeout, default=60, help="Ожидание Lua в секундах")
+        command.add_argument("--timeout", type=positive_timeout, help="Ожидание ответа в секундах")
         modes = ["engine", "app", "editor"] if name == "serve" else ["engine", "app"]
         command.add_argument("--mode", choices=modes, default="engine")
         if name == "serve":
@@ -96,7 +96,7 @@ def main(argv=None):
         pob_dir = getattr(args, "pob_dir", None)
         if mode == "engine":
             pob_dir = resolve_engine_dir(pob_dir)
-        timeout = getattr(args, "timeout", 60)
+        timeout = args.timeout or (180 if mode == "editor" else 60)
         if args.command == "doctor":
             doctor(pob_dir, timeout, mode)
             return

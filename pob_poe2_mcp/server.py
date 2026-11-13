@@ -183,7 +183,7 @@ class Server:
             mode_info = {
                 "app": " Режим app: операции изменяют текущую сборку открытого окна PoB; сохранение выполняет пользователь.",
                 "engine": " Режим engine: отдельная сессия расчёта на файлах установленного PoB.",
-                "editor": " Режим editor: команды работают с открытой сборкой PoB II при разрешении пользователя. Перед правками и после STALE_REVISION вызовите pob_check_build.",
+                "editor": " Режим editor: с разрешения пользователя pob_create_build создаёт отдельную сборку в библиотеке PoB II и открывает её для правок. Перед правками и после STALE_REVISION вызовите pob_check_build.",
             }[self.mode]
             return {"protocolVersion": version, "capabilities": {"tools": {}},
                     "serverInfo": {"name": "pob-poe2-mcp", "version": __version__},

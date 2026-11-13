@@ -8,7 +8,7 @@ from .api import MAX_MESSAGE
 from .errors import EngineError
 
 EDITOR_TOOLS = {
-    "pob_catalog", "pob_check_build", "pob_export_xml", "pob_inspect_item",
+    "pob_catalog", "pob_create_build", "pob_check_build", "pob_export_xml", "pob_inspect_item",
     "pob_tree_action", "pob_add_item", "pob_equip_item", "pob_select_weapon_set",
     "pob_add_skill_group", "pob_update_skill_group", "pob_delete_skill_group",
     "pob_select_main_skill", "pob_set_config",
@@ -33,7 +33,7 @@ class EditorClient:
             return port, token
         except (OSError, ValueError, KeyError, TypeError):
             self.revision = None
-            raise EngineError("EDITOR_DISABLED", "Включите правки через MCP для открытой сборки PoB II.") from None
+            raise EngineError("EDITOR_DISABLED", "Включите правки через MCP в PoB II.") from None
 
     def call(self, tool, arguments):
         port, token = self._connection_details()

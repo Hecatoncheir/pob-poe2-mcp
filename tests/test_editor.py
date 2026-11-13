@@ -25,6 +25,8 @@ class EditorMode(unittest.TestCase):
                 tool = request["tool"]
                 if tool == "pob_check_build":
                     reply = {"result": {"report": {"level": 90}}, "revision": 5}
+                elif tool == "pob_create_build":
+                    reply = {"result": {"id": "build.xml"}, "revision": 5}
                 elif request["revision"] == 5:
                     reply = {"result": {"changed": True}, "revision": 6}
                 else:
@@ -44,9 +46,11 @@ class EditorMode(unittest.TestCase):
                 endpoint.write_text(json.dumps({"port": http.server_port, "token": token}), encoding="utf-8")
                 with patch("pob_poe2_mcp.server.BuildAPI", side_effect=AssertionError("Отдельный Lua не нужен")):
                     self._exercise(endpoint, http.server_port)
-                self.assertEqual([entry[0] for entry in requests], ["/edit"] * 5)
-                self.assertEqual([entry[1] for entry in requests], ["Bearer " + token] * 4 + ["Bearer " + "b" * 64])
-                self.assertEqual([entry[2]["revision"] for entry in requests], [None, None, 5, 6, None])
+                self.assertEqual([entry[0] for entry in requests], ["/edit"] * 6)
+                self.assertEqual([entry[1] for entry in requests], ["Bearer " + token] * 5 + ["Bearer " + "b" * 64])
+                self.assertEqual([entry[2]["revision"] for entry in requests], [None, None, 5, 5, 6, None])
+                self.assertEqual(requests[2][2]["tool"], "pob_create_build")
+                self.assertEqual(requests[2][2]["arguments"], {"level": 90})
             finally:
                 http.shutdown()
                 worker.join(timeout=2)
@@ -58,13 +62,14 @@ class EditorMode(unittest.TestCase):
         self.assertIn("pob_tree_action", tools)
         self.assertIn("pob_equip_item", tools)
         self.assertIn("pob_update_skill_group", tools)
-        self.assertNotIn("pob_create_build", tools)
-        self.assertTrue(server.handle("tools/call", {"name": "pob_create_build"})["isError"])
+        self.assertIn("pob_create_build", tools)
 
         args = {"name": "pob_tree_action", "arguments": {"id": 42, "action": "allocate"}}
         self.assertTrue(server.handle("tools/call", args)["isError"])
         report = server.handle("tools/call", {"name": "pob_check_build"})
         self.assertEqual(report["structuredContent"]["revision"], 5)
+        created = server.handle("tools/call", {"name": "pob_create_build", "arguments": {"level": 90}})
+        self.assertEqual(created["structuredContent"]["result"], {"id": "build.xml"})
         changed = server.handle("tools/call", args)
         self.assertEqual(changed["structuredContent"]["revision"], 6)
         self.assertTrue(server.handle("tools/call", args)["isError"])

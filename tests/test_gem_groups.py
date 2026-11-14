@@ -32,6 +32,23 @@ class EditGroups(unittest.TestCase):
         return next(group for group in report['groups']
                     if group['gems'] and group['gems'][0]['skillId'] == COILING_BOLTS)
 
+    def test_skill_variant_changes_dps_and_survives_xml(self):
+        lightning = 'Metadata/Items/Gems/SkillGemBallLightning'
+        self.api.call('addSkillGroup', {'gems': [{'id': lightning, 'level': 1}]})
+        self.api.call('selectMainSkill', {'control': 'groups', 'id': 3})
+        before = self.api.call('getBuildReport')
+        selector = before['snapshot']['buildInfo']['statSets']
+        variant = next(entry for entry in selector['entries'] if entry['label'] == 'Fire-Infused')
+        self.api.call('selectMainSkill', {'control': 'statSets', 'id': variant['id']})
+        selected = self.api.call('getBuildReport')
+        self.assertEqual(selected['snapshot']['buildInfo']['statSets']['selected'], variant['id'])
+        self.assertNotEqual(selected['stats']['TotalDPS'], before['stats']['TotalDPS'])
+        xml = self.api.call('exportBuild')['xml']
+        self.api.call('loadBuild', {'xml': xml})
+        restored = self.api.call('getBuildReport')
+        self.assertEqual(restored['snapshot']['buildInfo']['statSets'], selected['snapshot']['buildInfo']['statSets'])
+        self.assertEqual(restored['stats'], selected['stats'])
+
     def test_item_skill_supports_change_dps_and_round_trip_through_xml(self):
         raw = ('Rarity: UNIQUE\nLiminal Coil\nTwisted Wand\n--------\n'
                'Grants Skill: Level 20 Coiling Bolts (implicit)\n100% increased Spell Damage')

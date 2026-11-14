@@ -377,7 +377,7 @@
   },
   {
     "name": "pob_select_main_skill",
-    "description": "Выбрать основную группу или активное умение по id из snapshot.buildInfo отчёта.",
+    "description": "Выбрать основную группу, активное умение, его часть или набор показателей по id из соответствующего списка snapshot.buildInfo отчёта.",
     "inputSchema": {
       "type": "object",
       "properties": {
@@ -385,7 +385,9 @@
           "type": "string",
           "enum": [
             "groups",
-            "skills"
+            "skills",
+            "parts",
+            "statSets"
           ]
         },
         "id": {

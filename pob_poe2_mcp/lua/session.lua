@@ -37,6 +37,12 @@ local function selector(control)
 	end
 	return { entries = entries, selected = control.selIndex, enabled = control:IsShown() and control:IsEnabled() }
 end
+local function hasChoices(control)
+	return control and control:IsShown() and #control.list > 1
+end
+local function visibleSelector(control)
+	if hasChoices(control) then return selector(control) end
+end
 local function snapshot()
 	local values = {}
 	for _, name in ipairs({ "TotalDPS", "Life", "Mana", "EnergyShield", "Spirit", "FireResist", "ColdResist", "LightningResist", "ChaosResist" }) do
@@ -51,7 +57,8 @@ local function snapshot()
 	return { targetVersion = build.targetVersion, treeVersion = build.spec.treeVersion, output = values,
 		buildInfo = { name = build.buildName, level = build.characterLevel, class = build.spec.curClassName,
 			ascendancy = build.spec.curAscendClassName, groups = selector(build.controls.mainSocketGroup),
-			skills = selector(build.controls.mainSkill) } }
+			skills = selector(build.controls.mainSkill),
+			parts = visibleSelector(build.controls.mainSkillPart), statSets = visibleSelector(build.controls.statSet) } }
 end
 local function validateXML(xml)
 	if type(xml) ~= "string" or #xml > 4 * 1024 * 1024 then
@@ -427,11 +434,12 @@ function methods.setCustomMods(params)
 	runCallback("OnFrame")
 	return snapshot()
 end
+local skillControls = { groups = "mainSocketGroup", skills = "mainSkill", parts = "mainSkillPart", statSets = "statSet" }
 function methods.selectMainSkill(params)
-	local control = params.control == "groups" and build.controls.mainSocketGroup
-		or params.control == "skills" and build.controls.mainSkill
+	local control = build.controls[skillControls[params.control]]
 	if not control or type(params.id) ~= "number" or params.id % 1 ~= 0
-		or not control.list[params.id] or not control:IsShown() or not control:IsEnabled() then
+		or not control.list[params.id] or not control:IsShown() or not control:IsEnabled()
+		or (params.control == "parts" or params.control == "statSets") and not hasChoices(control) then
 		fail("INVALID_REQUEST", "Выбор умения недоступен")
 	end
 	control:SetSel(control:ListIndexToDropIndex(params.id, 0))

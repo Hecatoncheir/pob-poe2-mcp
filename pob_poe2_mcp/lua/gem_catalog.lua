@@ -1,5 +1,5 @@
 -- Каталог и совместимость используют данные и проверку исходного PoB.
-return function(methods, fail, granted)
+return function(methods, fail, granted, canPreview)
 local assets
 local gemTooltip
 local function tooltipInstance(params)
@@ -75,5 +75,52 @@ function methods.getCompatibleSupports(params)
 	end
 	table.sort(result)
 	return { source = "original-lua", supportIds = result }
+end
+
+if not canPreview then return end
+
+local function matchingSkill(group, target, effectId)
+	local first
+	for index, skill in ipairs(group.displaySkillList or {}) do
+		local effect = skill.activeEffect
+		if effect.srcInstance == target and (not effectId or effect.grantedEffect.id == effectId) then
+			if index == group.mainActiveSkill then return index end
+			first = first or index
+		end
+	end
+	return first
+end
+
+function methods.measureSupportPreview(params)
+	local group = build.skillsTab.socketGroupList[params.groupId]
+	if not group or not group.enabled then fail("INVALID_REQUEST", "Группа умений выключена или недоступна") end
+	if build.mainSocketGroup ~= params.groupId then
+		methods.selectMainSkill({ control = "groups", id = params.groupId })
+	end
+	local target = granted.gems(build, group)[params.targetIndex]
+	if target and target.gemData and target.gemData.grantedEffect.support then
+		fail("INVALID_REQUEST", "Для расчёта нужен активный камень")
+	end
+	local index = target and target.enabled and matchingSkill(group, target, params.effectId)
+	if not index then fail("INVALID_REQUEST", "Выбранное умение недоступно для расчёта") end
+	local expectedEffect = group.displaySkillList[index].activeEffect.grantedEffect.id
+	if group.mainActiveSkill ~= index then
+		methods.selectMainSkill({ control = "skills", id = index })
+	end
+	local skill = build.calcsTab.mainEnv.player.mainSkill
+	local effect = skill.activeEffect
+	if effect.srcInstance ~= target or effect.grantedEffect.id ~= expectedEffect then
+		fail("CALCULATION_FAILED", "Lua выбрал другое умение")
+	end
+
+	if params.supportId then
+		local gem = build.data.gems[params.supportId]
+		local support = gem and gem.grantedEffect
+		if not support or not support.support or not calcLib.canGrantedEffectSupportActiveSkill(support, skill) then
+			fail("INVALID_REQUEST", "Эта поддержка не подходит выбранному умению")
+		end
+	end
+	return { dps = methods.getSnapshot().output.TotalDPS, effectId = effect.grantedEffect.id,
+		part = target.skillPart or 1, statSet = effect.statSet and effect.statSet.index or 1 }
 end
 end

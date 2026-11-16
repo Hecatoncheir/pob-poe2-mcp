@@ -775,6 +775,73 @@
     }
   },
   {
+    "name": "pob_preview_support",
+    "description": "Рассчитать DPS выбранного умения до и после добавления одной поддержки уровня 1 в полную копию черновика. targetIndex — позиция активного камня в gems начиная с 1. Рабочие XML и ревизия сохраняются.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "gems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "level": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 40
+              },
+              "quality": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "sourceIndex": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 11
+        },
+        "targetIndex": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 11
+        },
+        "supportId": {
+          "type": "string"
+        },
+        "groupId": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "gems",
+        "targetIndex",
+        "supportId"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
     "name": "pob_update_skill_group",
     "description": "Изменить группу через исходный SkillsTab. Передавайте sourceIndex из отчёта для сохранённых камней. Для умения от предмета первый элемент содержит его skillId в поле id и sourceIndex: 1, последующие элементы — поддержки. Поля первого элемента и название такого умения задаёт источник.",
     "inputSchema": {

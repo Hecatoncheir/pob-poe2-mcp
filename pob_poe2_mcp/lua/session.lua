@@ -355,7 +355,7 @@ setfenv(installMethods, getfenv(1))
 installMethods(methods, fail, snapshot, finishTreeChange, granted)
 local installGemCatalog = dofile(POB_MCP_PACKAGE_DIR .. "/lua/gem_catalog.lua")
 setfenv(installGemCatalog, getfenv(1))
-installGemCatalog(methods, fail, granted)
+installGemCatalog(methods, fail, granted, not host.live)
 local installGemGroups = dofile(POB_MCP_PACKAGE_DIR .. "/lua/gem_groups.lua")
 setfenv(installGemGroups, getfenv(1))
 installGemGroups(methods, fail, finishTreeChange, granted)
@@ -381,6 +381,7 @@ function methods.initialize()
 		available[#available + 1] = "importCharacter"
 	end
 	if host.get_build_directory then available[#available + 1] = "getBuildDirectory" end
+	if not host.live then available[#available + 1] = "measureSupportPreview" end
 	local platform = host.live and (host.app_platform or system) .. "-app" or system .. "-engine"
 	return { methods = available, platform = platform }
 end
@@ -468,6 +469,7 @@ end
 local lastXML
 local mutations = { equipItem = true, selectWeaponSet = true, deleteSkillGroup = true, updateSkillGroup = true, createBuild = true, addSkillGroup = true, addItem = true, setConfig = true, selectMainSkill = true, loadBuild = true, importCharacter = true, setCustomMods = true, toggleNode = true, treeAction = true, treeOptions = true }
 local independent = { initialize = true, createBuild = true, getCatalog = true, getBuildDirectory = true, loadBuild = true, importCharacter = true, shutdown = true }
+if not host.live then mutations.measureSupportPreview = true end
 local function dispatch(request)
 	if type(request) ~= "table" or type(request.id) ~= "string" or type(request.method) ~= "string" then
 		fail("INVALID_REQUEST", "Неверная структура запроса")

@@ -14,6 +14,7 @@ from pob_poe2_mcp.cli import positive_timeout
 from pob_poe2_mcp.engine import LOCK, resolve_engine_dir, setup_engine
 from pob_poe2_mcp.errors import EngineError
 from pob_poe2_mcp.server import METHODS, TOOLS, Server
+from pob_poe2_mcp.editor import EDITOR_APP_TOOLS
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -36,7 +37,7 @@ class Configuration(unittest.TestCase):
 
     def test_lock_and_tool_manifest(self):
         self.assertEqual(len(LOCK["revision"]), 40)
-        self.assertEqual({tool["name"] for tool in TOOLS}, set(METHODS) | {"pob_check_build"})
+        self.assertEqual({tool["name"] for tool in TOOLS}, set(METHODS) | {"pob_check_build"} | EDITOR_APP_TOOLS)
         self.assertIn('pob_tree_icons', {tool['name'] for tool in TOOLS})
 
     def test_timeout_rejects_nan_infinity_and_nonpositive_values(self):

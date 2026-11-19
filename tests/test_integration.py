@@ -10,6 +10,7 @@ import unittest
 from pob_poe2_mcp.api import BuildAPI, EngineError
 from pob_poe2_mcp.engine import engine_layout, resolve_engine_dir
 from pob_poe2_mcp.server import TOOLS, validate
+from pob_poe2_mcp.editor import EDITOR_APP_TOOLS
 
 ROOT = Path(__file__).resolve().parents[1]
 ENGINE = resolve_engine_dir()
@@ -251,7 +252,7 @@ class MCP(unittest.TestCase):
         responses = [json.loads(line) for line in process.stdout.splitlines()]
         self.assertEqual(len(responses), 7)
         engine_tools = {tool["name"] for tool in responses[1]["result"]["tools"]}
-        self.assertEqual(engine_tools, {tool["name"] for tool in TOOLS} - {"pob_get_build_directory", "pob_list_characters", "pob_get_character"})
+        self.assertEqual(engine_tools, {tool["name"] for tool in TOOLS} - {"pob_get_build_directory", "pob_list_characters", "pob_get_character"} - EDITOR_APP_TOOLS)
         self.assertTrue(responses[3]["result"]["structuredContent"]["result"]["targetsPassed"])
         self.assertTrue(responses[4]["result"]["isError"])
         self.assertIn("<PathOfBuilding2>", responses[5]["result"]["structuredContent"]["result"]["xml"])

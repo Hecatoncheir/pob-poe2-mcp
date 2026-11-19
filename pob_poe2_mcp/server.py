@@ -13,7 +13,7 @@ from .tree_icons import TreeIcons
 from .tree_scene_assets import SceneAssets
 from .gem_assets import GemAssets
 from .gem_supports import compatible_supports, preview_support
-from .editor import EDITOR_TOOLS, EditorClient
+from .editor import EDITOR_APP_TOOLS, EDITOR_TOOLS, EditorClient
 
 MANIFEST = Path(__file__).parent / "data/tools.json"
 TOOLS = json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -48,6 +48,7 @@ METHODS = {
     "pob_select_weapon_set": "selectWeaponSet",
 }
 TOOL_MODES = {
+    **dict.fromkeys(EDITOR_APP_TOOLS, "editor"),
     "pob_get_build_directory": "app",
     "pob_list_characters": "app",
     "pob_get_character": "app",
@@ -158,6 +159,10 @@ class Server:
         return self.execute_tool(name, args)
 
     def tool_response(self, name, args, result):
+        if self.editor:
+            payload = {"revision": self.editor.revision, "result": result}
+            return {"content": [{"type": "text", "text": json.dumps(payload, ensure_ascii=False)},
+                                *self.editor.content], "structuredContent": payload, "isError": False}
         image = None
         if name == 'pob_gem_icons':
             if self.gem_assets is None:
@@ -188,7 +193,7 @@ class Server:
             mode_info = {
                 "app": " Режим app: операции изменяют текущую сборку открытого окна PoB; сохранение выполняет пользователь.",
                 "engine": " Режим engine: отдельная сессия расчёта на файлах установленного PoB.",
-                "editor": " Режим editor: с разрешения пользователя pob_create_build создаёт отдельную сборку в библиотеке PoB II и открывает её для правок. Перед правками и после STALE_REVISION вызовите pob_check_build.",
+                "editor": " Режим editor: сначала вызовите pob_editor_status и проверьте capabilities. Приложение должно разрешить доступ вручную. pob_create_build создаёт отдельную сборку. Перед правками и после STALE_REVISION обновите состояние через pob_editor_status или pob_check_build. Смену компонентов отслеживайте через pob_editor_job; не повторяйте выполняющуюся операцию. Диалог MCP можно закрыть через pob_editor_app close_dialog. Другие диалоги с вводом защищены.",
             }[self.mode]
             return {"protocolVersion": version, "capabilities": {"tools": {}},
                     "serverInfo": {"name": "pob-poe2-mcp", "version": __version__},

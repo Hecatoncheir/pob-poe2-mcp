@@ -8,10 +8,37 @@ from threading import Thread
 import unittest
 from unittest.mock import patch
 
-from pob_poe2_mcp.server import Server
+from pob_poe2_mcp.server import Server, TOOLS
+from pob_poe2_mcp.editor import EDITOR_APP_TOOLS, EDITOR_TOOLS
 
 
 class EditorMode(unittest.TestCase):
+    def test_editor_tools_are_complete_and_app_tools_are_mode_scoped(self):
+        editor = Server(mode='editor', editor_endpoint='unused')
+        engine = Server(mode='engine')
+        app = Server(mode='app')
+        names = {tool['name'] for tool in TOOLS}
+        self.assertTrue(EDITOR_TOOLS <= names)
+        for name in EDITOR_APP_TOOLS:
+            self.assertTrue(editor.tool_available(name))
+            self.assertFalse(engine.tool_available(name))
+            self.assertFalse(app.tool_available(name))
+
+    def test_editor_relays_processed_assets_without_starting_second_engine(self):
+        server = Server(mode='editor', editor_endpoint='unused')
+        server.handle('initialize', {})
+        image = {'type': 'image', 'mimeType': 'image/png', 'data': 'aGVsbG8='}
+        server.editor.content = [image]
+        server.editor.revision = 7
+        for name in ('pob_render_image', 'pob_tree_icons', 'pob_gem_icons', 'pob_get_tree'):
+            with self.subTest(name=name), patch.object(server.editor, 'call', return_value={'scene': {'ready': True}}):
+                args = {'icons': ['test']} if name == 'pob_tree_icons' else {'ids': ['test']} if name == 'pob_gem_icons' else {}
+                reply = server.handle('tools/call', {'name': name, 'arguments': args})
+                self.assertFalse(reply['isError'])
+                self.assertEqual(reply['content'][1], image)
+                self.assertEqual(reply['structuredContent']['revision'], 7)
+                self.assertIsNone(server.api)
+
     def test_routes_to_editor_and_keeps_revision_after_refused_edit(self):
         requests = []
 

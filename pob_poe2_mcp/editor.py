@@ -12,7 +12,19 @@ EDITOR_TOOLS = {
     "pob_tree_action", "pob_add_item", "pob_equip_item", "pob_select_weapon_set",
     "pob_add_skill_group", "pob_update_skill_group", "pob_delete_skill_group",
     "pob_select_main_skill", "pob_set_config",
+    "pob_import_xml", "pob_set_custom_mods", "pob_tree_options", "pob_node_tooltip",
+    "pob_render_image", "pob_get_tree", "pob_tree_icons", "pob_tree_textures",
+    "pob_tree_hover", "pob_node_power", "pob_gem_icons", "pob_gem_supports",
+    "pob_preview_support", "pob_gem_tooltip", "pob_compare_item",
+    "pob_trade_catalog", "pob_trade_search", "pob_import_character",
 }
+EDITOR_APP_TOOLS = {
+    "pob_editor_status", "pob_editor_app", "pob_editor_components",
+    "pob_editor_library", "pob_editor_history", "pob_editor_notes",
+    "pob_editor_files", "pob_editor_progression", "pob_editor_ui",
+    "pob_editor_job",
+}
+EDITOR_TOOLS |= EDITOR_APP_TOOLS
 
 
 class EditorClient:
@@ -21,6 +33,7 @@ class EditorClient:
         self.timeout = timeout
         self.token = None
         self.revision = None
+        self.content = []
 
     def _connection_details(self):
         try:
@@ -36,6 +49,7 @@ class EditorClient:
             raise EngineError("EDITOR_DISABLED", "Включите правки через MCP в PoB II.") from None
 
     def call(self, tool, arguments):
+        self.content = []
         port, token = self._connection_details()
         if token != self.token:
             self.token = token
@@ -46,6 +60,7 @@ class EditorClient:
             error = reply["error"]
             raise EngineError(error["code"], error["message"])
         self.revision = reply["revision"]
+        self.content = [item for item in reply.get("content", []) if item.get("type") == "image"]
         return reply["result"]
 
     def _post(self, port, token, payload):

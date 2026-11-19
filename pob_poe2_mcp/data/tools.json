@@ -29,9 +29,14 @@
     "inputSchema": {
       "type": "object",
       "properties": {
-        "name": {"type": "string", "maxLength": 256}
+        "name": {
+          "type": "string",
+          "maxLength": 256
+        }
       },
-      "required": ["name"],
+      "required": [
+        "name"
+      ],
       "additionalProperties": false
     },
     "annotations": {
@@ -45,9 +50,13 @@
     "inputSchema": {
       "type": "object",
       "properties": {
-        "character": {"type": "object"}
+        "character": {
+          "type": "object"
+        }
       },
-      "required": ["character"],
+      "required": [
+        "character"
+      ],
       "additionalProperties": false
     },
     "annotations": {
@@ -1168,6 +1177,367 @@
     "annotations": {
       "readOnlyHint": true,
       "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_editor_status",
+    "description": "Состояние PoB II: подключение, диалоги, сборка, ревизия, история, возможности. Доступно при открытом диалоге и занятом приложении.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_editor_app",
+    "description": "Управление PoB II. close_dialog закрывает только диалог разрешения MCP. close/restart сначала сохраняют данные и отвечают клиенту; доступ после перезапуска включается вручную. Начните с pob_editor_status.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "connect",
+            "disconnect",
+            "recalculate",
+            "save",
+            "doctor",
+            "close_dialog",
+            "disable_access",
+            "close",
+            "restart"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "action"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_editor_components",
+    "description": "Компоненты PoB II: активная/предыдущая пара, установленные версии, закреплённые обновления, проверка, обновление, откат, выбор установленной версии по commit. Новая пара проверяется Lua до переключения. Замена dev на закреплённый выпуск требует allowReplaceDev. Действия update, rollback, select_installed возвращают фоновую задачу; результат получите через pob_editor_job.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "status",
+            "check_updates",
+            "update",
+            "rollback",
+            "select_installed"
+          ]
+        },
+        "component": {
+          "type": "string",
+          "enum": [
+            "pob",
+            "mcp"
+          ]
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$",
+          "maxLength": 40
+        },
+        "allowReplaceDev": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "action"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_editor_library",
+    "description": "Библиотека PoB II: список, обновление, открытие, копирование, переименование, удаление выбранной сборки, выбор/поиск папки. Ручная смена сборки по-прежнему отзывает доступ; авторизованные команды MCP сохраняют соединение.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "list",
+            "refresh",
+            "open",
+            "copy",
+            "rename",
+            "delete",
+            "set_folder",
+            "detect_folder"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "path": {
+          "type": "string",
+          "maxLength": 4096
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "action"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_editor_history",
+    "description": "Отмена и повтор правок текущей сборки с сохранением в библиотеку.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "status",
+            "undo",
+            "redo"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "action"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_editor_notes",
+    "description": "Чтение и сохранение заметок текущей сборки.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "read",
+            "write"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 1000000
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "action"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_editor_files",
+    "description": "Импорт XML, файла, кода или ссылки в отдельную сборку; экспорт XML/кода и сохранение XML по явному пути без системных диалогов. Перезапись файла требует overwrite=true.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "import_xml",
+            "import_file",
+            "import_code",
+            "import_link",
+            "export_xml",
+            "export_code",
+            "save_file"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 4000000
+        },
+        "path": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "overwrite": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "action"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_editor_progression",
+    "description": "План прокачки: этапы, снимок текущего состояния, применение дерева/умений/экипировки, изменение описания, завершённости и удаление этапа. Индекс с нуля.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "list",
+            "capture",
+            "apply",
+            "update",
+            "delete"
+          ]
+        },
+        "index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 1000000
+        },
+        "completed": {
+          "type": "boolean"
+        },
+        "parts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "tree",
+              "skills",
+              "equipment"
+            ]
+          },
+          "maxItems": 3
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "action"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_editor_ui",
+    "description": "Состояние и навигация интерфейса PoB II без управления экраном; тема, язык, масштаб и анимация.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "status",
+            "navigate",
+            "preferences"
+          ]
+        },
+        "page": {
+          "type": "string",
+          "enum": [
+            "library",
+            "workspace",
+            "components"
+          ]
+        },
+        "tab": {
+          "type": "string",
+          "enum": [
+            "tree",
+            "items",
+            "skills",
+            "conditions",
+            "calculations"
+          ]
+        },
+        "theme": {
+          "type": "string",
+          "enum": [
+            "system",
+            "light",
+            "dark"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "enum": [
+            "ru",
+            "en",
+            "fr",
+            "de",
+            "es",
+            "pt-BR",
+            "ja",
+            "ko",
+            "th",
+            "zh-Hant"
+          ]
+        },
+        "scale": {
+          "type": "number",
+          "minimum": 0.75,
+          "maximum": 2.0
+        },
+        "motion": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "action"
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_editor_job",
+    "description": "Состояние последней задачи смены компонентов: idle/running/complete/failed, результат или ошибка. Доступно при занятом приложении; завершение задачи обновляет ревизию.",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
       "openWorldHint": false
     }
   }

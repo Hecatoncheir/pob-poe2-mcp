@@ -193,7 +193,7 @@ class Server:
             mode_info = {
                 "app": " Режим app: операции изменяют текущую сборку открытого окна PoB; сохранение выполняет пользователь.",
                 "engine": " Режим engine: отдельная сессия расчёта на файлах установленного PoB.",
-                "editor": " Режим editor: сначала вызовите pob_editor_status и проверьте capabilities. Приложение должно разрешить доступ вручную. pob_create_build создаёт отдельную сборку. Перед правками и после STALE_REVISION обновите состояние через pob_editor_status или pob_check_build. Смену компонентов отслеживайте через pob_editor_job; не повторяйте выполняющуюся операцию. Диалог MCP можно закрыть через pob_editor_app close_dialog. Другие диалоги с вводом защищены.",
+                "editor": " Режим editor: сначала вызовите pob_editor_status и проверьте capabilities. Приложение должно разрешить доступ вручную. pob_create_build создаёт отдельную сборку. Перед правками и после STALE_REVISION обновите состояние через pob_editor_status или pob_check_build. Смену компонентов отслеживайте через pob_editor_job; не повторяйте выполняющуюся операцию. В PoB II 0.12.0 снимок и действия любого диалога доступны через pob_editor_ui snapshot/perform. Перед setText нажмите tap на поле. После STALE_UI получите новый snapshot. close_dialog закрывает текущий диалог; discard=true явно отменяет ввод, сохранение выполняется кнопкой формы. Файлы открывайте через pob_editor_files с явным путём.",
             }[self.mode]
             return {"protocolVersion": version, "capabilities": {"tools": {}},
                     "serverInfo": {"name": "pob-poe2-mcp", "version": __version__},

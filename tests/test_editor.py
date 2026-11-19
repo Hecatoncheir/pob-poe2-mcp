@@ -13,6 +13,38 @@ from pob_poe2_mcp.editor import EDITOR_APP_TOOLS, EDITOR_TOOLS
 
 
 class EditorMode(unittest.TestCase):
+    def test_ui_actions_are_discoverable_and_relayed(self):
+        server = Server(mode='editor', editor_endpoint='unused')
+        server.handle('initialize', {})
+        ui = next(t for t in TOOLS if t['name'] == 'pob_editor_ui')
+        actions = ui['inputSchema']['properties']['action']['enum']
+        self.assertTrue({'snapshot', 'perform', 'close_dialog', 'screenshot', 'gesture', 'key'} <= set(actions))
+        cases = [
+            ('pob_editor_ui', {'action': 'snapshot'}),
+            ('pob_editor_ui', {'action': 'perform', 'nodeId': 12,
+                             'snapshotId': 3, 'operation': 'setText', 'value': 'Полный DPS ✓'}),
+            ('pob_editor_ui', {'action': 'close_dialog', 'discard': True}),
+            ('pob_editor_ui', {'action': 'screenshot'}),
+            ('pob_editor_ui', {'action': 'gesture', 'snapshotId': 3,
+                             'operation': 'drag', 'from': {'x': 10, 'y': 20},
+                             'to': {'x': 100, 'y': 200}}),
+            ('pob_editor_ui', {'action': 'key', 'snapshotId': 3,
+                             'key': 'z', 'modifiers': ['control']}),
+            ('pob_editor_app', {'action': 'close_dialog', 'discard': True}),
+        ]
+        for name, args in cases:
+            with self.subTest(name=name, args=args), patch.object(
+                    server.editor, 'call', return_value={'snapshotId': 4}) as call:
+                reply = server.handle('tools/call', {'name': name, 'arguments': args})
+                self.assertFalse(reply['isError'])
+                call.assert_called_once_with(name, args)
+        with patch.object(server.editor, 'call') as call:
+            reply = server.handle('tools/call', {'name': 'pob_editor_ui', 'arguments': {
+                'action': 'perform', 'nodeId': 'wrong', 'snapshotId': 3,
+                'operation': 'tap'}})
+            self.assertTrue(reply['isError'])
+            call.assert_not_called()
+
     def test_editor_tools_are_complete_and_app_tools_are_mode_scoped(self):
         editor = Server(mode='editor', editor_endpoint='unused')
         engine = Server(mode='engine')

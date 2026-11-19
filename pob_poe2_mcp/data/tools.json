@@ -1195,7 +1195,7 @@
   },
   {
     "name": "pob_editor_app",
-    "description": "Управление PoB II. close_dialog закрывает только диалог разрешения MCP. close/restart сначала сохраняют данные и отвечают клиенту; доступ после перезапуска включается вручную. Начните с pob_editor_status.",
+    "description": "Управление PoB II. close_dialog закрывает текущий диалог, включая «Полный DPS»; для отмены ввода в форме требуется discard=true. close/restart сохраняют данные и отвечают перед завершением. Начните с pob_editor_status. Новые действия интерфейса требуют PoB II 0.12.0.",
     "inputSchema": {
       "type": "object",
       "properties": {
@@ -1212,6 +1212,10 @@
             "close",
             "restart"
           ]
+        },
+        "discard": {
+          "type": "boolean",
+          "description": "Явно отменить ввод в закрываемой форме."
         }
       },
       "additionalProperties": false,
@@ -1457,7 +1461,7 @@
   },
   {
     "name": "pob_editor_ui",
-    "description": "Состояние и навигация интерфейса PoB II без управления экраном; тема, язык, масштаб и анимация.",
+    "description": "Полное управление интерфейсом PoB II 0.12.0: snapshot возвращает видимые элементы, ID, поля, значения и доступные действия; perform выполняет действие элемента из свежего snapshotId; close_dialog закрывает верхний диалог. Перед setText нажмите tap на поле. Игровые изменения проходят обычные обработчики Lua. Для файлов доступны также pob_editor_files с явным путём. screenshot возвращает PNG окна и snapshot; gesture управляет мышью по координатам снимка, key отправляет клавишу с modifiers. Для gesture/key требуется свежий snapshotId. Системный выбор файла выполняйте через pob_editor_files.",
     "inputSchema": {
       "type": "object",
       "properties": {
@@ -1466,7 +1470,13 @@
           "enum": [
             "status",
             "navigate",
-            "preferences"
+            "preferences",
+            "snapshot",
+            "perform",
+            "close_dialog",
+            "screenshot",
+            "gesture",
+            "key"
           ]
         },
         "page": {
@@ -1517,6 +1527,82 @@
         },
         "motion": {
           "type": "boolean"
+        },
+        "nodeId": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "snapshotId": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "operation": {
+          "type": "string",
+          "description": "Для perform — действие из nodes.actions; для gesture — tap, doubleTap, longPress, drag, scroll или hover. Для scroll value={x,y} задаёт смещение."
+        },
+        "value": {
+          "description": "Аргумент действия: строка для setText, объект для setSelection или scrollToOffset."
+        },
+        "discard": {
+          "type": "boolean"
+        },
+        "from": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "x",
+            "y"
+          ],
+          "additionalProperties": false,
+          "description": "Начало жеста в логических пикселях снимка окна."
+        },
+        "to": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "x",
+            "y"
+          ],
+          "additionalProperties": false,
+          "description": "Конец drag в логических пикселях."
+        },
+        "button": {
+          "type": "string",
+          "enum": [
+            "primary",
+            "secondary"
+          ]
+        },
+        "key": {
+          "type": "string",
+          "description": "Клавиша: a–z, 0–9, tab, enter, escape, space, backspace, delete, arrowLeft/Right/Up/Down, home, end, pageUp, pageDown."
+        },
+        "modifiers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "control",
+              "shift",
+              "alt",
+              "meta"
+            ]
+          },
+          "description": "Модификаторы сочетания клавиш."
         }
       },
       "additionalProperties": false,

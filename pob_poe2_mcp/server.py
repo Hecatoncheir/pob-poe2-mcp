@@ -12,7 +12,7 @@ from .images import render_build_image, validate_image_args
 from .tree_icons import TreeIcons
 from .tree_scene_assets import SceneAssets
 from .gem_assets import GemAssets
-from .gem_supports import compatible_supports, preview_support
+from .gem_supports import compatible_supports, preview_support, compare_supports
 from .editor import EDITOR_APP_TOOLS, EDITOR_TOOLS, EditorClient
 
 MANIFEST = Path(__file__).parent / "data/tools.json"
@@ -38,6 +38,7 @@ METHODS = {
     "pob_gem_tooltip": "getGemTooltip",
     "pob_gem_supports": None,
     "pob_preview_support": None,
+    "pob_compare_supports": None,
     "pob_update_skill_group": "updateSkillGroup",
     "pob_delete_skill_group": "deleteSkillGroup",
     "pob_inspect_item": "inspectItem",
@@ -54,9 +55,10 @@ TOOL_MODES = {
     "pob_get_character": "app",
     "pob_import_character": "engine",
     "pob_preview_support": "engine",
+    "pob_compare_supports": "engine",
 }
 READ_ONLY_TOOLS = {"pob_catalog", "pob_check_build", "pob_node_tooltip", "pob_export_xml", "pob_render_image", "pob_get_tree", "pob_tree_icons", "pob_tree_textures", "pob_tree_hover", "pob_node_power"}
-READ_ONLY_TOOLS.update({'pob_gem_icons', 'pob_gem_supports', 'pob_gem_tooltip', 'pob_preview_support'})
+READ_ONLY_TOOLS.update({'pob_gem_icons', 'pob_gem_supports', 'pob_gem_tooltip', 'pob_preview_support', 'pob_compare_supports'})
 READ_ONLY_TOOLS.add('pob_inspect_item')
 READ_ONLY_TOOLS.update({'pob_compare_item', 'pob_trade_catalog', 'pob_trade_search'})
 
@@ -120,7 +122,10 @@ class Server:
             self.api = BuildAPI(pob_dir=self.pob_dir, timeout=self.timeout, mode=self.mode)
         try:
             if name == 'pob_gem_supports':
-                return compatible_supports(self.api, args['gems'], self.timeout, args.get('groupId'))
+                return compatible_supports(self.api, args['gems'], self.timeout, args.get('groupId'), args.get('targetIndex'))
+            if name == 'pob_compare_supports':
+                return compare_supports(self.api, args['gems'], args['targetIndex'],
+                                        args['supportIds'], self.timeout, args.get('groupId'))
             if name == 'pob_preview_support':
                 return preview_support(self.api, args['gems'], args['targetIndex'],
                                        args['supportId'], self.timeout, args.get('groupId'))

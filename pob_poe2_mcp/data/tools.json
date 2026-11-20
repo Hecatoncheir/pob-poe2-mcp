@@ -728,7 +728,7 @@
   },
   {
     "name": "pob_gem_supports",
-    "description": "Подходящие поддержки для черновика группы: исходная проверка PoB в отдельном Lua. Текущая сборка и ревизия не изменяются.",
+    "description": "Подходящие поддержки для полной группы и выбранного активного камня targetIndex (с 1). Исходный Lua возвращает состав, область общих поддержек и предупреждения. Вместимость конкретного умения неизвестна: sockets.capacity=null.",
     "inputSchema": {
       "type": "object",
       "properties": {
@@ -770,6 +770,11 @@
         "groupId": {
           "type": "integer",
           "minimum": 1
+        },
+        "targetIndex": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
         }
       },
       "required": [
@@ -841,6 +846,79 @@
         "gems",
         "targetIndex",
         "supportId"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "pob_compare_supports",
+    "description": "Сравнить от 1 до 8 поддержек уровня 1 и качества 0 из одного исходного XML и полной группы. Lua возвращает before/after/delta, предупреждения и ошибки каждого кандидата; xmlHash и baseRevision определяют исходное состояние. Рабочая сборка не меняется. Это сравнение DPS, а не оценка всех свойств сборки.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "gems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "level": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 40
+              },
+              "quality": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "sourceIndex": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 11
+        },
+        "targetIndex": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 11
+        },
+        "groupId": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "supportIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 8,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "gems",
+        "targetIndex",
+        "supportIds"
       ],
       "additionalProperties": false
     },

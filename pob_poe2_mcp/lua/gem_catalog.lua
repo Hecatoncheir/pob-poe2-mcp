@@ -61,20 +61,39 @@ end
 function methods.getCompatibleSupports(params)
 	local group = build.skillsTab.socketGroupList[params.groupId]
 	if not group then fail("INVALID_REQUEST", "Группа не найдена") end
-	for index, gem in ipairs(granted.gems(build, group)) do
+	local gems = granted.gems(build, group)
+	local target = params.targetIndex and gems[params.targetIndex]
+	if params.targetIndex and (not target or not target.gemData or target.gemData.grantedEffect.support) then
+		fail("INVALID_REQUEST", "Для подбора нужен активный камень")
+	end
+	local count, enabledCount = 0, 0
+	for index, gem in ipairs(gems) do
 		local support = gem.gemData and gem.gemData.grantedEffect.support
-		if (index == 1 and support) or (index > 1 and not support) then
+		if not target and ((index == 1 and support) or (index > 1 and not support)) then
 			fail("INVALID_REQUEST", "Сначала нужен камень умения, затем камни поддержки")
+		end
+		if support then
+			count = count + 1
+			if gem.enabled then enabledCount = enabledCount + 1 end
+		end
+	end
+	local targetGroup = group
+	if target then
+		targetGroup = { noSupports = group.noSupports, displaySkillList = {} }
+		for _, skill in ipairs(group.displaySkillList or {}) do
+			if skill.activeEffect.srcInstance == target then table.insert(targetGroup.displaySkillList, skill) end
 		end
 	end
 	local result = {}
 	for id, gem in pairs(build.data.gems) do
-		if gem.grantedEffect and gem.grantedEffect.support and granted.canSupport(group, gem.grantedEffect) then
+		if gem.grantedEffect and gem.grantedEffect.support and granted.canSupport(targetGroup, gem.grantedEffect) then
 			result[#result + 1] = id
 		end
 	end
 	table.sort(result)
-	return { source = "original-lua", supportIds = result }
+	return { source = "original-lua", supportIds = result,
+		sockets = { supportCount = count, enabledSupportCount = enabledCount,
+			scope = granted.scope(build, group) or "group", supportsAllowed = not group.noSupports } }
 end
 
 if not canPreview then return end

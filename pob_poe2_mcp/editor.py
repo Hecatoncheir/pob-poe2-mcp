@@ -15,7 +15,7 @@ EDITOR_TOOLS = {
     "pob_import_xml", "pob_set_custom_mods", "pob_tree_options", "pob_node_tooltip",
     "pob_render_image", "pob_get_tree", "pob_tree_icons", "pob_tree_textures",
     "pob_tree_hover", "pob_node_power", "pob_gem_icons", "pob_gem_supports",
-    "pob_preview_support", "pob_gem_tooltip", "pob_compare_item",
+    "pob_preview_support", "pob_compare_supports", "pob_gem_tooltip", "pob_compare_item",
     "pob_trade_catalog", "pob_trade_search", "pob_import_character",
 }
 EDITOR_APP_TOOLS = {

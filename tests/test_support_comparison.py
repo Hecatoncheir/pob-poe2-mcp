@@ -63,17 +63,17 @@ class SupportComparison(unittest.TestCase):
         self.assertTrue(all(entry['error']['message'] for entry in errors))
         self.assert_unchanged(xml, revision)
 
-    def test_item_skill_uses_slot_supports_without_changing_equipment(self):
+    def test_item_skill_uses_original_support_scope_without_changing_equipment(self):
         raw = ('Rarity: UNIQUE\nLiminal Coil\nTwisted Wand\n--------\n'
                'Grants Skill: Level 20 Coiling Bolts (implicit)\n100% increased Spell Damage')
         self.api.call('equipItem', {'slot': 'Weapon 1', 'raw': raw})
         group = next(row for row in self.api.call('getBuildReport')['groups']
-                     if row.get('source') and row.get('supportScope') == 'slot')
+                     if row.get('source') and row.get('supportScope') in ('skill', 'slot'))
         gems = [{'id': group['gems'][0]['skillId'], 'sourceIndex': 1}]
         xml = self.api.call('exportBuild')['xml']
         revision = self.api.revision
         info = compatible_supports(self.api, gems, 60, group['id'], 1)
-        self.assertEqual(info['sockets']['scope'], 'slot')
+        self.assertEqual(info['sockets']['scope'], group['supportScope'])
         self.assertIsNone(info['sockets']['capacity'])
         result = compare_supports(self.api, gems, 1, [CONTROLLED], 60, group['id'])
         self.assertGreater(result['entries'][0]['delta'], 0)
